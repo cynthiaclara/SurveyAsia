@@ -1,0 +1,41 @@
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.vl {
+    height: 40px;
+    border: 1px solid #999;
+}
+
+.landing-page {
+    background-color: #39b6f0;
+}
+
+.hero {
+    background-image: url("/assets/img/hero.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.survey-promo {
+    background-color: #f7fafc;
+}
+
+.register-soon {
+    background-color: #6dc8f2;
+}
+
+.services hr {
+    width: 10%;
+    border: 5px solid #39b6f0;
+}
+
+footer {
+    background-color: #39b6f0;
+}
