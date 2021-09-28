@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Registercontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,12 @@ Route::get('/sign-in', function () {
     return view('auth.login');
 });
 
-Route::get('/sign-up', function () {
-    return view('auth.register');
-});
+// Route::get('/sign-up', function () {
+//     return view('auth.register');
+// });
+
+Route::get('/sign-up', [registercontroller::class, 'create']);
+Route::Post('/sign-up', [registercontroller::class, 'store']);
 
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');

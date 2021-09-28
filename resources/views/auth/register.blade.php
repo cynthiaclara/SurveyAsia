@@ -22,32 +22,58 @@
     <div class="col-md-7 sign-up-right justify-content-center">
       <h3 class="mb-3 fw-bold">Buat akun Surveyasia</h3>
       <h6 class="mb-5">Gratis dan mudah</h6>
-      <form>
+      <form action="/sign-up" method="post">
+        @csrf
         <div class="row">
           <div class="col">
             <label for="first-name" class="form-label">Nama Depan</label>
-            <input type="text" class="form-control" name="first-name" placeholder="Ketik nama depan Anda"
+            <input type="text" class="form-control @error('first-name')is-invalid @enderror" name="first-name" placeholder="Ketik nama depan Anda"
               aria-label="Nama Depan">
+              @error('first-name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
           </div>
           <div class="col">
             <label for="last-name" class="form-label">Nama Belakang</label>
-            <input type="text" class="form-control" name="last-name" placeholder="Ketik Nama belakang Anda"
+            <input type="text" class="form-control @error('last-name')is-invalid @enderror" name="last-name" placeholder="Ketik Nama belakang Anda"
               aria-label="Nama Belakang">
+              @error('last-name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
           </div>
         </div>
         <div class="mt-3">
           <label for="username" class="form-label">Username</label>
-          <input type="username" class="form-control" id="username" name="username" placeholder="Ketik username Anda" />
+          <input type="username" class="form-control @error('username')is-invalid @enderror" id="username" name="username" placeholder="Ketik username Anda" />
+          @error('username')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
         </div>
         <div class="mt-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-            placeholder="Ketik email Anda" />
+          <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp"
+            placeholder="Ketik email Anda" required/>
+            @error('email')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
         </div>
         <div class="mt-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password"
-            placeholder="Ketik kata sandi Anda" />
+          <input type="password" class="form-control @error('password')is-invalid @enderror" id="password" name="password"
+            placeholder="Ketik kata sandi Anda" required/>
+            @error('password')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
           <div class="col-auto">
             <span id="passwordHelpInline" class="form-text">
               Harus minimal 8 karakter
@@ -56,7 +82,7 @@
         </div>
         <div class="checkbox mt-3">
           <label>
-            <input type="checkbox" value="tac"> Dengan membuat akun berarti Anda menyetujui <a href="#"
+            <input type="checkbox" name="checkbox" value="tac"> Dengan membuat akun berarti Anda menyetujui <a href="#"
               class="link-dark">Syarat dan
               Ketentuan</a>, serta <a href="#" class="link-dark">Kebijakan Privasi</a> kami
           </label>
