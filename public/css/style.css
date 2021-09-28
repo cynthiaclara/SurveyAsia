@@ -39,3 +39,66 @@ body {
 footer {
     background-color: #39b6f0;
 }
+
+.hero-about {
+    background-image: url("/assets/img/about.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topic-card {
+    height: 150px;
+    border-radius: 16px;
+}
+
+.vision-mission {
+    background-color: #f6f8fd;
+}
+
+.hr-vm {
+    width: 5%;
+    border: 3px solid #39b6f0;
+}
+
+/* Auth */
+.sign-in-form {
+    height: 100vh;
+}
+
+.sign-in-left {
+    background-color: #39b6f0 !important;
+}
+
+.sign-in-right {
+    padding: 10% 10% !important;
+}
+
+.sign-up-form {
+    height: 100vh;
+}
+
+.sign-up-left {
+    background-color: #39b6f0 !important;
+}
+
+.sign-up-right {
+    padding: 3% 5% !important;
+}
+
+.forgot-password-form {
+    height: 100vh;
+}
+
+.forgot-password-left {
+    background-color: #39b6f0 !important;
+}
+
+.forgot-password-right {
+    padding: 16% 10% !important;
+}
+
+.ellipse {
+    left: 25%;
+}
+/* End Auth */

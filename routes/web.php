@@ -21,14 +21,22 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/sign-in', function () {
+    return view('auth.login');
 });
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/sign-up', function () {
+    return view('auth.register');
 });
 
-Route::get('/forget', function () {
-    return view('forget');
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
 });
