@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< Updated upstream
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password as RulesPassword;
 use Illuminate\Support\Facades\Hash;
-=======
-use Illuminate\Http\Request;
->>>>>>> Stashed changes
 
 class Registercontroller extends Controller
 {
     public function create()
     {
-<<<<<<< Updated upstream
         return view('auth.register');
     }
 
@@ -42,8 +37,5 @@ class Registercontroller extends Controller
         $request->session()->flash('success', 'Registration Success!');
 
         return redirect('/sign-in');
-=======
-        return view('register');
->>>>>>> Stashed changes
     }
 }

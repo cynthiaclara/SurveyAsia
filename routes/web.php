@@ -26,7 +26,6 @@ Route::get('/sign-in', function () {
     return view('auth.login');
 });
 
-<<<<<<< Updated upstream
 // Route::get('/sign-up', function () {
 //     return view('auth.register');
 // });
@@ -41,13 +40,11 @@ Route::get('/forgot-password', function () {
 Route::get('/about', function () {
     return view('about');
 });
-=======
 // Route::get('/register', function () {
 //     return view('register');
 // });
 
 Route::get('/register', [Registercontroller::class, 'create']);
->>>>>>> Stashed changes
 
 Route::get('/blog', function () {
     return view('blog');
