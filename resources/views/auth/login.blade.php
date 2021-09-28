@@ -25,6 +25,12 @@
             <h3 class="mb-3 fw-bold">Selamat datang kembali!</h3>
             <h6 class="mb-5">Mari membuat sesuatu yang hebat</h6>
             <form>
+                @if(session()->has('success'))
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                   {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <div class="mt-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"

@@ -15,18 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 255);
-            $table->string('password');
+            $table->string('first-name');
+            $table->string('last-name');
+            $table->string('username');
             $table->string('email')->unique();
-            $table->string('nama_depan');
-            $table->string('nama_belakang');
-            $table->bigInteger('no_telp');
-            $table->enum('gender', ['L', 'P']);
-            $table->date('tanggal_lahir');
-            $table->string('profesi');
-            $table->string('alamat', 255);
-            $table->bigInteger('Nik');
-            $table->string('company', 255);
+            $table->string('password');
+            $table->bigInteger('no_telp')->nullable();
+            $table->enum('gender', ['L', 'P'])->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('profesi')->nullable();
+            $table->string('alamat')->nullable();
+            $table->bigInteger('Nik')->nullable();
+            $table->enum('status', ['researcher', 'responden'])->nullable();
+            $table->string('company')->nullable();
             $table->timestamp('created_at')->nullable();
         });
     }
