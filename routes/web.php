@@ -26,12 +26,8 @@ Route::get('/sign-in', function () {
     return view('auth.login');
 });
 
-// Route::get('/sign-up', function () {
-//     return view('auth.register');
-// });
-
-Route::get('/sign-up', [registercontroller::class, 'create']);
-Route::Post('/sign-up', [registercontroller::class, 'store']);
+Route::get('/sign-up', [RegisterController::class, 'create']);
+Route::post('/sign-up', [RegisterController::class, 'store']);
 
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
@@ -40,12 +36,15 @@ Route::get('/forgot-password', function () {
 Route::get('/about', function () {
     return view('about');
 });
-// Route::get('/register', function () {
-//     return view('register');
-// });
-
-Route::get('/register', [Registercontroller::class, 'create']);
 
 Route::get('/blog', function () {
     return view('blog');
+});
+
+Route::get('/blog/detail-blog', function () {
+    return view('detail-blog');
+});
+
+Route::get('/news', function () {
+    return view('news');
 });
