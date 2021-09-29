@@ -23,6 +23,10 @@ body {
     background-size: cover;
 }
 
+.title-landing-page {
+    padding: 0px 100px;
+}
+
 .survey-promo {
     background-color: #f7fafc;
 }
@@ -33,7 +37,15 @@ body {
 
 .services hr {
     width: 10%;
-    border: 5px solid #39b6f0;
+    border: 5px solid #f7931b;
+}
+
+.btn-orange {
+    background-color: #f7931b;
+}
+
+.btn-orange:hover {
+    background-color: #ffa840;
 }
 
 footer {
