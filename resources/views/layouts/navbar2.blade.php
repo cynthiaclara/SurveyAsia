@@ -17,7 +17,29 @@
                 <li class="nav-item">
                     <a class="nav-link text-info me-3" href="/news">News</a>
                 </li>
-                <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li>
+                @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ auth()->user()->username }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{-- <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>--}}
+                        <li><a class="dropdown-item" href="/">Home</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item">Logout</button>
+                            </form>
+                    </ul>
+                </li>
+                @else
+                <li></li>
+                {{-- <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,7 +53,8 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
-                </li>
+                </li> --}}
+                @endauth
             </ul>
         </div>
     </div>
