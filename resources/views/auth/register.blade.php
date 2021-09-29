@@ -26,54 +26,55 @@
         @csrf
         <div class="row">
           <div class="col">
-            <label for="first-name" class="form-label">Nama Depan</label>
-            <input type="text" class="form-control @error('first-name')is-invalid @enderror" name="first-name" placeholder="Ketik nama depan Anda"
-              aria-label="Nama Depan" value="{{ old('first-name') }}">
-              @error('first-name')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+            <label for="first_name" class="form-label">Nama Depan</label>
+            <input type="text" class="form-control @error('first_name')is-invalid @enderror" name="first_name"
+              placeholder="Ketik nama depan Anda" aria-label="Nama Depan" value="{{ old('first_name') }}">
+            @error('first_name')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="col">
-            <label for="last-name" class="form-label">Nama Belakang</label>
-            <input type="text" class="form-control @error('last-name')is-invalid @enderror" name="last-name" placeholder="Ketik Nama belakang Anda"
-              aria-label="Nama Belakang" value="{{ old('last-name') }}">
-              @error('last-name')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+            <label for="last_name" class="form-label">Nama Belakang</label>
+            <input type="text" class="form-control @error('last_name')is-invalid @enderror" name="last_name"
+              placeholder="Ketik nama belakang Anda" aria-label="Nama Belakang" value="{{ old('last_name') }}">
+            @error('last_name')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
         </div>
         <div class="mt-3">
           <label for="username" class="form-label">Username</label>
-          <input type="username" class="form-control @error('username')is-invalid @enderror" id="username" name="username" placeholder="Ketik username Anda" value="{{ old('username') }}"/>
+          <input type="username" class="form-control @error('username')is-invalid @enderror" id="username"
+            name="username" placeholder="Ketik username Anda" value="{{ old('username') }}" />
           @error('username')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div class="mt-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp"
-            placeholder="Ketik email Anda" required value="{{ old('email') }}"/>
-            @error('email')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+          <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email"
+            aria-describedby="emailHelp" placeholder="Ketik email Anda" required value="{{ old('email') }}" />
+          @error('email')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div class="mt-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control @error('password')is-invalid @enderror" id="password" name="password"
-            placeholder="Ketik kata sandi Anda" required/>
-            @error('password')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+          <input type="password" class="form-control @error('password')is-invalid @enderror" id="password"
+            name="password" placeholder="Ketik kata sandi Anda" required />
+          @error('password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
           <div class="col-auto">
             <span id="passwordHelpInline" class="form-text">
               Harus minimal 8 karakter
@@ -82,15 +83,16 @@
         </div>
         <div class="checkbox mt-3">
           <label>
-            <input type="checkbox" name="checkbox" id="checkbox" value="tac" class="@error('checkbox')is-invalid @enderror" required> Dengan membuat akun berarti Anda menyetujui <a href="#"
-              class="link-dark">Syarat dan
+            <input type="checkbox" name="checkbox" id="checkbox" value="tac"
+              class="@error('checkbox')is-invalid @enderror" required> Dengan membuat akun berarti Anda menyetujui <a
+              href="#" class="link-dark">Syarat dan
               Ketentuan</a>, serta <a href="#" class="link-dark">Kebijakan Privasi</a> kami
           </label>
           @error('checkbox')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-              @enderror
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <button type="submit" class="btn btn-info w-100 text-white my-5" name="submit">Daftar</button>
       </form>
@@ -107,6 +109,6 @@
       </div>
     </div>
   </div>
-    </section>
+</section>
 
 @endsection
