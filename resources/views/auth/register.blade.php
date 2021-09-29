@@ -28,7 +28,7 @@
           <div class="col">
             <label for="first-name" class="form-label">Nama Depan</label>
             <input type="text" class="form-control @error('first-name')is-invalid @enderror" name="first-name" placeholder="Ketik nama depan Anda"
-              aria-label="Nama Depan">
+              aria-label="Nama Depan" value="{{ old('first-name') }}">
               @error('first-name')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -38,7 +38,7 @@
           <div class="col">
             <label for="last-name" class="form-label">Nama Belakang</label>
             <input type="text" class="form-control @error('last-name')is-invalid @enderror" name="last-name" placeholder="Ketik Nama belakang Anda"
-              aria-label="Nama Belakang">
+              aria-label="Nama Belakang" value="{{ old('last-name') }}">
               @error('last-name')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -48,7 +48,7 @@
         </div>
         <div class="mt-3">
           <label for="username" class="form-label">Username</label>
-          <input type="username" class="form-control @error('username')is-invalid @enderror" id="username" name="username" placeholder="Ketik username Anda" />
+          <input type="username" class="form-control @error('username')is-invalid @enderror" id="username" name="username" placeholder="Ketik username Anda" value="{{ old('username') }}"/>
           @error('username')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -58,7 +58,7 @@
         <div class="mt-3">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp"
-            placeholder="Ketik email Anda" required/>
+            placeholder="Ketik email Anda" required value="{{ old('email') }}"/>
             @error('email')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -82,12 +82,17 @@
         </div>
         <div class="checkbox mt-3">
           <label>
-            <input type="checkbox" name="checkbox" value="tac"> Dengan membuat akun berarti Anda menyetujui <a href="#"
+            <input type="checkbox" name="checkbox" id="checkbox" value="tac" class="@error('checkbox')is-invalid @enderror" required> Dengan membuat akun berarti Anda menyetujui <a href="#"
               class="link-dark">Syarat dan
               Ketentuan</a>, serta <a href="#" class="link-dark">Kebijakan Privasi</a> kami
           </label>
+          @error('checkbox')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
         </div>
-        <button type="submit" class="btn btn-info w-100 text-white my-5">Daftar</button>
+        <button type="submit" class="btn btn-info w-100 text-white my-5" name="submit">Daftar</button>
       </form>
       <p class="text-center mt-3 text-secondary">atau daftar dengan</p>
       <div class="d-flex justify-content-center">
@@ -102,5 +107,6 @@
       </div>
     </div>
   </div>
-</section>
+    </section>
+
 @endsection

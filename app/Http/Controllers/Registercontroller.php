@@ -27,7 +27,8 @@ class Registercontroller extends Controller
             'first-name.required' => 'The first name field is required.',
             'last-name.required' => 'The last name field is required.',
             'first-name.regex' => 'The first name format is invalid.',
-            'last-name.regex' => 'The last name format is invalid.'
+            'last-name.regex' => 'The last name format is invalid.',
+            // 'checkbox.required' => 'wajib diisi'
         ]);
 
         $validated['password'] = Hash::make($validated['password']);
