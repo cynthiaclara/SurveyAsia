@@ -7,7 +7,7 @@
 <section class="landing-page" id="landing-page">
     <div class="row flex-md-row-reverse h-75">
         <div class="col-md-6 hero"></div>
-        <div class="col-md-4 text-white align-self-center container">
+        <div class="col-md-6 text-white align-self-center title-landing-page">
             <h1 class="fw-bold">The Fastest Online Research Platform</h1>
             <p class="fw-light mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat possimus labore
                 ipsam
@@ -97,7 +97,7 @@
                     exercitationem, animi
                     dolores autem vel nihil dicta recusandae minima excepturi quasi earum facilis expedita veniam sunt
                     atque porro odio!</p>
-                <a class="btn btn-info text-white rounded-pill px-5" href="#" role="button">Mulai</a>
+                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Mulai</a>
             </div>
         </div>
         <div class="row">
@@ -110,7 +110,7 @@
                     exercitationem, animi
                     dolores autem vel nihil dicta recusandae minima excepturi quasi earum facilis expedita veniam sunt
                     atque porro odio!</p>
-                <a class="btn btn-info text-white rounded-pill px-5" href="#" role="button">Mulai</a>
+                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Mulai</a>
             </div>
         </div>
         <div class="row flex-md-row-reverse">
@@ -123,7 +123,7 @@
                     exercitationem, animi
                     dolores autem vel nihil dicta recusandae minima excepturi quasi earum facilis expedita veniam sunt
                     atque porro odio!</p>
-                <a class="btn btn-info text-white rounded-pill px-5" href="#" role="button">Mulai</a>
+                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Mulai</a>
             </div>
         </div>
     </div>
