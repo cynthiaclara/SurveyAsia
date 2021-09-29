@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row pb-3">
             <div class="col-md-2">
-                <h4 class="fw-bold">Surveyasia</h4>
+                <a href="/" class="text-white text-decoration-none">
+                    <h4 class="fw-bold">Surveyasia</h4>
+                </a>
             </div>
             <div class="col-md-2">
                 <p class="fw-bold">Tentang</p>
@@ -39,32 +41,32 @@
             </div>
             <div class="col-md-4">
                 <p>Subscribe to our newsletter and be the first to know about our updates</p>
-                <form action="#">
+                <form>
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-sm-7">
                             <input type="email" class="form-control" id="email" aria-describedby="email" name="email"
                                 placeholder="Email Address">
                         </div>
-                        <div class="col-auto">
+                        <div class="col-sm-5">
                             <button type="button" class="btn btn-light text-info">Subscribe</button>
                         </div>
                     </div>
                 </form>
                 <div class="row mt-5">
                     <div class="col-auto">
-                        <a href="#"><img src="assets/img/logo_youtube_white.png" alt="YouTube" height="32">
+                        <a href="#"><img src="/assets/img/logo_youtube_white.png" alt="YouTube" height="32">
                         </a>
                     </div>
                     <div class="col-auto">
-                        <a href="#"><img src="assets/img/logo_instagram_white.png" alt="Instagram" height="32">
+                        <a href="#"><img src="/assets/img/logo_instagram_white.png" alt="Instagram" height="32">
                         </a>
                     </div>
                     <div class="col-auto">
-                        <a href="#"><img src="assets/img/logo_facebook_white.png" alt="Facebook" height="32">
+                        <a href="#"><img src="/assets/img/logo_facebook_white.png" alt="Facebook" height="32">
                         </a>
                     </div>
                     <div class="col-auto">
-                        <a href="#"><img src="assets/img/logo_twitter_white.png" alt="Twitter" height="32">
+                        <a href="#"><img src="/assets/img/logo_twitter_white.png" alt="Twitter" height="32">
                         </a>
                     </div>
                 </div>
