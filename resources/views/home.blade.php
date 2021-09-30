@@ -91,7 +91,7 @@
             <div class="col-md-6">
                 <img src="assets/img/service_1.png" alt="Service 1" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 align-self-center">
                 <h3 class="fw-bold">Template Populer</h3>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nesciunt quos
                     exercitationem, animi
@@ -104,7 +104,7 @@
             <div class="col-md-6">
                 <img src="assets/img/service_2.png" alt="Service 2" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 align-self-center">
                 <h3 class="fw-bold">Kustomisasi</h3>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nesciunt quos
                     exercitationem, animi
@@ -117,7 +117,7 @@
             <div class="col-md-6">
                 <img src="assets/img/service_3.png" alt="Service 3" class="img-fluid">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 align-self-center">
                 <h3 class="fw-bold">Real-Time Monitoring</h3>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nesciunt quos
                     exercitationem, animi
