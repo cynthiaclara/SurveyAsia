@@ -17,17 +17,17 @@ class Registercontroller extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'first-name' => ['required', 'regex:/^[\p{L}\s-]+$/u', 'max:255'],
-            'last-name' => ['required', 'regex:/^[\p{L}\s-]+$/u', 'max:255'],
+            'first_name' => ['required', 'regex:/^[\p{L}\s-]+$/u', 'max:255'],
+            'last_name' => ['required', 'regex:/^[\p{L}\s-]+$/u', 'max:255'],
             'username' => ['required', 'min:4', 'unique:users'],
             'email' => ['required', 'email:dns', 'unique:users'],
             'password' => ['required', RulesPassword::min(8)],
             // 'checkbox' => ['required']
         ], [
-            'first-name.required' => 'The first name field is required.',
-            'last-name.required' => 'The last name field is required.',
-            'first-name.regex' => 'The first name format is invalid.',
-            'last-name.regex' => 'The last name format is invalid.',
+            'first_name.required' => 'The first name field is required.',
+            'last_name.required' => 'The last name field is required.',
+            'first_name.regex' => 'The first name format is invalid.',
+            'last_name.regex' => 'The last name format is invalid.',
             // 'checkbox.required' => 'wajib diisi'
         ]);
 
