@@ -39,9 +39,8 @@
                         Welcome back, {{ auth()->user()->username }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {{-- <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>--}}
                         <li><a class="dropdown-item" href="/">Home</a></li>
+                        <li><a class="dropdown-item" href="/researcher/dashboard">Dashboard</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -50,6 +49,7 @@
                                 @csrf
                                 <button type="submit" class="dropdown-item">Logout</button>
                             </form>
+                        </li>
                     </ul>
                 </li>
                 @else
