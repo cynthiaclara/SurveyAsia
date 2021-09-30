@@ -56,3 +56,15 @@ Route::get('/blog/detail-blog', function () {
 Route::get('/news', function () {
     return view('news');
 });
+
+Route::get('/researcher/dashboard', function () {
+    return view('researcher.dashboard');
+});
+
+Route::get('/researcher/pricing', function () {
+    return view('researcher.pricing');
+});
+
+Route::get('/researcher/payment', function () {
+    return view('researcher.payment');
+});
