@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Registercontroller;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,14 +59,17 @@ Route::get('/news', function () {
     return view('news');
 });
 
-Route::get('/researcher/dashboard', function () {
-    return view('researcher.dashboard');
-});
+// Route::get('/researcher/dashboard', function () {
+//     return view('researcher.dashboard');
+// });
+Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/researcher/pricing', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/researcher/payment', [DashboardController::class, 'index'])->middleware('auth');
 
-Route::get('/researcher/pricing', function () {
-    return view('researcher.pricing');
-});
+// Route::get('/researcher/pricing', function () {
+//     return view('researcher.pricing');
+// });
 
-Route::get('/researcher/payment', function () {
-    return view('researcher.payment');
-});
+// Route::get('/researcher/payment', function () {
+//     return view('researcher.payment');
+// });
