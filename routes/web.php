@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/sign-in', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/sign-in', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/sign-in', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
@@ -34,7 +34,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 //     return view('auth.login');
 // });
 
-Route::get('/sign-up', [RegisterController::class, 'create']);
+Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/sign-up', [RegisterController::class, 'store']);
 
 Route::get('/forgot-password', function () {

@@ -27,6 +27,25 @@
         <div class="row">
           <div class="col">
             <label for="first_name" class="form-label">Nama Depan</label>
+<<<<<<< HEAD
+            <input type="text" class="form-control @error('first_name')is-invalid @enderror" name="first_name" placeholder="Ketik nama depan Anda"
+              aria-label="Nama Depan" value="{{ old('first-name') }}">
+              @error('first_name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
+          </div>
+          <div class="col">
+            <label for="last_name" class="form-label">Nama Belakang</label>
+            <input type="text" class="form-control @error('last_name')is-invalid @enderror" name="last_name" placeholder="Ketik Nama belakang Anda"
+              aria-label="Nama Belakang" value="{{ old('last-name') }}">
+              @error('last_name')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror
+=======
             <input type="text" class="form-control @error('first_name')is-invalid @enderror" name="first_name"
               placeholder="Ketik nama depan Anda" aria-label="Nama Depan" value="{{ old('first_name') }}">
             @error('first_name')
@@ -44,6 +63,7 @@
               {{ $message }}
             </div>
             @enderror
+>>>>>>> 01f766df9bc30d33cc444ea12b11f1136e45b2f9
           </div>
         </div>
         <div class="mt-3">
