@@ -25,7 +25,7 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('loginError', 'Your email and password doesnt match');
+        return back()->with('loginError', "Your email and password doesn't match");
     }
 
     public function logout(Request $request)
