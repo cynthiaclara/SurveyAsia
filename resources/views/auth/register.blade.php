@@ -44,24 +44,6 @@
                 {{ $message }}
               </div>
               @enderror
-            <input type="text" class="form-control @error('first_name')is-invalid @enderror" name="first_name"
-              placeholder="Ketik nama depan Anda" aria-label="Nama Depan" value="{{ old('first_name') }}">
-            @error('first_name')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-            @enderror
-          </div>
-          <div class="col">
-            <label for="last_name" class="form-label">Nama Belakang</label>
-            <input type="text" class="form-control @error('last_name')is-invalid @enderror" name="last_name"
-              placeholder="Ketik nama belakang Anda" aria-label="Nama Belakang" value="{{ old('last_name') }}">
-            @error('last_name')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-            @enderror
-          </div>
         </div>
         <div class="mt-3">
           <label for="username" class="form-label">Username</label>
