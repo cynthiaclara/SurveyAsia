@@ -9,7 +9,15 @@ class DashboardController extends Controller
     public function index()
     {
         return view('researcher.dashboard');
+    }
+
+    public function pricing()
+    {
         return view('researcher.pricing');
+    }
+
+    public function payment()
+    {
         return view('researcher.payment');
     }
 }

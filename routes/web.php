@@ -63,8 +63,8 @@ Route::get('/news', function () {
 //     return view('researcher.dashboard');
 // });
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/researcher/pricing', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/researcher/payment', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
+Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
 
 // Route::get('/researcher/pricing', function () {
 //     return view('researcher.pricing');
