@@ -97,9 +97,9 @@
       </form>
       <p class="text-center mt-3 text-secondary">atau daftar dengan</p>
       <div class="d-flex justify-content-center">
-        <a href="#"><img src="assets/img/btn_google.png" alt="Google" /></a>
-        <a href="#"><img src="assets/img/btn_facebook.png" alt="Google" /></a>
-        <a href="#"><img src="assets/img/btn_linkedin.png" alt="Google" /></a>
+        <a href="{{ url('/auth/google') }}"><img src="assets/img/btn_google.png" alt="Google" /></a>
+        <a href="{{ url('/auth/facebook') }}"><img src="assets/img/btn_facebook.png" alt="Google" /></a>
+        <a href="{{ url('/auth/linkedin') }}"><img src="assets/img/btn_linkedin.png" alt="Google" /></a>
       </div>
       <div class="col mt-5 text-center">
         <p>

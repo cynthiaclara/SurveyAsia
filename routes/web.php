@@ -24,6 +24,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('home');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\SocialiteController@handleProviderCallback');
 
 
 Route::get('/sign-in', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -73,3 +78,7 @@ Route::get('/researcher/payment', [DashboardController::class, 'payment'])->midd
 // Route::get('/researcher/payment', function () {
 //     return view('researcher.payment');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
