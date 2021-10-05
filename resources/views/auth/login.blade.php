@@ -60,9 +60,9 @@
                 password?</a>
             <p class="text-center mt-3 text-secondary">atau masuk dengan akun lain</p>
             <div class="d-flex justify-content-center">
-                <a href="{{ url('/auth/google') }}"><img src="assets/img/btn_google.png" alt="Google" /></a>
-                <a href="{{ url('/auth/facebook') }}"><img src="assets/img/btn_facebook.png" alt="Google" /></a>
-                <a href="{{ url('/auth/linkedin') }}"><img src="assets/img/btn_linkedin.png" alt="Google" /></a>
+                <a href="{{ route('google.login') }}"><img src="assets/img/btn_google.png" alt="Google" /></a>
+                <a href="{{ route('facebook.login')}}"><img src="assets/img/btn_facebook.png" alt="Google" /></a>
+                <a href="{{ route('linkedin.login') }}"><img src="assets/img/btn_linkedin.png" alt="Google" /></a>
             </div>
             <div class="col mt-5 text-center">
                 <p>

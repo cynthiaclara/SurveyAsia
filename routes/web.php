@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\LinkedinController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Registercontroller;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,16 +29,26 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\SocialiteController@handleProviderCallback');
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
+// Route::get('auth/{provider}/callback', 'Auth\SocialiteController@handleProviderCallback');
 
 
 Route::get('/sign-in', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/sign-in', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+//  login dengan google ,facebook dan linkedin
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
+// // Facebook Login
+Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback'])->name('facebook.callback');
+
+// // Linkedin Login
+Route::get('auth/linkedin', [LinkedinController::class, 'redirectToLinkedin'])->name('linkedin.login');
+Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback'])->name('linkedin.callback');
 
 // Route::get('/sign-in', function () {
 //     return view('auth.login');
@@ -79,6 +92,6 @@ Route::get('/researcher/payment', [DashboardController::class, 'payment'])->midd
 //     return view('researcher.payment');
 // });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

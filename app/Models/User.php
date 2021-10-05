@@ -38,8 +38,8 @@ class User extends Authenticatable
     ];
     public $timestamps = false;
 
-    public function socialAccounts()
-    {
-        return $this->hasMany(SocialAccount::class);
-    }
+    // public function socialAccounts()
+    // {
+    //     return $this->hasMany(SocialAccount::class);
+    // }
 }
