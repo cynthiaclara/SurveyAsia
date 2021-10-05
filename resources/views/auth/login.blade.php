@@ -28,22 +28,23 @@
                 @csrf
                 @if(session()->has('success'))
                 <div class="alert alert-info alert-dismissible fade show" role="alert">
-                   {{ session('success') }}
+                    {{ session('success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
 
                 @if(session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                   {{ session('loginError') }}
+                    {{ session('loginError') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
 
                 <div class="mt-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp"
-                        placeholder="Ketik email Anda" autofocus required value="{{ old('email') }}"/>
+                    <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email"
+                        aria-describedby="emailHelp" placeholder="Ketik email Anda" autofocus required
+                        value="{{ old('email') }}" />
                     @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -52,17 +53,19 @@
                 </div>
                 <div class="mt-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="********" required />
+                    <input type="password" class="form-control" id="password" name="password" placeholder="********"
+                        required />
                 </div>
-                <button type="submit" class="btn btn-info w-100 text-white mt-5">Masuk</button>
+                <button type="submit" class="btn btn-orange w-100 text-white mt-5">Masuk</button>
             </form>
-            <a href="/forgot-password" class="d-flex justify-content-end link-info text-decoration-none mt-3 mb-5">Lupa
+            <a href="/forgot-password"
+                class="d-flex justify-content-end link-orange text-decoration-none mt-3 mb-5">Lupa
                 password?</a>
             <p class="text-center mt-3 text-secondary">atau masuk dengan akun lain</p>
             <div class="d-flex justify-content-center">
                 <a href="{{ route('google.login') }}"><img src="assets/img/btn_google.png" alt="Google" /></a>
-                <a href="{{ route('facebook.login')}}"><img src="assets/img/btn_facebook.png" alt="Google" /></a>
-                <a href="{{ route('linkedin.login') }}"><img src="assets/img/btn_linkedin.png" alt="Google" /></a>
+                <a href="{{ route('facebook.login')}}"><img src="assets/img/btn_facebook.png" alt="Facebook" /></a>
+                <a href="{{ route('linkedin.login') }}"><img src="assets/img/btn_linkedin.png" alt="LinkedIn" /></a>
             </div>
             <div class="col mt-5 text-center">
                 <p>

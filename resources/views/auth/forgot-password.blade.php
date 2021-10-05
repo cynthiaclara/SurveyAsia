@@ -30,7 +30,7 @@
           <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
             placeholder="Ketik email Anda" />
         </div>
-        <button type="submit" class="btn btn-info w-100 text-white my-3">Kirimkan saya tautannya</button>
+        <button type="submit" class="btn btn-orange w-100 text-white my-3">Kirimkan saya tautannya</button>
       </form>
       <div class="col mt-5 text-center">
         <a href="/sign-in" class="link-info text-decoration-none">Kembali ke halaman Masuk</a>
