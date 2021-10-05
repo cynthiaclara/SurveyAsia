@@ -27,32 +27,28 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home');
 });
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
 // Route::get('auth/{provider}/callback', 'Auth\SocialiteController@handleProviderCallback');
 
-
 Route::get('/sign-in', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/sign-in', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-//  login dengan google ,facebook dan linkedin
+//  login dengan google, facebook dan linkedin
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
-// // Facebook Login
+// Facebook Login
 Route::get('auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
 Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback'])->name('facebook.callback');
 
-// // Linkedin Login
+// Linkedin Login
 Route::get('auth/linkedin', [LinkedinController::class, 'redirectToLinkedin'])->name('linkedin.login');
 Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback'])->name('linkedin.callback');
-
-// Route::get('/sign-in', function () {
-//     return view('auth.login');
-// });
 
 Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/sign-up', [RegisterController::class, 'store']);
@@ -77,21 +73,12 @@ Route::get('/news', function () {
     return view('news');
 });
 
-// Route::get('/researcher/dashboard', function () {
-//     return view('researcher.dashboard');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
 
-// Route::get('/researcher/pricing', function () {
-//     return view('researcher.pricing');
-// });
-
-// Route::get('/researcher/payment', function () {
-//     return view('researcher.payment');
-// });
-
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -87,7 +87,7 @@
 <section class="partner py-5" id="partner">
     <div class="container">
         <h4 class="text-center">Mitra</h4>
-        <hr class="hr-vm mx-auto">
+        <hr class="hr-vm-orange mx-auto">
         <div class="row">
             <div class="col-md-4 d-flex align-items-center justify-content-center">
                 <img src="/assets/img/partner_1.png" alt="Partner" class="img-fluid">
@@ -113,6 +113,48 @@
     </div>
 </section>
 {{-- End Partner --}}
+
+{{-- Contanct Info --}}
+<section class="contact-info py-5" id="contact-info">
+    <div class="container">
+        <h2 class="fw-bold">Contact Info</h2>
+        <hr class="hr-vm-orange">
+        <h5 class="text-secondary">Butuh Pertolongan?</h5>
+        <h5 class="text-secondary">Berikut cara menghubungi kami.</h5>
+        <a href="/contact" class="link-dark text-decoration-none">
+            <h5 class="fw-bold my-5">Kirim permintaan bantuan -></h5>
+        </a>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="/assets/img/ic_contact_info_1.png" alt="Contact Info 1" class="img-fluid" width="36">
+            </div>
+            <div class="col-md-3">
+                <p class="fw-light">Graha Mustika Ratu 5th Floor 503, Tebet, Jakarta Selatan 12870</p>
+            </div>
+            <div class="col-md-1">
+                <img src="/assets/img/ic_contact_info_2.png" alt="Contact Info 2" class="img-fluid" width="36">
+            </div>
+            <div class="col-md-3">
+                <p class="fw-light">021-8370-7143</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <img src="/assets/img/ic_contact_info_3.png" alt="Contact Info 3" class="img-fluid" width="36">
+            </div>
+            <div class="col-md-3">
+                <p class="fw-light">info@citiasiainc.id</p>
+            </div>
+            <div class="col-md-1">
+                <img src="/assets/img/ic_contact_info_4.png" alt="Contact Info 4" class="img-fluid" width="36">
+            </div>
+            <div class="col-md-3">
+                <p class="fw-light">021-8370-5680</p>
+            </div>
+        </div>
+    </div>
+</section>
+{{-- End Contact Info --}}
 
 {{-- TaC --}}
 <section class="tac py-5" id="tac">
