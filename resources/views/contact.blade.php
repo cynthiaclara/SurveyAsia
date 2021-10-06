@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('layouts.navbar')
+@extends('layouts.navbar2')
 
 @section('content')
 {{-- Breadcrumb --}}
