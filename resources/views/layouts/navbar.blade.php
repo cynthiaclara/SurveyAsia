@@ -19,7 +19,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Harga</a>
+                    <a class="nav-link" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">Tentang Kami</a>
@@ -59,6 +59,7 @@
                 <li class="nav-item">
                     <a class="btn btn-info text-white" href="/sign-up" role="button">Bergabung</a>
                 </li>
+                @endauth
                 <li class="nav-item ms-3 me-2">
                     <div class="vl"></div>
                 </li>
@@ -68,11 +69,10 @@
                         ID
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">ID</a></li>
                         <li><a class="dropdown-item" href="#">EN</a></li>
+                        <li><a class="dropdown-item" href="#">ID</a></li>
                     </ul>
                 </li>
-                @endauth
             </ul>
         </div>
 

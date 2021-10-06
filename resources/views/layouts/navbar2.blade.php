@@ -18,6 +18,9 @@
                     <a class="nav-link text-info me-3" href="/news">News</a>
                 </li>
                 @auth
+                <li>
+                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
