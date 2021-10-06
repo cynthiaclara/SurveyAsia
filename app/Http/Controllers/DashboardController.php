@@ -20,4 +20,9 @@ class DashboardController extends Controller
     {
         return view('researcher.payment');
     }
+
+    public function designSurvey()
+    {
+        return view('researcher.design-survey');
+    }
 }
