@@ -80,5 +80,6 @@ Route::get('/contact', function () {
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
+Route::get('/researcher/design-survey', [DashboardController::class, 'designSurvey'])->middleware('auth');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
