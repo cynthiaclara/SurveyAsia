@@ -95,4 +95,8 @@ Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->midd
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
 Route::get('/researcher/design-survey', [DashboardController::class, 'designSurvey'])->middleware('auth');
 
+Route::get('/respondent/dashboard', function () {
+    return view('respondent.dashboard');
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
