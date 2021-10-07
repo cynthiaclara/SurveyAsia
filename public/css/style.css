@@ -27,10 +27,6 @@ body {
     background-color: #f7fafc;
 }
 
-.register-soon {
-    background-color: #6dc8f2;
-}
-
 .services hr {
     width: 10%;
     border: 5px solid #f7931b;
@@ -42,6 +38,14 @@ body {
 
 .btn-orange:hover {
     background-color: #ffa840;
+}
+
+.btn-outline-orange {
+    border-color: #f7931b;
+}
+
+.btn-outline-orange:hover {
+    border-color: #ffa840;
 }
 
 .text-orange {
