@@ -20,6 +20,10 @@
     {{-- My CSS --}}
     <link rel="stylesheet" href="/css/style.css">
 
+    {{-- Font Awesome --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
+    </script>
+
     <title>Surveyasia.id</title>
 </head>
 

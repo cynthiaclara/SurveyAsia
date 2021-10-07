@@ -27,33 +27,20 @@
                         {{ auth()->user()->username }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/">Home</a></li>
-                        <li><a class="dropdown-item" href="/researcher/dashboard">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="/"><i class="fas fa-user fa-fw"></i> Home</a></li>
+                        <li><a class="dropdown-item" href="/researcher/dashboard"><i
+                                    class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
                             <form action="/logout" method="post">
                                 @csrf
-                                <button type="submit" class="dropdown-item">Logout</button>
+                                <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i>
+                                    Logout</button>
                             </form>
                     </ul>
                 </li>
-                {{-- <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        David
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
-                </li> --}}
                 @endauth
             </ul>
         </div>

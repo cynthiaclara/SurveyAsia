@@ -8,11 +8,11 @@
     <div class="row flex-md-row-reverse h-75">
         <div class="col-md-6 hero"></div>
         <div class="col-md-6 text-white align-self-center title-landing-page">
-            <h1 class="fw-bold">Work on Big Ideas, Simply with Surveyasia</h1>
+            <h1 class="fw-bold">Work on Big Ideas, <br> Simply with Surveyasia</h1>
             <p class="fw-light mt-3">from the small stuff to the big picture, Surveyasia organizes your survey with
                 clear terms and messages, why it matters, and how to get it done.
             </p>
-            <a class="btn btn-light text-info mt-5" href="/sign-up" role="button">Try for FREE</a>
+            <a class="btn btn-light text-info fw-bold mt-5" href="/sign-up" role="button">Try for FREE</a>
         </div>
     </div>
 </section>
@@ -24,20 +24,16 @@
         <h3 class="fw-bold text-center">Go beyond collecting feedbacks!</h3>
         <h4 class="fw-bold text-center">Explore other Surveyasia products that can help <br> drive change in your
             organization</h4>
-        <div class="row pt-5">
-            <div class="col-md-6">
-                <h6 class="fw-bold">Our Advantages</h6>
-                <ul>
-                    <li>Make surveys easier with different types of question dan answer templates.</li>
-                    <li>Get respondents easily and realiby.</li>
-                    <li>Customize the chart report accordingly.</li>
-                    <li>The need to download reports in various price formats.</li>
-                    <li>Affordable and according to needs.</li>
-                </ul>
-                <a class="btn btn-orange text-light mt-5" href="/sign-up" role="button">Make the survey</a>
-            </div>
-            <div class="col-md-6 text-end">
+        <div class="row flex-md-row-reverse pt-5">
+            <div class="col-md-7 text-end">
                 <img src="/assets/img/prof_sales.png" alt="Sales" class="img-fluid" width="320">
+            </div>
+            <div class="col-md-5">
+                <h6 class="fw-bold">Our Advantages</h6>
+                <p>Make surveys easier with different types of question and answer templates. Get respondents easily and
+                    reliably. Customize the chart report accordingly. The need to download reports in various price
+                    formats. Affordable and according to needs.</p>
+                <a class="btn btn-orange text-light mt-5" href="/sign-up" role="button">Make the survey</a>
             </div>
         </div>
     </div>
@@ -59,7 +55,6 @@
                     Impress from the get-go with an interface that looks beautiful on any device. Customize your survey
                     to be as unique as your brand. Or get started right away with hundreds of free templates in our
                     gallery. </p>
-                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Start</a>
             </div>
         </div>
         <div class="row">
@@ -71,7 +66,6 @@
                 <p class="mt-4">SurveyAsia responds to previous answers to show only the most relevant questions. A
                     better experience for respondents = better data for you, presented in clear reports and metrics.
                 </p>
-                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Start</a>
             </div>
         </div>
         <div class="row flex-md-row-reverse">
@@ -84,7 +78,6 @@
                     exercitationem, animi
                     dolores autem vel nihil dicta recusandae minima excepturi quasi earum facilis expedita veniam sunt
                     atque porro odio!</p>
-                <a class="btn btn-orange text-white rounded-pill px-5" href="#" role="button">Start</a>
             </div>
         </div>
     </div>
@@ -110,6 +103,11 @@
                 <img src="/assets/img/intro_3.png" alt="Intro 3" class="img-fluid">
                 <h6 class="fw-bold">Many prizes await</h6>
                 <p>Collect prizes from every survey you take, as many as you want!</p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-2">
+                <a href="/sign-up" class="btn btn-outline-orange w-100" role="button">Join to be a Researcher</a>
             </div>
         </div>
     </div>
@@ -151,14 +149,4 @@
 </section>
 {{-- End Survey Promo --}}
 
-{{-- Register Soon --}}
-<section class="register-soon py-5" id="register-soon">
-    <div class="container">
-        <div class="text-center">
-            <p class="text-white fs-3">Register now, there are interesting offers</p>
-            <a class="btn btn-outline-light mt-3" href="/sign-up" role="button">Register Now!</a>
-        </div>
-    </div>
-</section>
-{{-- End Register Soon --}}
 @endsection
