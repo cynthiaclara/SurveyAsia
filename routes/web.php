@@ -77,6 +77,19 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/pilih', function () {
+    return view('screening.pilih');
+});
+
+Route::get('/tempatkerja', function () {
+    return view('screening.tempatkerja');
+});
+
+Route::get('/posisikerja', function () {
+    return view('screening.posisikerja');
+});
+
+
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
