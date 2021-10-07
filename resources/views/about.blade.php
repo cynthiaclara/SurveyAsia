@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('layouts.navbar')
+@extends('layouts.navbar2')
 
 @section('content')
 {{-- Hero About --}}
@@ -59,7 +59,7 @@
 
 {{-- Vision & Mission --}}
 <h4 class="text-center mt-3">Visi & Misi</h4>
-<hr class="hr-vm mx-auto">
+<hr class="hr-vm-orange mx-auto">
 <section class="vision-mission py-5" id="vision-mission">
     <div class="container">
         <div class="row justify-content-center">
@@ -73,7 +73,7 @@
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
-                <p class="text-info">Misi</p>
+                <p class="text-orange">Misi</p>
                 <h5>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti rerum iusto delectus, praesentium
                     perferendis ratione ad labore a officia, repudiandae veniam nihil explicabo provident, similique
                     nostrum ipsa illum dolorem officiis."
@@ -119,36 +119,28 @@
     <div class="container">
         <h2 class="fw-bold">Contact Info</h2>
         <hr class="hr-vm-orange">
-        <h5 class="text-secondary">Butuh Pertolongan?</h5>
+        <h5 class="text-secondary">Butuh pertolongan?</h5>
         <h5 class="text-secondary">Berikut cara menghubungi kami.</h5>
         <a href="/contact" class="link-dark text-decoration-none">
-            <h5 class="fw-bold my-5">Kirim permintaan bantuan -></h5>
+            <h5 class="fw-bold my-5">Kirim permintaan bantuan <i class="fas fa-long-arrow-alt-right"></i></h5>
         </a>
         <div class="row">
-            <div class="col-md-1">
-                <img src="/assets/img/ic_contact_info_1.png" alt="Contact Info 1" class="img-fluid" width="36">
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex">
+                <img src="/assets/img/ic_contact_info_1.png" alt="Contact Info 1" class="me-3" width="36" height="36">
                 <p class="fw-light">Graha Mustika Ratu 5th Floor 503, Tebet, Jakarta Selatan 12870</p>
             </div>
-            <div class="col-md-1">
-                <img src="/assets/img/ic_contact_info_2.png" alt="Contact Info 2" class="img-fluid" width="36">
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex">
+                <img src="/assets/img/ic_contact_info_2.png" alt="Contact Info 2" class="me-3" width="36" height="36">
                 <p class="fw-light">021-8370-7143</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-1">
-                <img src="/assets/img/ic_contact_info_3.png" alt="Contact Info 3" class="img-fluid" width="36">
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex"><img src="/assets/img/ic_contact_info_3.png" alt="Contact Info 3" class="me-3"
+                    width="36" height="36">
                 <p class="fw-light">info@citiasiainc.id</p>
             </div>
-            <div class="col-md-1">
-                <img src="/assets/img/ic_contact_info_4.png" alt="Contact Info 4" class="img-fluid" width="36">
-            </div>
-            <div class="col-md-3">
+            <div class="col-md-3 d-flex"><img src="/assets/img/ic_contact_info_4.png" alt="Contact Info 4" class="me-3"
+                    width="36" height="36">
                 <p class="fw-light">021-8370-5680</p>
             </div>
         </div>
