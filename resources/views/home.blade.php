@@ -63,8 +63,8 @@
             </div>
             <div class="col-md-6 align-self-center">
                 <h3 class="fw-bold">Easy to customize</h3>
-                <p class="mt-4">SurveyAsia responds to previous answers to show only the most relevant questions. A
-                    better experience for respondents = better data for you, presented in clear reports and metrics.
+                <p class="mt-4">Surveyasia are quick and easy to build: set up and share a beautiful survey in minutes.
+                    Use Integrations to automatically send data wherever you want it. Zero coding or onboarding needed.
                 </p>
             </div>
         </div>
@@ -74,10 +74,8 @@
             </div>
             <div class="col-md-6 align-self-center">
                 <h3 class="fw-bold">Real-Time Monitoring</h3>
-                <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nesciunt quos
-                    exercitationem, animi
-                    dolores autem vel nihil dicta recusandae minima excepturi quasi earum facilis expedita veniam sunt
-                    atque porro odio!</p>
+                <p class="mt-4">Surveyasia responds to previous answers to show only the most relevant questions. A
+                    better experience for respondents = better data for you, presented in clear reports and metrics.</p>
             </div>
         </div>
     </div>
@@ -100,14 +98,9 @@
                 <p>Spend 5 - 10 minutes with us, and it won't be sorely if you do useful and fun activities</p>
             </div>
             <div class="col-md-4 text-center">
-                <img src="/assets/img/intro_3.png" alt="Intro 3" class="img-fluid">
+                <img src="/assets/img/survey_promo_2.png" alt="Intro 3" class="img-fluid">
                 <h6 class="fw-bold">Many prizes await</h6>
                 <p>Collect prizes from every survey you take, as many as you want!</p>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-md-2">
-                <a href="/sign-up" class="btn btn-outline-orange w-100" role="button">Join to be a Researcher</a>
             </div>
         </div>
     </div>
@@ -129,20 +122,26 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-5">
-                <img src="/assets/img/survey_promo_2.png" alt="Survey Promo 2" class="img-fluid">
+                <img src="/assets/img/intro_3.png" alt="Survey Promo 2" class="img-fluid">
             </div>
             <div class="col-md-5 text-center align-self-center">
                 <h3 class="fw-bold">Answer the surveys</h3>
-                <p>Answer some surveys and <br> get point</p>
+                <p>Answer some surveys and get money. <br> Redeem your balance <br> for get a gift</p>
             </div>
         </div>
-        <div class="row flex-md-row-reverse justify-content-center">
+        {{-- <div class="row flex-md-row-reverse justify-content-center">
             <div class="col-md-5">
                 <img src="/assets/img/survey_promo_3.png" alt="Survey Promo 3" class="img-fluid">
             </div>
             <div class="col-md-5 text-center align-self-center">
                 <h3 class="fw-bold">Get the rewards</h3>
                 <p>Redeem your points for <br> get a gift</p>
+            </div>
+        </div> --}}
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-2">
+                <a href="/sign-up" class="btn btn-outline-orange bg-light w-100" role="button">Join to be a
+                    Researcher</a>
             </div>
         </div>
     </div>

@@ -126,6 +126,14 @@ Route::get('/respondent/dashboard', function () {
     return view('respondent.dashboard');
 });
 
+Route::get('/survey/pre-survey', function () {
+    return view('survey.pre-survey');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
