@@ -39,6 +39,7 @@
                                 <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i>
                                     Logout</button>
                             </form>
+                        </li>
                     </ul>
                 </li>
                 @endauth

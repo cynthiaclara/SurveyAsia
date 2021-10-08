@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Template
@@ -17,7 +17,7 @@
                         <li><a class="dropdown-item" href="#">Chart</a></li>
                         <li><a class="dropdown-item" href="#">Question Bank</a></li>
                     </ul>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
@@ -56,10 +56,10 @@
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="btn btn-outline-info mx-sm-3" href="/sign-in" role="button">Masuk</a>
+                    <a class="btn btn-outline-info mx-sm-3" href="/sign-in" role="button">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-info text-white" href="/sign-up" role="button">Bergabung</a>
+                    <a class="btn btn-info text-white" href="/sign-up" role="button">Sign Up</a>
                 </li>
                 @endauth
                 <li class="nav-item ms-3 me-2">
