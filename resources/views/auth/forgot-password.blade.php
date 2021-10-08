@@ -24,11 +24,23 @@
       <h1>🔐</h1>
       <h3 class="mb-3 fw-bold">Atur Ulang Kata Sandi</h3>
       <h6 class="mb-5">Masukkan email Anda dan kami akan mengirimkan tautan reset</h6>
-      <form>
+      <form method="POST" action="{{ route('password.email') }}">
+        @csrf
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
         <div class="mt-3">
           <label for="email" class="form-label">Email Anda</label>
-          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-            placeholder="Ketik email Anda" />
+          <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" aria-describedby="emailHelp"
+            placeholder="Ketik email Anda" required autocomplete="email" autofocus/>
+
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+             @enderror
         </div>
         <button type="submit" class="btn btn-orange w-100 text-white my-3">Kirimkan saya tautannya</button>
       </form>
