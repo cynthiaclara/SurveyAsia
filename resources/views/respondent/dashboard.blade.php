@@ -63,7 +63,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
                     </div>
                 </div>
             </div>
