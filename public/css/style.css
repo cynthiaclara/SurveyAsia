@@ -23,8 +23,9 @@ body {
     padding: 0px 100px;
 }
 
-.survey-promo {
-    background-color: #f7fafc;
+.survey-promo,
+.intro-2 {
+    background-color: #ddf1ff;
 }
 
 .services hr {
