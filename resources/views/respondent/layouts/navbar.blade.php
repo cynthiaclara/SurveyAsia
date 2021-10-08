@@ -27,7 +27,7 @@
                         {{ auth()->user()->username }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user fa-fw"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="/researcher/dashboard"><i
                                     class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a></li>
                         <li>
@@ -39,6 +39,7 @@
                                 <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i>
                                     Keluar</button>
                             </form>
+                        </li>
                     </ul>
                 </li>
                 @endauth

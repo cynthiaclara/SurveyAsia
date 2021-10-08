@@ -16,7 +16,7 @@
                 {{ auth()->user()->username }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#"><i class="fas fa-user fa-fw"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
                 <li><a class="dropdown-item" href="/respondent/dashboard"><i class="fas fa-user-friends fa-fw"></i> Jadi
                         Responden</a></li>
                 <li>
