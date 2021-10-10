@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('remember_token')->nullable();
             $table->bigInteger('no_telp')->nullable();
             $table->enum('gender', ['L', 'P'])->nullable();
             $table->date('tanggal_lahir')->nullable();

@@ -25,6 +25,7 @@
       <h3 class="mb-3 fw-bold">Atur Ulang Kata Sandi</h3>
       <form method="POST" action="{{ route('password.update') }}">
         @csrf
+        <!-- @method("GET") -->
         <input type="hidden" name="token" value="{{ $token }}">
         <div class="mt-3">
           <label for="email" class="form-label">Email Anda</label>

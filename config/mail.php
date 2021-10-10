@@ -44,6 +44,17 @@ return [
             'timeout' => null,
             'auth_mode' => null,
         ],
+        // 'smtp' => [
+        //     'driver' => env('MAIL_DRIVER', 'smtp'),
+        //         'transport' => 'smtp',
+        //         'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
+        //         'port' => env('MAIL_PORT', 2525),
+        //         'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+        //         'username' => env('MAIL_USERNAME'),
+        //         'password' => env('MAIL_PASSWORD'),
+        //         'timeout' => null,
+        //         'auth_mode' => null,
+        // ],
 
         'ses' => [
             'transport' => 'ses',
@@ -101,7 +112,7 @@ return [
     ],
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'wdev9233@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'alsa.wulan30@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'SurveyAsia'),
     ],
 
