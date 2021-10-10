@@ -80,8 +80,10 @@ Route::get('/reset-password/{token}', function ($token) {
     return view('auth.passwords.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
-Route::post('/reset-password', [Auth\ResetPasswordController::class, 'resetPassword'])
-    ->middleware('guest')->name('password.update');
+// Route::post('/reset-password/{email}/{code}', [ResetPasswordController::class, 'resetPassword'])
+//     ->middleware('guest')->name('password.update');
+
+    Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
 
 Route::get('/about', function () {
@@ -140,3 +142,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Route::get('/reset-password', function () {
 //     return view('auth.passwords.reset');
 // });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
