@@ -64,7 +64,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <p class="text-info">Visi</p>
+                <p class="text-default">Visi</p>
                 <h5>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti rerum iusto delectus, praesentium
                     perferendis ratione ad labore a officia, repudiandae veniam nihil explicabo provident, similique
                     nostrum ipsa illum dolorem officiis."

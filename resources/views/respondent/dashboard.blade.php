@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-5">
                         <p class="text-secondary" style="margin-bottom: 0px">Tarik Saldo</p>
-                        <a href="#" class="link-info text-decoration-none">Klik & Cek Riwayat</a>
+                        <a href="#" class="link-default text-decoration-none">Klik & Cek Riwayat</a>
                     </div>
                 </div>
 

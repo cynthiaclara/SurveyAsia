@@ -37,6 +37,6 @@ class Registercontroller extends Controller
 
         $request->session()->flash('success', 'Registration Success!');
 
-        return redirect('/sign-in');
+        return redirect('/pilih');
     }
 }

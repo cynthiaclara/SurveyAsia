@@ -83,7 +83,7 @@ Route::get('/reset-password/{token}', function ($token) {
 // Route::post('/reset-password/{email}/{code}', [ResetPasswordController::class, 'resetPassword'])
 //     ->middleware('guest')->name('password.update');
 
-    Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
 
 Route::get('/about', function () {
@@ -122,7 +122,7 @@ Route::get('/posisikerja', function () {
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
-Route::get('/researcher/design-survey', [DashboardController::class, 'designSurvey'])->middleware('auth');
+Route::get('/researcher/create-survey', [DashboardController::class, 'createSurvey'])->middleware('auth');
 
 Route::get('/respondent/dashboard', function () {
     return view('respondent.dashboard');
