@@ -51,8 +51,9 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Batal</button>
-                            <a class="btn btn-info text-white" href="/researcher/design-survey" role="button">Simpan</a>
+                            <button type="button" class="btn btn-outline-default" data-bs-dismiss="modal">Batal</button>
+                            <a class="btn btn-default text-white" href="/researcher/create-survey"
+                                role="button">Simpan</a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +64,7 @@
                 <div class="input-group">
                     <input class="form-control" type="search" placeholder="Cari Judul Survey"
                         aria-label="Cari Judul Survey" aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-info text-light" id="btnNavbarSearch" type="button"><i
+                    <button class="btn btn-default text-light" id="btnNavbarSearch" type="button"><i
                             class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -84,7 +85,7 @@
         <div class="col d-flex align-items-center">
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-info">Status</p>
+                    <p class="text-default">Status</p>
                     <h6 class="text-success">Active</h6>
                 </div>
             </div>
@@ -92,7 +93,7 @@
         <div class="col d-flex align-items-center">
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-info">Design</p>
+                    <p class="text-default">Design</p>
                     <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
                 </div>
             </div>
@@ -100,7 +101,7 @@
         <div class="col d-flex align-items-center">
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-info">Report</p>
+                    <p class="text-default">Report</p>
                     <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
                 </div>
             </div>
@@ -108,7 +109,7 @@
         <div class="col d-flex align-items-center">
             <div class="row text-center">
                 <div class="col">
-                    <p class="text-info">Share</p>
+                    <p class="text-default">Share</p>
                     <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
                 </div>
             </div>

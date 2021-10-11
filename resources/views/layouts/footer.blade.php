@@ -1,4 +1,4 @@
-<footer class="pt-5 text-white">
+<footer class="pt-5 bg-default text-white">
     <div class="container">
         <div class="row pb-3">
             <div class="col-md-2">
@@ -48,7 +48,7 @@
                                 placeholder="Email Address">
                         </div>
                         <div class="col-sm-5">
-                            <button type="button" class="btn btn-light text-info">Subscribe</button>
+                            <button type="button" class="btn btn-light text-default">Subscribe</button>
                         </div>
                     </div>
                 </form>

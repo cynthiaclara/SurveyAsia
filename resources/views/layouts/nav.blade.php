@@ -1,13 +1,14 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
-    <img src="assets/img/surveyasia.png" alt="Logo" style="width:150px;height:40px;">
+        <a class="navbar-brand text-info" href="/"><img src="/assets/img/surveyasia.png" alt="Surveyasia"
+                width="150"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
+                <li class="nav-item dropdown me-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         ID
@@ -17,11 +18,11 @@
                         <li><a class="dropdown-item" href="#">EN</a></li>
                     </ul>
                 </li>
-                <li class="nav-item ms-3 me-2">
-                    <div class="vl"></div>
+                {{-- <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li> --}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="far fa-arrow-alt-circle-left"></i> Markus Persson</a>
                 </li>
-                <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li>
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         David
@@ -34,7 +35,7 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

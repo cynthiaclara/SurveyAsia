@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
-        <a class="navbar-brand text-info" href="/"><img src="/assets/img/surveyasia.png" alt="Surveyasia"
+        <a class="navbar-brand text-default" href="/"><img src="/assets/img/surveyasia.png" alt="Surveyasia"
                 width="150"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,10 +56,10 @@
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="btn btn-outline-info mx-sm-3" href="/sign-in" role="button">Log In</a>
+                    <a class="btn btn-outline-default mx-sm-3" href="/sign-in" role="button">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-info text-white" href="/sign-up" role="button">Sign Up</a>
+                    <a class="btn btn-default text-white" href="/sign-up" role="button">Sign Up</a>
                 </li>
                 @endauth
                 <li class="nav-item ms-3 me-2">

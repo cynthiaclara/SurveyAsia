@@ -37,9 +37,9 @@
             <div class="row">
                 <div class="col-md-2">
                     <img src="/assets/img/prof_pic.png" alt="Profile Picture" width="110" class="d-block mb-2">
-                    <a href="#" class="link-info text-decoration-none">Change</a>
+                    <a href="#" class="link-default text-decoration-none">Change</a>
                     |
-                    <a href="#" class="link-info text-decoration-none">Delete</a>
+                    <a href="#" class="link-default text-decoration-none">Delete</a>
                 </div>
                 <div class="col">
                     <h3>David Chandra</h3>
@@ -55,7 +55,7 @@
                     <p>David Chandra</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -67,7 +67,7 @@
                     <p>davidc</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -79,7 +79,7 @@
                     <p>********</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -91,11 +91,11 @@
                     <p>davidchandra@gmail.com</p>
                     <div class="d-flex">
                         <p class="text-orange me-3">Not Verified</p>
-                        <a href="#" class="link-info text-decoration-none">Resend Email</a>
+                        <a href="#" class="link-default text-decoration-none">Resend Email</a>
                     </div>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -107,7 +107,7 @@
                     <p>Indonesia</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -119,7 +119,7 @@
                     <p>1234567891011121</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>
@@ -131,7 +131,7 @@
                     <p>081234567890</p>
                 </div>
                 <div class="col-md-1 text-end">
-                    <a href="#" class="link-info">Edit</a>
+                    <a href="#" class="link-default">Edit</a>
                 </div>
                 <hr>
             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('researcher.layouts.navbar')
+@extends('researcher.layouts.navbar2')
 
 @section('content')
 
@@ -9,15 +9,15 @@
     <div class="container">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/researcher/dashboard"
-                        class="link-orange text-decoration-none">Beranda</a></li>
-                <li class="breadcrumb-item"><a href="/researcher/design-survey" class="link-info">Design Survey</a></li>
-                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Customize
-                        Diagram</a>
+                <li class="breadcrumb-item"><a href="/researcher/dashboard" class="link-orange text-decoration-none"><i
+                            class="fas fa-home fa-fw"></i> Beranda</a></li>
+                <li class="breadcrumb-item"><a href="/researcher/create-survey" class="link-default">Survey</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Data Responden</a>
+                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Diagram</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Analisa Hasil</a>
+                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Respondent</a>
+                </li>
+                <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Analytics Result</a>
                 </li>
             </ol>
         </nav>
@@ -32,7 +32,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2">
-                <a href="#" class="link-info">
+                <a href="#" class="link-default">
                     <h6>Pertanyaan</h6>
                 </a>
             </div>
@@ -44,7 +44,7 @@
             <div class="col ms-auto"></div>
             <div class="col text-end">
                 <button class="btn btn-outline-secondary me-3" type="submit">Cancel</button>
-                <button class="btn btn-info text-white px-4" type="submit">Save</button>
+                <button class="btn btn-default text-white px-4" type="submit">Save</button>
             </div>
         </div>
         <form action="#">

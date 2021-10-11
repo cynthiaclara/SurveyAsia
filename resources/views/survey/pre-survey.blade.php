@@ -34,19 +34,19 @@
         <div class="row border rounded pt-3 mt-3 mx-1">
             <div class="col-md-3">
                 <h6 class="fw-bold">Estimasi Pengerjaan</h6>
-                <p class="text-info">10 Menit</p>
+                <p class="text-default">10 Menit</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Jumlah Pertanyaan</h6>
-                <p class="text-info">30 Pertanyaan</p>
+                <p class="text-default">30 Pertanyaan</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Status</h6>
-                <p class="text-info">Aktif</p>
+                <p class="text-default">Aktif</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Jumlah Hadiah</h6>
-                <p class="text-info">Rp1.500</p>
+                <p class="text-default">Rp1.500</p>
             </div>
         </div>
         <div class="row border rounded mt-3 mx-1">
@@ -66,7 +66,7 @@
             </p>
         </div>
         <div class="row pt-4 pb-2 mx-1">
-            <a href="#" class="btn btn-success w-100" role="button">Mulai</a>
+            <a href="#" class="btn btn-default w-100" role="button">Mulai</a>
         </div>
     </div>
 </section>
