@@ -85,10 +85,7 @@ Route::get('/reset-password/{token}', function ($token) {
 
 // Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
-Route::post('/reset-password', 'ResetPasswordController@resetPassword');
-
-
-
+// Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
 
