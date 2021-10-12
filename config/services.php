@@ -30,7 +30,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-  
+
 
     /* Social Media */
     'facebook' => [
@@ -50,6 +50,13 @@ return [
         'client_secret' => env('GOOGLE_SECRET'),
         'redirect'      => env('GOOGLE_URL'),
     ],
+
+    // YouTube
+    'youtube' => [
+        'api_key'           => env('YOUTUBE_API_KEY'),
+        'search_endpoint'   => env('YOUTUBE_SEARCH_ENDPOINT'),
+        'channel_id'        => env('YOUTUBE_CHANNEL_ID'),
+    ]
 
 
 

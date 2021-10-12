@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
@@ -94,13 +95,16 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+// Route::get('/blog', function () {
+//     return view('blog');
+// });
 
-Route::get('/blog/detail-blog', function () {
-    return view('detail-blog');
-});
+// Route::get('/blog/detail-blog', function () {
+//     return view('detail-blog');
+// });
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
 
 Route::get('/news', function () {
     return view('news');
@@ -114,12 +118,20 @@ Route::get('/pilih', function () {
     return view('screening.pilih');
 });
 
-Route::get('/tempatkerja', function () {
+Route::get('/upload-ktp', function () {
+    return view('screening.upload-ktp');
+});
+
+Route::get('/tempat-kerja', function () {
     return view('screening.tempatkerja');
 });
 
-Route::get('/posisikerja', function () {
+Route::get('/posisi-kerja', function () {
     return view('screening.posisikerja');
+});
+
+Route::get('/alamat-domisili', function () {
+    return view('screening.alamatdomisili');
 });
 
 
@@ -150,7 +162,3 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/screeningktp', function () {
-    return view('screening.ktp');
-});
