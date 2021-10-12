@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/researcher/dashboard');
+            return redirect()->intended('/pilih');
         }
 
         return back()->with('loginError', "Your email and password doesn't match");

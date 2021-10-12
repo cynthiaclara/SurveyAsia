@@ -23,7 +23,7 @@ class FacebookController extends Controller
             $find_user = User::where('provider_id', $user->getId())->first();
             if ($find_user) {
                 Auth::login($find_user);
-                return redirect()->intended('/researcher/dashboard');
+                return redirect()->intended('/pilih');
             } else {
                 $new_user = User::create([
                     'username' => $user->getName(),
@@ -33,7 +33,7 @@ class FacebookController extends Controller
                 ]);
 
                 Auth::login($new_user);
-                return redirect()->intended('/researcher/dashboard');
+                return redirect()->intended('/pilih');
             }
         } catch (Exception $e) {
             return redirect('/login');
