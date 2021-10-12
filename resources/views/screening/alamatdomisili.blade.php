@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <a class="btn btn-orange w-100 text-white text-white" href="/login" role="button">Selanjutnya</a>
+                <a class="btn btn-orange w-100 text-white text-white" href="/respondent/dashboard" role="button">Selanjutnya</a>
             </div>
         </div>
     </div>

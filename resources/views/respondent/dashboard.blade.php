@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-10">
                         <p style="margin-bottom: 0px">Selamat Datang!</p>
-                        <h5 class="fw-bold">David Chandra</h5>
+                        {{ auth()->user()->username }}
                     </div>
                 </div>
                 <div class="row mt-4">

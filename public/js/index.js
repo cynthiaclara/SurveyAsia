@@ -4,7 +4,9 @@ function RolesButton() {
         window.location.href = "/register";
     } else if (respondent.checked) {
         window.location.href = "/upload-ktp";
-    } else {
-        window.location.href = "/pilih";
     }
 }
+
+// else {
+//     window.location.href = "/pilih";
+// }
