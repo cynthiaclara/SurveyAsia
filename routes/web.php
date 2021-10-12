@@ -83,7 +83,11 @@ Route::get('/reset-password/{token}', function ($token) {
 // Route::post('/reset-password/{email}/{code}', [ResetPasswordController::class, 'resetPassword'])
 //     ->middleware('guest')->name('password.update');
 
-    Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+// Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+
+Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+
+
 
 
 Route::get('/about', function () {
