@@ -154,16 +154,15 @@ body {
     background-color: #f7fafc;
 }
 
-/* ktp */
-#drop_zone {
-	background-color: #FFFFFF;
-	border: #030105 2px dashed;
-	width: 90%;
-	padding : 120px 0;
-    margin-left: 40px;
+.sidebar-active {
+    background: #1a94cd;
+    color: #fff;
 }
 
-#drop_zone p {
-	font-size: 20px;
-	text-align: center;
+/* ktp */
+#drop_zone {
+    background-color: #fff;
+    border: #000 2px dashed;
+    width: 100%;
+    padding: 120px 0;
 }
