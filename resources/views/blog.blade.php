@@ -169,29 +169,57 @@
     </div>
 </section>
 
-<section class="surveyasia-tv py-5" id="surveyasia-tv">
+{{-- Surveyasia TV --}}
+<section class="surveyasia-tv py-5 mb-5" id="surveyasia-tv">
     <div class="container">
         <h4 class="fw-bold text-default">Surveyasia TV</h4>
         <hr>
-        <img src="/assets/img/surveyasia_tv_1.png" alt="Surveyasia TV 1" class="img-fluid w-100">
-        <div class="row mt-3">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tb-LMYEpIsQ" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        {{-- <div class="row mt-3">
             <div class="col-md-4">
-                <img src="/assets/img/surveyasia_tv_2.png" alt="Surveyasia TV 2" class="img-fluid w-100 mb-3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kwf-xhrE7nI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 <p class="fw-light">Craig Bator - 27 Dec 2020</p>
                 <h6>At Value-Focused Hotels, the Free Breakfast Gets Bigger</h6>
             </div>
             <div class="col-md-4">
-                <img src="/assets/img/surveyasia_tv_3.png" alt="Surveyasia TV 3" class="img-fluid w-100 mb-3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zOdw80EOmwc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 <p class="fw-light">Craig Bator - 27 Dec 2020</p>
                 <h6>Failure is the condiment that gives success its flavor</h6>
             </div>
             <div class="col-md-4">
-                <img src="/assets/img/surveyasia_tv_4.png" alt="Surveyasia TV 4" class="img-fluid w-100 mb-3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1rduslcL3z8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 <p class="fw-light">Craig Bator - 27 Dec 2020</p>
                 <h6>Les nouveaux maillots du Real Madrid pour la saison</h6>
             </div>
+        </div> --}}
+        <div class="row mt-3 pb-5">
+            @foreach ($videoList->items as $key => $item)
+            <div class="col-md-4">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $item->id->videoId }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <p class="fw-light">{{ $item->snippet->channelTitle }} -
+                    {{ date('d M Y', strtotime($item->snippet->publishTime)) }}</p>
+                <h6>{{ $item->snippet->title }}</h6>
+            </div>
+            @endforeach
         </div>
     </div>
 </section>
+{{-- Surveyasia TV --}}
 
 @endsection
