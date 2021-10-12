@@ -59,7 +59,7 @@
                     <a class="btn btn-outline-default mx-sm-3" href="/sign-in" role="button">Log In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-default text-white" href="/sign-up" role="button">Sign Up</a>
+                    <a class="btn btn-default text-white" href="/pilih" role="button">Sign Up</a>
                 </li>
                 @endauth
                 <li class="nav-item ms-3 me-2">

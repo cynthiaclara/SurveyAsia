@@ -11,24 +11,25 @@
         <p class="mt-3 text-center">Pilihlah salah satu untuk kamu</p>
         <div class="row text-center">
             <div class="col-md-6 mt-5">
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-                <label class="btn btn-light" for="option1"> <img src="/assets/img/akun2.png" alt="Researcher"
+                <input type="radio" class="btn-check" name="options" id="researcher" autocomplete="off">
+                <label class="btn btn-light" for="researcher"> <img src="/assets/img/akun2.png" alt="Researcher"
                         class="img-fluid rounded p-4">
                     <p class="fw-bold">Researcher</p>
                 </label>
             </div>
             <div class="col-md-6 mt-5">
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" checked>
-                <label class="btn btn-light" for="option2"> <img src="/assets/img/akun1.png" alt="Responden"
+                <input type="radio" class="btn-check" name="options" id="respondent" autocomplete="off">
+                <label class="btn btn-light" for="respondent"> <img src="/assets/img/akun1.png" alt="Responden"
                         class="img-fluid rounded p-4">
-                    <p class="fw-bold">Responden</p>
+                    <p class="fw-bold">Respondent</p>
                 </label>
             </div>
         </div>
         <p class="mt-3 text-center">*Pemilihan ini hanya untuk awal pengenalan, selanjutnya anda juga bisa mendapatkan
             keduanya</p>
         <div class="col mt-3 text-center">
-            <a class="btn btn-orange text-white w-50 text-white my-3" href="/login" role="button">Selanjutnya</a>
+            <a class="btn btn-orange text-white w-50 text-white my-3" href="#" onclick="RolesButton()"
+                role="button">Selanjutnya</a>
         </div>
     </div>
 
