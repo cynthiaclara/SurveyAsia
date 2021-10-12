@@ -3,7 +3,7 @@
 @section('content')
 <section class="sign-up-form" id="sign-up-form">
   <div class="row">
-    <div class="col-md-5 sign-up-left py-5 ps-5 text-white">
+    <div class="col-md-5 bg-default py-5 ps-5 text-white">
       <div class="row justify-content-center">
         <div class="col-10 col-sm-8">
           <a href="/" class="text-decoration-none">
@@ -103,7 +103,7 @@
       </div>
       <div class="col mt-5 text-center">
         <p>
-          Sudah memiliki akun? <a href="/sign-in" class="link-info text-decoration-none fw-bold">Masuk Sekarang</a>
+          Sudah memiliki akun? <a href="/sign-in" class="link-default text-decoration-none fw-bold">Masuk Sekarang</a>
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
-        <a class="navbar-brand text-info" href="/"><img src="/assets/img/surveyasia.png" alt="Surveyasia"
+        <a class="navbar-brand link-default" href="/"><img src="/assets/img/surveyasia.png" alt="Surveyasia"
                 width="150"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-info" href="/">Home</a>
+                    <a class="nav-link link-default" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Riwayat</a>
+                    <a class="nav-link link-default" href="#">Riwayat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-info me-3" href="/news">News</a>
+                    <a class="nav-link link-default me-3" href="/news">News</a>
                 </li>
                 @auth
                 <li>

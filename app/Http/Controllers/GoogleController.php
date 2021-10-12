@@ -23,7 +23,7 @@ class GoogleController extends Controller
 
             if ($findUser) {
                 Auth::login($findUser);
-                return redirect()->intended('/researcher/dashboard');
+                return redirect()->intended('/pilih');
             } else {
                 $newUser = User::create([
                     'username' => $user->getName(),
@@ -32,7 +32,7 @@ class GoogleController extends Controller
                     'password' => bcrypt('12345678')
                 ]);
                 Auth::login($newUser);
-                return redirect()->intended('/researcher/dashboard');
+                return redirect()->intended('/pilih');
             }
         } catch (Exception $e) {
             return redirect('/login');

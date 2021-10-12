@@ -23,7 +23,7 @@ class LinkedinController extends Controller
 
             if ($find_user) {
                 Auth::login($find_user);
-                return redirect()->intended('/researcher/dashboard');
+                return redirect()->intended('/pilih');
             } else {
                 $new_user = User::create([
                     'username' => $user->getName(),

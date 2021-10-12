@@ -46,7 +46,7 @@
                         <div class="card bg-dark text-light">
                             <img src="/assets/img/blog_4.png" alt="Blog 4" class="img-fluid blog-4">
                             <div class="card-img-overlay align-items-end">
-                                <span class="badge bg-info">New</span>
+                                <span class="badge bg-default">New</span>
                                 <p class="fw-light">Craig Balor - 27 Dec 2020</p>
                                 <h4>Tourism in Dubai is booming by international tourist</h4>
                             </div>
@@ -60,7 +60,7 @@
 
 <section class="recommendation-blog pt-5" id="recommendation-blog">
     <div class="container">
-        <h4 class="fw-bold text-info">Recommendation</h4>
+        <h4 class="fw-bold text-default">Recommendation</h4>
         <hr>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -163,7 +163,7 @@
         </div>
         <div class="row d-flex justify-content-center mt-3">
             <div class="col-md-5 text-center">
-                <button type="submit" class="btn btn-outline-info text-dark w-100">Selengkapnya</button>
+                <button type="submit" class="btn btn-outline-default text-dark w-100">Selengkapnya</button>
             </div>
         </div>
     </div>
@@ -171,7 +171,7 @@
 
 <section class="surveyasia-tv py-5" id="surveyasia-tv">
     <div class="container">
-        <h4 class="fw-bold text-info">Surveyasia TV</h4>
+        <h4 class="fw-bold text-default">Surveyasia TV</h4>
         <hr>
         <img src="/assets/img/surveyasia_tv_1.png" alt="Surveyasia TV 1" class="img-fluid w-100">
         <div class="row mt-3">

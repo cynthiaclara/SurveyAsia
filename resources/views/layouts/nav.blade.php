@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
     <img src="assets/img/surveyasia.png" alt="Logo" style="width:150px;height:40px;">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

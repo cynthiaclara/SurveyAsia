@@ -89,6 +89,9 @@ Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
 
 
+Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+
+
 
 Route::get('/about', function () {
     return view('about');
@@ -126,7 +129,7 @@ Route::get('/posisikerja', function () {
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
-Route::get('/researcher/design-survey', [DashboardController::class, 'designSurvey'])->middleware('auth');
+Route::get('/researcher/create-survey', [DashboardController::class, 'createSurvey'])->middleware('auth');
 
 Route::get('/respondent/dashboard', function () {
     return view('respondent.dashboard');
@@ -150,3 +153,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/screeningktp', function () {
+    return view('screening.ktp');
+});

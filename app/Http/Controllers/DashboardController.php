@@ -21,8 +21,8 @@ class DashboardController extends Controller
         return view('researcher.payment');
     }
 
-    public function designSurvey()
+    public function createSurvey()
     {
-        return view('researcher.design-survey');
+        return view('researcher.create-survey');
     }
 }

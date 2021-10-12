@@ -3,13 +3,44 @@ body {
     overflow-x: hidden;
 }
 
+.bg-default {
+    background-color: #1a94cd;
+}
+
+.btn-default {
+    background-color: #1a94cd;
+}
+
+.btn-default:hover {
+    background-color: #4eb8e9;
+}
+
+.btn-outline-default {
+    border-color: #1a94cd;
+    color: #1a94cd;
+}
+
+.btn-outline-default:hover {
+    background-color: #1a94cd;
+    color: #fff;
+}
+
+.text-default {
+    color: #1a94cd !important;
+}
+
+.link-default {
+    color: #1a94cd !important;
+}
+
+.link-default:hover,
+.link-default:focus {
+    color: #4eb8e9 !important;
+}
+
 .vl {
     height: 40px;
     border: 1px solid #999;
-}
-
-.landing-page {
-    background-color: #39b6f0;
 }
 
 .hero {
@@ -25,7 +56,7 @@ body {
 
 .survey-promo,
 .intro-2 {
-    background-color: #ddf1ff;
+    background-color: #fcfdfe;
 }
 
 .services hr {
@@ -62,10 +93,6 @@ body {
     color: #ffa840;
 }
 
-footer {
-    background-color: #39b6f0;
-}
-
 .hero-about {
     background-image: url("/assets/img/about.png");
     background-position: center;
@@ -85,7 +112,7 @@ footer {
 
 .hr-vm {
     width: 5%;
-    border: 3px solid #39b6f0;
+    border: 3px solid #1a94cd;
 }
 
 .hr-vm-orange {
@@ -98,10 +125,6 @@ footer {
     height: 100vh;
 }
 
-.sign-in-left {
-    background-color: #39b6f0 !important;
-}
-
 .sign-in-right {
     padding: 10% 10% !important;
 }
@@ -110,20 +133,12 @@ footer {
     height: 100vh;
 }
 
-.sign-up-left {
-    background-color: #39b6f0 !important;
-}
-
 .sign-up-right {
     padding: 3% 5% !important;
 }
 
 .forgot-password-form {
     height: 100vh;
-}
-
-.forgot-password-left {
-    background-color: #39b6f0 !important;
 }
 
 .forgot-password-right {
@@ -137,4 +152,18 @@ footer {
 
 .comparison-price {
     background-color: #f7fafc;
+}
+
+/* ktp */
+#drop_zone {
+	background-color: #FFFFFF;
+	border: #030105 2px dashed;
+	width: 90%;
+	padding : 120px 0;
+    margin-left: 40px;
+}
+
+#drop_zone p {
+	font-size: 20px;
+	text-align: center;
 }

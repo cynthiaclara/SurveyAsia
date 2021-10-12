@@ -3,7 +3,7 @@
 @section('content')
 <section class="sign-in-form" id="sign-in-form">
     <div class="row">
-        <div class="col-md-5 sign-in-left py-5 ps-5 text-white">
+        <div class="col-md-5 bg-default py-5 ps-5 text-white">
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-8">
                     <a href="/" class="text-decoration-none">

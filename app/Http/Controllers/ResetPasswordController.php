@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Log;
 class ResetPasswordController extends Controller
 {
 
-/**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -40,31 +40,26 @@ class ResetPasswordController extends Controller
     }
 
 
-        // $this->validate($request, [
-        // 'password' => 'required|min:8|confirmed',
-        // 'password_confirmation' => 'required|min8'
-         }
+    // $this->validate($request, [
+    // 'password' => 'required|min:8|confirmed',
+    // 'password_confirmation' => 'required|min8'
+}
 
-    $user = User::whereEmail($email)->first();
-    if($user == null){
-        echo 'Email not exists';
+$user = User::whereEmail($email)->first();
+if ($user == null) {
+    echo 'Email not exists';
+}
+
+$user = Sentinel::findById($user->id);
+$reminder = Reminder::exists($user);
+
+if ($reminder) {
+    if ($code == $reminder->code) {
+        Reminder::complete($user, $code, $request->password);
+        return redirect('/login')->with('success', 'Password reset. Please login with new password!');
+    } else {
+        return redirect('/sign-in')->with(compact('user'));
     }
-   
-    $user = Sentinel::findById($user->id);
-    $reminder = Reminder::exists($user);
-
-    if($reminder){
-        if($code == $reminder->code){
-            Reminder::complete($user, $code, $request->password);
-            return redirect('/login')->with('success', 'Password reset. Please login with new password!');
-
-        }else{
-            return redirect('/')->with(compact('user'));
-        }
-        }else{
-            echo 'time expired';
-    }
-
-    
-
-
+} else {
+    echo 'time expired';
+}

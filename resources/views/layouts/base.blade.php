@@ -20,6 +20,9 @@
     {{-- My CSS --}}
     <link rel="stylesheet" href="/css/style.css">
 
+    {{-- Favicon --}}
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon-surveyasia-32.png' />
+
     {{-- Font Awesome --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
     </script>
