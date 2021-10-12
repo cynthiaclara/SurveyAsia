@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
+
 
 trait ResetsPasswords
 {
@@ -28,7 +28,7 @@ trait ResetsPasswords
     {
         $token = $request->route()->parameter('token');
 
-        return view('auth.passwords.reset')->with(
+        return view('auth.passwords.email')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
@@ -47,7 +47,8 @@ trait ResetsPasswords
         // will update the password on an actual user model and persist it to the
         // database. Otherwise we will parse the error and return the response.
         $response = $this->broker()->reset(
-            $this->credentials($request), function ($user, $password) {
+            $this->credentials($request),
+            function ($user, $password) {
                 $this->resetPassword($user, $password);
             }
         );
@@ -56,8 +57,8 @@ trait ResetsPasswords
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
         return $response == Password::PASSWORD_RESET
-                    ? $this->sendResetResponse($request, $response)
-                    : $this->sendResetFailedResponse($request, $response);
+            ? $this->sendResetResponse($request, $response)
+            : $this->sendResetFailedResponse($request, $response);
     }
 
     /**
@@ -69,7 +70,7 @@ trait ResetsPasswords
     {
         return [
             'token' => 'required',
-            'email' => 'required|email',
+            // 'email' => 'required|email',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
@@ -93,7 +94,10 @@ trait ResetsPasswords
     protected function credentials(Request $request)
     {
         return $request->only(
-            'email', 'password', 'password_confirmation', 'token'
+            // 'email',
+            'new_password',
+            'password_confirmation'
+            // 'token'
         );
     }
 
@@ -106,15 +110,15 @@ trait ResetsPasswords
      */
     protected function resetPassword($user, $password)
     {
-        $this->setUserPassword($user, $password);
+        $user->password = Hash::make($password);
 
         $user->setRememberToken(Str::random(60));
 
         $user->save();
 
         event(new PasswordReset($user));
-
-        $this->guard()->login($user);
+        // $this->guard()->login($user);
+        return redirect()->route('login');
     }
 
     /**
@@ -143,7 +147,7 @@ trait ResetsPasswords
         }
 
         return redirect($this->redirectPath())
-                            ->with('status', trans($response));
+            ->with('status', trans($response));
     }
 
     /**
@@ -162,8 +166,8 @@ trait ResetsPasswords
         }
 
         return redirect()->back()
-                    ->withInput($request->only('email'))
-                    ->withErrors(['email' => trans($response)]);
+            ->withInput($request->only('email'))
+            ->withErrors(['email' => trans($response)]);
     }
 
     /**

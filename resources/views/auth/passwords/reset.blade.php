@@ -25,24 +25,12 @@
       <h3 class="mb-3 fw-bold">Atur Ulang Kata Sandi</h3>
       <form method="POST" action="{{ route('password.update') }}">
         @csrf
-        <!-- @method("GET") -->
         <input type="hidden" name="token" value="{{ $token }}">
         <div class="mt-3">
-          <label for="email" class="form-label">Email Anda</label>
-          <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" aria-describedby="emailHelp"
-            placeholder="Ketik email Anda" required autocomplete="email" autofocus/>
-
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-             @enderror
-        </div>
-        <div class="mt-3">
             <label for="password" class="form-label">New Password</label>
-            <input type="password" class="form-control" id="password" name="password"
-              placeholder="Masukkan password baru anda"/>
-              @error('password')
+            <input type="password" class="form-control" id="new_password" name="new_password"
+              placeholder="Masukkan password baru anda" required/>
+              @error('new_password')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                   </span>
@@ -51,7 +39,7 @@
           <div class="mt-3">
             <label for="password-confirm" class="form-label">Confirm New Password</label>
             <input type="password" class="form-control" id="password-confirm" name="password_confirmation"
-              placeholder="Confirm password baru anda"/>
+              placeholder="Confirm password baru anda" required/>
               @error('password_confirmation')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

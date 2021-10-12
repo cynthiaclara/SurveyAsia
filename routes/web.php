@@ -57,39 +57,17 @@ Route::get('/sign-up', [RegisterController::class, 'create'])->middleware('guest
 Route::post('/sign-up', [RegisterController::class, 'store']);
 
 Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
+    return view('auth.passwords.email');
 });
 
 Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
+    return view('auth.passwords.email');
 })->middleware('guest')->name('password.request');
-
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
-
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.email');
 
 Route::get('/reset-password/{token}', function ($token) {
     return view('auth.passwords.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
-
-// Route::post('/reset-password/{email}/{code}', [ResetPasswordController::class, 'resetPassword'])
-//     ->middleware('guest')->name('password.update');
-
-// Route::post('/reset-password', 'ResetPasswordController@resetPassword');
-
-// Route::post('/reset-password', 'ResetPasswordController@resetPassword');
-Route::post('/reset-password', 'ResetPasswordController@resetPassword');
-
-
-
+// reset password
 Route::get('/about', function () {
     return view('about');
 });
