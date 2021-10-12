@@ -27,7 +27,6 @@
         @csrf
         <input type="hidden" name="token" value="{{ $token }}">
         <div class="mt-3">
-<<<<<<< HEAD
             <label for="password" class="form-label">New Password</label>
             <input type="password" class="form-control" id="new_password" name="new_password"
               placeholder="Masukkan password baru anda" required/>
@@ -47,40 +46,8 @@
                   </span>
                @enderror
           </div>
-=======
-          <label for="email" class="form-label">Email Anda</label>
-          <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"
-            id="email" name="email" aria-describedby="emailHelp" placeholder="Ketik email Anda" required
-            autocomplete="email" autofocus />
-
-          @error('email')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-          @enderror
+          <button type="submit" class="btn btn-orange w-100 text-white my-3">Reset Password</button>
         </div>
-        <div class="mt-3">
-          <label for="password" class="form-label">New Password</label>
-          <input type="password" class="form-control" id="password" name="password"
-            placeholder="Masukkan password baru anda" />
-          @error('password')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-          @enderror
-        </div>
-        <div class="mt-3">
-          <label for="password-confirm" class="form-label">Confirm New Password</label>
-          <input type="password" class="form-control" id="password-confirm" name="password_confirmation"
-            placeholder="Confirm password baru anda" />
-          @error('password_confirmation')
-          <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-          @enderror
-        </div>
->>>>>>> 63b6e477f43142d4a93983ebd98670a9679fdbb8
-        <button type="submit" class="btn btn-orange w-100 text-white my-3">Reset Password</button>
       </form>
     </div>
   </div>
