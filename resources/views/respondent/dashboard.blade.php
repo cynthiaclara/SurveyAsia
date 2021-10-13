@@ -24,7 +24,8 @@
                     </div>
                     <div class="col-md-10">
                         <p style="margin-bottom: 0px">Selamat Datang!</p>
-                        {{ auth()->user()->username }}
+                        {{-- {{ auth()->user()->username }} --}}
+                        David Chandra
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -46,7 +47,6 @@
 
             </div>
         </div>
-
     </div>
 </section>
 {{-- End Header Respondent --}}
@@ -55,98 +55,21 @@
 <section class="recommendation-survey pt-5" id="recommendation-survey">
     <div class="container">
         <h5 class="fw-bold">Rekomendasi untukmu</h5>
-        <div class="row">
-            <div class="col-md-3">
+        @for ($j = 0; $j < 2; $j++) <div class="row mt-3">
+            @for ($i = 0; $i < 4; $i++) <div class="col-md-3">
                 <div class="card shadow-sm" style="border-radius: 16px;">
                     <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
                         style="border-radius: 16px">
                     <div class="card-body">
                         <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
                         <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
+                        <a href="/survey/pre-survey" class="btn btn-default text-white w-100" role="button">Mulai</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <img src="/assets/img/recommendation_survey.png" alt="Recommendation Survey" class="card-img-top"
-                        style="border-radius: 16px">
-                    <div class="card-body">
-                        <h5 class="card-title">Survey promo Big Sale terhadap intensitas belanja</h5>
-                        <p class="card-text text-secondary" style="font-size: 12px">by Sarah William - All Level</p>
-                        <a href="/survey/pre-survey" class="btn btn-success w-100" role="button">Mulai</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    @endfor
+    </div>
+    @endfor
     </div>
 </section>
 {{-- End Recommendation Survey --}}
@@ -156,26 +79,14 @@
     <div class="container">
         <h5 class="fw-bold">Surveyasia News</h5>
         <div class="row">
-            <div class="col-md-3">
-                <img src="/assets/img/surveyasia_news_1.png" alt="Surveyasia News" class="card-img-top">
-                <p class="text-primary mt-3"><i class="fas fa-calendar-alt fa-fw"></i> 04 August 2021</p>
+            @for ($k = 1; $k <= 4; $k++) <div class="col-md-3">
+                <img src="/assets/img/surveyasia_news_{{ $k }}.png" alt="Surveyasia News" class="card-img-top">
+                <p class="text-default mt-3"><i class="fas fa-calendar-alt fa-fw"></i> 04 August 2021</p>
                 <p>5 Ways on how technology can help your capital raise.</p>
-            </div>
-            <div class="col-md-3">
-                <img src="/assets/img/surveyasia_news_2.png" alt="Surveyasia News" class="card-img-top">
-                <p class="text-primary mt-3"><i class="fas fa-calendar-alt fa-fw"></i> 04 August 2021</p>
-                <p>The difference between an investment fund and a SOV.</p>
-            </div>
-            <div class="col-md-3">
-                <img src="/assets/img/surveyasia_news_3.png" alt="Surveyasia News" class="card-img-top">
-                <p class="text-primary mt-3"><i class="fas fa-calendar-alt fa-fw"></i> 04 August 2021</p>
-                <p>How to choose the right SPV or fund administrotor.</p>
-            </div>
-            <div class="col-md-3">
-                <img src="/assets/img/surveyasia_news_4.png" alt="Surveyasia News" class="card-img-top">
-                <p class="text-primary mt-3"><i class="fas fa-calendar-alt fa-fw"></i> 04 August 2021</p>
-                <p>How to choose the right SPV or fund administrotor.</p>
-            </div>
         </div>
+        @endfor
     </div>
-</section> {{-- End Surveyasia News --}} @endsection
+    </div>
+</section> {{-- End Surveyasia News --}}
+
+@endsection
