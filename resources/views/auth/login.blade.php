@@ -69,7 +69,7 @@
             </div>
             <div class="col mt-5 text-center">
                 <p>
-                    Tidak memiliki akun? <a href="/sign-up" class="link-info text-decoration-none fw-bold">Buat Akun</a>
+                    Tidak memiliki akun? <a href="/pilih" class="link-info text-decoration-none fw-bold">Buat Akun</a>
                 </p>
             </div>
         </div>

@@ -11,7 +11,7 @@
         <p class="mt-3 text-center">Pilihlah salah satu untuk kamu</p>
         <div class="row text-center">
             <div class="col-md-6 mt-5">
-                <input type="radio" class="btn-check" name="researcher" id="researcher" autocomplete="off">
+                <input type="radio" class="btn-check" name="researcher" id="researcher" autocomplete="off" value="researcher">
                 <label class="btn btn-light" for="researcher"> <img src="/assets/img/akun2.png" alt="Researcher"
                         class="img-fluid rounded p-4">
                     <p class="fw-bold">Researcher</p>

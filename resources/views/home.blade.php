@@ -146,7 +146,7 @@
         </div> --}}
         <div class="row justify-content-center mt-5">
             <div class="col-md-2">
-                <a href="/sign-up" class="btn btn-outline-orange bg-light w-100" role="button">Join to be a
+                <a href="/upload-ktp" class="btn btn-outline-orange bg-light w-100" role="button">Join to be a
                     Respondent</a>
             </div>
         </div>

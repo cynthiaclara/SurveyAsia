@@ -21,7 +21,7 @@ class Registercontroller extends Controller
             'last_name' => ['required', 'regex:/^[\p{L}\s-]+$/u', 'max:255'],
             'username' => ['required', 'min:4', 'unique:users'],
             'email' => ['required', 'email:dns', 'unique:users'],
-            'password' => ['required', RulesPassword::min(8)],
+            'password' => ['required', RulesPassword::min(8)]
             // 'checkbox' => ['required']
         ], [
             'first_name.required' => 'The first name field is required.',
