@@ -34,7 +34,7 @@
         <div class="row border rounded pt-3 mt-3 mx-1">
             <div class="col-md-3">
                 <h6 class="fw-bold">Estimasi Pengerjaan</h6>
-                <p class="text-default">10 Menit</p>
+                <p class="text-default"><i class="far fa-clock fa-fw"></i> 10 Menit</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Jumlah Pertanyaan</h6>
