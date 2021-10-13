@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('layouts.navbar2')
+@extends('layouts.navbar')
 
 @section('content')
 
@@ -11,11 +11,13 @@
         <div class="row py-3">
             <div class="col-md-7">
                 <a href="/blog/detail-blog">
-                    <div class="card bg-dark text-light">
+                    <div class="card bg-dark text-light" style="height: 98%">
                         <img src="/assets/img/blog_1.png" alt="Blog 1" class="img-fluid blog-1">
-                        <div class="card-img-overlay align-items-end">
-                            <p class="fw-light">Craig Balor - 27 Dec 2020</p>
-                            <h3>After All is Said and Done, More is Done</h3>
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <span>
+                                <p class="fw-light">Craig Balor - 27 Dec 2020</p>
+                                <h3>After All is Said and Done, More is Done</h3>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -23,34 +25,44 @@
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card bg-dark text-light">
-                            <img src="/assets/img/blog_2.png" alt="Blog 2" class="img-fluid blog-2">
-                            <div class="card-img-overlay align-items-end">
-                                <p class="fw-light">Craig Balor - 27 Dec 2020</p>
-                                <h6>They’re back! Kennedy Darling named to return to</h6>
+                        <a href="/blog/detail-blog">
+                            <div class="card bg-dark text-light">
+                                <img src="/assets/img/blog_2.png" alt="Blog 2" class="img-fluid blog-2">
+                                <div class="card-img-overlay d-flex align-items-end">
+                                    <span>
+                                        <p class="fw-light">Craig Balor - 27 Dec 2020</p>
+                                        <h6>They’re back! Kennedy Darling named to return to</h6>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-md-6">
-                        <div class="card bg-dark text-light">
-                            <img src="/assets/img/blog_3.png" alt="Blog 3" class="img-fluid blog-3">
-                            <div class="card-img-overlay align-items-end">
-                                <p class="fw-light">Craig Balor - 27 Dec 2020</p>
-                                <h6>Swiss authorities say Uber drivers should</h6>
+                        <a href="/blog/detail-blog">
+                            <div class="card bg-dark text-light">
+                                <img src="/assets/img/blog_3.png" alt="Blog 3" class="img-fluid blog-3">
+                                <div class="card-img-overlay d-flex align-items-end">
+                                    <span>
+                                        <p class="fw-light">Craig Balor - 27 Dec 2020</p>
+                                        <h6>Swiss authorities say Uber drivers should</h6>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col">
-                        <div class="card bg-dark text-light">
-                            <img src="/assets/img/blog_4.png" alt="Blog 4" class="img-fluid blog-4">
-                            <div class="card-img-overlay align-items-end">
-                                <span class="badge bg-default">New</span>
-                                <p class="fw-light">Craig Balor - 27 Dec 2020</p>
-                                <h4>Tourism in Dubai is booming by international tourist</h4>
+                        <a href="/blog/detail-blog">
+                            <div class="card bg-dark text-light">
+                                <img src="/assets/img/blog_4.png" alt="Blog 4" class="img-fluid blog-4">
+                                <div class="card-img-overlay align-items-end">
+                                    <span class="badge bg-default mb-5">New</span>
+                                    <p class="fw-light">Craig Balor - 27 Dec 2020</p>
+                                    <h4>Tourism in Dubai is booming by international tourist</h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

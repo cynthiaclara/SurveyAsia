@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('layouts.navbar2')
+@extends('layouts.navbar')
 
 @section('content')
 
@@ -10,30 +10,29 @@
         </h1>
         <img src="/assets/img/detail_blog_1.png" alt="Detail Blog" class="img-fluid w-100 my-5">
         <div class="row mb-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="70">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-10">
                         <p class="fw-bold">MIKA MATIKAINEN</p>
                         <p class="fw-light">Apr 15, 2020 - 4 min read</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <p class="fw-bold">Share on Facebook</p>
+            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
+                <a href="#" class="link-dark text-decoration-none">
+                    <p class="fw-bold mt-3"><i class="fab fa-facebook fa-fw"></i> Share on Facebook</p>
+                </a>
             </div>
-            <div class="col-md-4 text-center">
-                <p class="fw-bold">Share on Twitter</p>
+            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
+                <a href="#" class="link-dark text-decoration-none">
+                    <p class="fw-bold mt-3"><i class="fab fa-twitter fa-fw"></i> Share on Twitter</p>
+                </a>
             </div>
         </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit ducimus placeat quasi beatae, debitis rem in
-            cum, nemo doloremque, accusamus voluptates laudantium dicta dolores est veritatis iure vel ea? Esse?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum omnis doloribus temporibus? Id ducimus,
-            beatae at doloribus corrupti dolores doloremque hic adipisci labore vitae, dolorum a quo aliquam delectus
-            cum?</p>
-        <h5 class="fw-bold">Next on the pipeline</h5>
+        <h5 class="fw-bold mt-5">Next on the pipeline</h5>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, praesentium at error omnis velit illo
             quia quod! Recusandae quasi odit itaque praesentium impedit voluptatum eaque est adipisci, quae, dolore
             voluptas.</p>
