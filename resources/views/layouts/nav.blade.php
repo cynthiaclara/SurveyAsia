@@ -19,9 +19,9 @@
                     </ul>
                 </li>
                 {{-- <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link"><i class="far fa-arrow-alt-circle-left"></i> Markus Persson</a>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
