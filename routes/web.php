@@ -68,18 +68,10 @@ Route::get('/forgot-password', function () {
 Route::get('/reset-password/{token}', function ($token) {
     return view('auth.passwords.reset', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
-// reset password
+
 Route::get('/about', function () {
     return view('about');
 });
-
-// Route::get('/blog', function () {
-//     return view('blog');
-// });
-
-// Route::get('/blog/detail-blog', function () {
-//     return view('detail-blog');
-// });
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
@@ -112,11 +104,11 @@ Route::get('/alamat-domisili', function () {
     return view('screening.alamatdomisili');
 });
 
-
 Route::get('/researcher/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 Route::get('/researcher/pricing', [DashboardController::class, 'pricing'])->middleware('auth');
 Route::get('/researcher/payment', [DashboardController::class, 'payment'])->middleware('auth');
 Route::get('/researcher/create-survey', [DashboardController::class, 'createSurvey'])->middleware('auth');
+Route::get('/researcher/data-respondent', [DashboardController::class, 'dataRespondent'])->middleware('auth');
 
 Route::get('/respondent/dashboard', function () {
     return view('respondent.dashboard');
@@ -131,7 +123,6 @@ Route::get('/profile', function () {
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 
 // Route::get('/reset-password', function () {
 //     return view('auth.passwords.reset');
