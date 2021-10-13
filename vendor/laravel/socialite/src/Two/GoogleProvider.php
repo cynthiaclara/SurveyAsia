@@ -51,7 +51,7 @@ class GoogleProvider extends AbstractProvider implements ProviderInterface
             ],
             'headers' => [
                 'Accept' => 'application/json',
-                'Authorization' => 'Bearer '.$token,
+                'Authorization' => 'Bearer ' . $token,
             ],
         ]);
 

@@ -8,7 +8,7 @@
     <ul class="navbar-nav ms-auto me-3 me-lg-4">
         @auth
         <li>
-            <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+            <img src="{{ auth()->user()->avatar }}" alt="Profile Picture" class="img-fluid" width="36">
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"

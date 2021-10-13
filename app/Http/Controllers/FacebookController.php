@@ -23,12 +23,13 @@ class FacebookController extends Controller
             $find_user = User::where('provider_id', $user->getId())->first();
             if ($find_user) {
                 Auth::login($find_user);
-                return redirect()->intended('/pilih');
+                return redirect()->intended('/researcher/dashboard');
             } else {
                 $new_user = User::create([
                     'username' => $user->getName(),
                     'email' => $user->getEmail(),
                     'provider_id' => $user->getId(),
+                    'avatar' => $user->getAvatar(),
                     'password' => bcrypt('12345678')
                 ]);
 

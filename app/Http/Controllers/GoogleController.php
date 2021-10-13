@@ -23,12 +23,13 @@ class GoogleController extends Controller
 
             if ($findUser) {
                 Auth::login($findUser);
-                return redirect()->intended('/pilih');
+                return redirect()->intended('/researcher/dashboard');
             } else {
                 $newUser = User::create([
                     'username' => $user->getName(),
                     'email' => $user->getEmail(),
                     'provider_id' => $user->getId(),
+                    'avatar' => $user->getAvatar(),
                     'password' => bcrypt('12345678')
                 ]);
                 Auth::login($newUser);

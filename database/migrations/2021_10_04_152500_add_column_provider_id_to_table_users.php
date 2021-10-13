@@ -15,6 +15,7 @@ class AddColumnProviderIdToTableUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('provider_id')->after('email')->nullable();
+            $table->string('avatar')->after('provider_id')->nullable();
         });
     }
 
