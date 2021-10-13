@@ -25,4 +25,9 @@ class DashboardController extends Controller
     {
         return view('researcher.create-survey');
     }
+
+    public function dataRespondent()
+    {
+        return view('researcher.data-respondent');
+    }
 }

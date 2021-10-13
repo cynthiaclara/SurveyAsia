@@ -1,29 +1,9 @@
 @extends('layouts.footer')
 @extends('layouts.base')
+@extends('researcher.layouts.breadcrumb')
 @extends('researcher.layouts.navbar2')
 
 @section('content')
-
-{{-- Breadcrumb --}}
-<section class="breadcrumb-contact mt-3 ms-5" id="breadcrumb-contact">
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/researcher/dashboard" class="link-orange text-decoration-none"><i
-                        class="fas fa-home fa-fw"></i> Beranda</a></li>
-            <li class="breadcrumb-item"><a href="/researcher/create-survey" class="link-default">Survey</a>
-            </li>
-            <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Diagram</a>
-            </li>
-            <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Respondent</a>
-            </li>
-            <li class="breadcrumb-item"><a href="#" class="link-secondary text-decoration-none">Analytics Result</a>
-            </li>
-        </ol>
-    </nav>
-</section>
-{{-- End Breadcrumb --}}
-
-<hr class="mb-0">
 
 {{-- Sidebar --}}
 <section class="sidebar-create-survey" id="sidebar-create-survey">
