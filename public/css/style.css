@@ -10,7 +10,6 @@ body {
 .btn-default {
     background-color: #1a94cd;
 }
-
 .btn-default:hover {
     background-color: #4eb8e9;
 }
@@ -19,7 +18,6 @@ body {
     border-color: #1a94cd;
     color: #1a94cd;
 }
-
 .btn-outline-default:hover {
     background-color: #1a94cd;
     color: #fff;
@@ -32,7 +30,6 @@ body {
 .link-default {
     color: #1a94cd !important;
 }
-
 .link-default:hover,
 .link-default:focus {
     color: #4eb8e9 !important;
@@ -67,7 +64,6 @@ body {
 .btn-orange {
     background-color: #f7931b;
 }
-
 .btn-orange:hover {
     background-color: #ffa840;
 }
@@ -75,7 +71,6 @@ body {
 .btn-outline-orange {
     border-color: #f7931b;
 }
-
 .btn-outline-orange:hover {
     border-color: #ffa840;
 }
@@ -87,10 +82,28 @@ body {
 .link-orange {
     color: #f7931b;
 }
-
 .link-orange:hover,
 .link-orange:focus {
     color: #ffa840;
+}
+
+.table-orange,
+.table-orange > td,
+.table-orange > th {
+    background-color: #f7931b;
+}
+.table-orange tbody + tbody,
+.table-orange td,
+.table-orange th,
+.table-orange thead th {
+    border-color: #f7931b;
+}
+.table-hover .table-orange:hover {
+    background-color: #ffa840;
+}
+.table-hover .table-orange:hover > td,
+.table-hover .table-orange:hover > th {
+    background-color: #ffa840;
 }
 
 .hero-about {
@@ -118,6 +131,11 @@ body {
 .hr-vm-orange {
     width: 100px;
     border: 3px solid #f7931b;
+}
+
+.hero-blog img,
+.hero-blog .card {
+    border-radius: 16px;
 }
 
 /* Auth */
