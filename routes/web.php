@@ -92,6 +92,10 @@ Route::get('/upload-ktp', function () {
     return view('screening.upload-ktp');
 });
 
+Route::get('/personal-data', function () {
+    return view('screening.personal-data');
+});
+
 Route::get('/tempat-kerja', function () {
     return view('screening.tempatkerja');
 });
@@ -116,6 +120,14 @@ Route::get('/respondent/dashboard', function () {
 
 Route::get('/survey/pre-survey', function () {
     return view('survey.pre-survey');
+});
+
+Route::get('/survey/history', function () {
+    return view('survey.history');
+});
+
+Route::get('/survey/history/change-point', function () {
+    return view('survey.change-point');
 });
 
 Route::get('/profile', function () {
