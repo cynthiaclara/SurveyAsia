@@ -3,7 +3,7 @@
         <div class="row pb-3">
             <div class="col-md-2">
                 <a href="/" class="text-white text-decoration-none">
-                    <h4 class="fw-bold">Surveyasia</h4>
+                    <img src="/assets/img/surveyasia_white.png" alt="Surveyasia" width="150">
                 </a>
             </div>
             <div class="col-md-2">

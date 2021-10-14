@@ -6,7 +6,7 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        {{-- <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown me-3">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -18,11 +18,11 @@
                         <li><a class="dropdown-item" href="#">EN</a></li>
                     </ul>
                 </li>
-                {{-- <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li> --}}
-                {{-- <li class="nav-item">
+                <li><img src="/assets/img/prof_pic.png" alt="Profile Picture" width="32"></li>
+                <li class="nav-item">
                     <a href="#" class="nav-link"><i class="far fa-arrow-alt-circle-left"></i> Markus Persson</a>
-                </li> --}}
-                {{-- <li class="nav-item dropdown">
+                </li>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         David
@@ -35,8 +35,8 @@
                         </li>
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
-                </li> --}}
+                </li>
             </ul>
-        </div>
+        </div> --}}
     </div>
 </nav>

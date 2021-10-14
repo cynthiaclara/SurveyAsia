@@ -8,11 +8,12 @@
     <div class="row flex-md-row-reverse h-75">
         <div class="col-md-6 hero"></div>
         <div class="col-md-6 text-white align-self-center title-landing-page">
-            <h1 class="fw-bold">Work on Big Ideas, <br> Simply with Surveyasia</h1>
-            <p class="fw-light mt-3">from the small stuff to the big picture, Surveyasia organizes your survey with
-                clear terms and messages, why it matters, and how to get it done.
+            <h1 class="fw-bold">Mau membuat Survei dengan Mudah? Kami Solusinya!</h1>
+            <p class="fw-light mt-3">Kami akan membantu Anda menetapkan tujuan untuk survei Anda dan merancang untuk
+                mencapainya.
+                Klik, rancang, dan simpan hal yang paling penting bagi Anda, semuanya di satu tempat.
             </p>
-            <a class="btn btn-light text-default fw-bold mt-5" href="/sign-up" role="button">Try for FREE</a>
+            <a class="btn btn-light text-default fw-bold mt-5 py-3 px-5" href="/sign-up" role="button">Coba Gratis</a>
         </div>
     </div>
 </section>
@@ -21,19 +22,23 @@
 {{-- Intro --}}
 <section class="intro py-5" id="intro">
     <div class="container">
-        <h3 class="fw-bold text-center">Go beyond collecting feedbacks!</h3>
-        <h4 class="fw-bold text-center">Explore other Surveyasia products that can help <br> drive change in your
-            organization</h4>
+        <div class="row justify-content-center text-center">
+            <div class="col-md-7">
+                <h2 class="fw-bold">Mudah, Aman, dan Terpercaya Gunakan Kesempatan Anda untuk Bergabung Bersama Kami
+                </h2>
+            </div>
+        </div>
+
         <div class="row flex-md-row-reverse pt-5">
             <div class="col-md-7 text-end">
-                <img src="/assets/img/prof_sales.png" alt="Sales" class="img-fluid" width="320">
+                <img src="/assets/img/our_advantages.png" alt="Our Advantages" class="img-fluid" width="350">
             </div>
             <div class="col-md-5">
-                <h6 class="fw-bold">Our Advantages</h6>
-                <p>Make surveys easier with different types of question and answer templates. Get respondents easily and
-                    reliably. Customize the chart report accordingly. The need to download reports in various price
-                    formats. Affordable and according to needs.</p>
-                <a class="btn btn-orange text-light mt-5" href="/sign-up" role="button">Make the survey</a>
+                <h4 class="fw-bold">Keunggulan Kami </h4>
+                <p>Membuat survei lebih mudah dengan berbagai jenis format pertanyaan dan jawaban. Mendapatkan responden
+                    dengan mudah dan terpercaya. Kustomisasi chart report sesuai kebutuhan. Download report dalam
+                    berbagai format. Harga terjangkau dan sesuai dengan kebutuhan.</p>
+                <a class="btn btn-orange text-light mt-5 py-3 px-5" href="/sign-up" role="button">Buat Survei</a>
             </div>
         </div>
     </div>
@@ -43,45 +48,43 @@
 {{-- Services --}}
 <section class="services py-5" id="services">
     <div class="container">
-        <h3 class="fw-bold">Our Services</h3>
+        <h3 class="fw-bold">Layanan Kami</h3>
         <hr>
         <div class="row flex-md-row-reverse py-5">
-            <div class="col-md-6">
+            <div class="col-md-8 text-end">
                 <img src="assets/img/service_1.png" alt="Service 1" class="img-fluid">
             </div>
-            <div class="col-md-6 align-self-center">
-                <h3 class="fw-bold">Popular Templates</h3>
-                <p class="mt-4">There are many variations of popular templates that will help you to be hustle free.
-                    Impress from the get-go with an interface that looks beautiful on any device. Customize your survey
-                    to be as unique as your brand. Or get started right away with hundreds of free templates in our
-                    gallery. </p>
+            <div class="col-md-4 align-self-center">
+                <h3 class="fw-bold">Format Populer</h3>
+                <p class="mt-4">Kami menyediakan berbagai format populer untuk menunjang kebutuhan Anda. Tinggal Klik
+                    dan dapatkan berbagai macam format menarik.</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <img src="assets/img/service_2.png" alt="Service 2" class="img-fluid">
             </div>
-            <div class="col-md-6 align-self-center">
-                <h3 class="fw-bold">Easy to customize</h3>
-                <p class="mt-4">Surveyasia are quick and easy to build: set up and share a beautiful survey in minutes.
-                    Use Integrations to automatically send data wherever you want it. Zero coding or onboarding needed.
+            <div class="col-md-4 align-self-center">
+                <h3 class="fw-bold">Mudah disesuaikan</h3>
+                <p class="mt-4">Surveyasia cepat dan mudah dibuat: siapkan dan bagikan survei cantik dalam hitungan
+                    menit. Gunakan Integrasi untuk mengirim data secara otomatis ke mana pun Anda inginkan.
                 </p>
             </div>
         </div>
         <div class="row flex-md-row-reverse">
-            <div class="col-md-6">
+            <div class="col-md-8 text-end">
                 <img src="assets/img/service_3.png" alt="Service 3" class="img-fluid">
             </div>
-            <div class="col-md-6 align-self-center">
-                <h3 class="fw-bold">Real-Time Monitoring</h3>
-                <p class="mt-4">Surveyasia responds to previous answers to show only the most relevant questions. A
-                    better experience for respondents = better data for you, presented in clear reports and metrics.</p>
+            <div class="col-md-4 align-self-center">
+                <h3 class="fw-bold">Pantau setiap saat</h3>
+                <p class="mt-4">SurveyAsia menanggapi jawaban sebelumnya untuk hanya menampilkan pertanyaan yang paling
+                    relevan. Pengalaman yang lebih baik untuk responden = data yang lebih baik untuk Anda dan disajikan
+                    dalam laporan dan metrik yang jelas.</p>
             </div>
         </div>
         <div class="row justify-content-center mt-5">
-            <div class="col-md-2">
-                <a href="/sign-up" class="btn btn-outline-orange bg-light w-100" role="button">Join to be a
-                    Researcher</a>
+            <div class="col-md-3">
+                <a href="/sign-up" class="btn btn-orange text-white py-3 w-100" role="button">Ayo jadi Researcher</a>
             </div>
         </div>
     </div>
@@ -91,22 +94,27 @@
 {{-- Intro 2 --}}
 <section class="intro-2 py-5" id="intro-2">
     <div class="container">
-        <h4 class="fw-bold text-center">Help us for our Innovation & <br> Get the Rewards</h4>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <h4 class="fw-bold text-center">Bantu kami untuk berinovasi dengan mengisi survei </h4>
+            </div>
+        </div>
         <div class="row pt-3">
             <div class="col-md-4 text-center">
                 <img src="/assets/img/intro_1.png" alt="Intro 1" class="img-fluid">
-                <h6 class="fw-bold">Your answer can help</h6>
-                <p>Your voice can help change the future</p>
+                <h6 class="fw-bold">Jawabanmu dapat <br> membantu kami</h6>
+                <p>Suaramu dapat membantu perubahan masa depan</p>
             </div>
             <div class="col-md-4 text-center">
                 <img src="/assets/img/intro_2.png" alt="Intro 2" class="img-fluid">
-                <h6 class="fw-bold">Use your free time wisely</h6>
-                <p>Spend 5 - 10 minutes with us, and it won't be sorely if you do useful and fun activities</p>
+                <h6 class="fw-bold">Menghabiskan waktu luang <br> yang bermanfaat</h6>
+                <p>Dengan waktu 5 - 10 menit tidak akan terasa jika kamu melakukan aktivitas yang bermanfaat dan
+                    menyenangkan</p>
             </div>
             <div class="col-md-4 text-center">
                 <img src="/assets/img/survey_promo_2.png" alt="Intro 3" class="img-fluid">
-                <h6 class="fw-bold">Many prizes await</h6>
-                <p>Collect prizes from every survey you take, as many as you want!</p>
+                <h6 class="fw-bold">Mudah dalam <br> pengisian Survei</h6>
+                <p>Desain yang elegan dan nyaman akan mempermudah anda dalam mengisi survei</p>
             </div>
         </div>
     </div>
@@ -116,14 +124,18 @@
 {{-- Survey Promo --}}
 <section class="survey-promo py-5" id="survey-promo">
     <div class="container">
-        <h4 class="fw-bold text-center">Get rewards by just filling out a survey <br> 5 - 10 minutes, anywhere.</h4>
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h4 class="fw-bold text-center">Dapatkan hadiah dengan hanya isi survei 5 - 10 menit di mana saja</h4>
+            </div>
+        </div>
         <div class="row pt-3 flex-md-row-reverse justify-content-center">
             <div class="col-md-5">
                 <img src="/assets/img/survey_promo_1.png" alt="Survey Promo 1" class="img-fluid">
             </div>
             <div class="col-md-5 text-center align-self-center">
-                <h3 class="fw-bold">Registration</h3>
-                <p>Register and fill in some short questions <br> about you</p>
+                <h3 class="fw-bold">Registrasi</h3>
+                <p>Daftar dan isi beberapa pertanyaan <br> singkat tentang anda</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -131,23 +143,16 @@
                 <img src="/assets/img/intro_3.png" alt="Survey Promo 2" class="img-fluid">
             </div>
             <div class="col-md-5 text-center align-self-center">
-                <h3 class="fw-bold">Answer the surveys</h3>
-                <p>Answer some surveys and get money. <br> Redeem your balance <br> for get a gift</p>
+                <h3 class="fw-bold">Dapatkan hadiah</h3>
+                <p>Jawab beberapa survei dan dapatkan <br> hadiah berupa uang tunai yang dapat <br> ditukarkan dengan
+                    hadiah
+                    menarik!</p>
             </div>
         </div>
-        {{-- <div class="row flex-md-row-reverse justify-content-center">
-            <div class="col-md-5">
-                <img src="/assets/img/survey_promo_3.png" alt="Survey Promo 3" class="img-fluid">
-            </div>
-            <div class="col-md-5 text-center align-self-center">
-                <h3 class="fw-bold">Get the rewards</h3>
-                <p>Redeem your points for <br> get a gift</p>
-            </div>
-        </div> --}}
         <div class="row justify-content-center mt-5">
-            <div class="col-md-2">
-                <a href="/upload-ktp" class="btn btn-outline-orange bg-light w-100" role="button">Join to be a
-                    Respondent</a>
+            <div class="col-md-3">
+                <a href="/upload-ktp" class="btn btn-default text-white py-3 w-100" role="button">Bergabung
+                    Responden</a>
             </div>
         </div>
     </div>

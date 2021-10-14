@@ -53,7 +53,7 @@ body {
 
 .survey-promo,
 .intro-2 {
-    background-color: #fcfdfe;
+    background-color: #f3faff;
 }
 
 .services hr {
@@ -113,13 +113,16 @@ body {
     background-size: cover;
 }
 
-.topic-card {
+.faq-card {
+    background-color: #fff;
     height: 150px;
     border-radius: 16px;
 }
 
-.vision-mission,
-.contact-info {
+.faq,
+.award,
+.partner,
+.tac {
     background-color: #f6f8fd;
 }
 
@@ -134,7 +137,9 @@ body {
 }
 
 .hero-blog img,
-.hero-blog .card {
+.hero-blog .card,
+.history-survey .card,
+.header-survey .card {
     border-radius: 16px;
 }
 
