@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.base')
-@extends('layouts.navbar2')
+@extends('layouts.navbar')
 
 @section('content')
 {{-- Hero About --}}
@@ -15,47 +15,48 @@
 </section>
 {{-- End Hero About --}}
 
-{{-- Choose Topic --}}
-<section class="choose-topic py-5" id="choose-topic">
+{{-- Choose FAQ --}}
+<section class="faq py-5" id="faq">
     <div class="container">
-        <h4 class="text-center">Pilih Topik</h4>
+        <h4 class="text-center">FAQ</h4>
+        <hr class="hr-vm-orange mx-auto">
         <div class="row justify-content-evenly mt-5">
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Template</p>
+                    <p>General Information</p>
                 </a>
             </div>
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Harga</p>
+                    <p>Respondent</p>
                 </a>
             </div>
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Blog</p>
+                    <p>Researcher</p>
                 </a>
             </div>
         </div>
         <div class="row justify-content-evenly mt-5">
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Penarikan Hadiah</p>
+                    <p>Template</p>
                 </a>
             </div>
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Create Survey</p>
+                    <p>Tukar Poin</p>
                 </a>
             </div>
-            <div class="col-md-3 d-flex align-items-center justify-content-center shadow topic-card">
+            <div class="col-md-3 d-flex align-items-center justify-content-center shadow faq-card">
                 <a href="#" class="text-decoration-none text-dark">
-                    <p>Pembayaran</p>
+                    <p>Question Bank</p>
                 </a>
             </div>
         </div>
     </div>
 </section>
-{{-- End Choose Topic --}}
+{{-- End Choose FAQ --}}
 
 {{-- Vision & Mission --}}
 <h4 class="text-center mt-3">Visi & Misi</h4>
@@ -82,6 +83,23 @@
         </div>
 </section>
 {{-- End Vision & Mission --}}
+
+{{-- Award --}}
+<section class="award py-5" id="award">
+    <div class="container">
+        <h4 class="text-center">Penghargaan</h4>
+        <hr class="hr-vm-orange mx-auto">
+        <div class="row mt-5">
+            @for ($i = 0; $i < 3; $i++) <div class="col-md-4 text-center">
+                <img src="/assets/img/ellipse_orange_2.png" alt="Ellipse" class="mb-3">
+                <h5>Lorem ipsum dolor sit amet</h5>
+                <p class="text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, soluta!</p>
+        </div>
+        @endfor
+    </div>
+    </div>
+</section>
+{{-- End Award --}}
 
 {{-- Partner --}}
 <section class="partner py-5" id="partner">
@@ -151,7 +169,10 @@
 {{-- TaC --}}
 <section class="tac py-5" id="tac">
     <div class="container">
-        <h4 class="mb-3">Syarat & Ketentuan</h4>
+        <span class="d-flex">
+            <h4 class="mb-3 me-2">Syarat & Ketentuan Penggunaan</h4>
+            <h4 class="text-orange">Surveyasia</h4>
+        </span>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet hic accusamus vitae ipsum officia
             rerum dicta deleniti ipsa facilis aut repudiandae enim minus, neque quidem aperiam corporis esse
             aliquam suscipit saepe necessitatibus quae obcaecati fuga ab. Exercitationem eveniet necessitatibus,
