@@ -20,15 +20,15 @@
             </div>
           </div>
           <p class="mt-3">Diharapkan agar file KTP yang diupload memiliki kualitas yang baik dan jelas.</p>
-          <div class="progress mt-4">
+          {{-- <div class="progress mt-4">
             <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0"
               aria-valuemax="100"></div>
-          </div>
+          </div> --}}
       </div>
     </div>
     <div class="row justify-content-center my-3">
       <div class="col-md-3">
-        <a class="btn btn-orange rounded-pill text-white my-3 w-100" href="/tempat-kerja" role="button">Selanjutnya</a>
+        <a class="btn btn-orange text-white my-3 w-100" href="/personal-data" role="button">Selanjutnya</a>
       </div>
     </div>
 
