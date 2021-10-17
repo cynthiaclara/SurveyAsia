@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**
@@ -41,4 +42,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get user's role, each user will have only one role so that the
+     * relation is one-to-one, or many
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
+    {
+        # code...
+        return $this->belongsTo(Role::class);
+    }
+
+    public function permissions()
+    {
+        # code...
+        return $this->hasManyThrough(Permission::class, Role::class);
+    }
 }

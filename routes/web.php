@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Researcher\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('/dashboard', 'home');
+
+Route::get('/research/login', [AuthController::class, 'loginForm']);
+
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+    Route::get('users', [\App\Http\Controllers\Admin\UserController::class, 'index']);
+});

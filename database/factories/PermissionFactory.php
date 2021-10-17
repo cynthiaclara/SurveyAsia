@@ -23,6 +23,8 @@ class PermissionFactory extends Factory
     {
         return [
             //
+            'name' => $this->faker->words(3, true),
+            'description' => $this->faker->text()
         ];
     }
 }
