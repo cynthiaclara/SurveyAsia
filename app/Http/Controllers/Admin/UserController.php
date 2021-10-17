@@ -21,9 +21,9 @@ class UserController extends Controller
         $rolesWithPermissions = Role::with('permissions')->get();
         $rolesWithUsers = Role::with('users')->get();
         $usersWithRole = User::with('role')->get();
-        $usersWithPermissions = User::find(1)->role;
+        //$usersWithPermissions = User::find(1)->role;
 
-        dd($usersWithPermissions);
+        dd($users);
     }
 
     /**

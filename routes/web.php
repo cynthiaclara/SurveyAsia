@@ -25,6 +25,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::view('/dashboard', 'home');
 
+Route::view('/admin-login', 'auth.admin.login')->name('view-admin-login');
+Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 'attemptLogin'])->name('attempt-admin-login');
+
 Route::get('/research/login', [AuthController::class, 'loginForm']);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
