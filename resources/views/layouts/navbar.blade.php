@@ -25,7 +25,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Welcome back, {{ auth()->user()->name }}
+              Welcome back, {{ auth()->user()->first_name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/"><i
@@ -53,7 +53,7 @@
               href="{{ route('login') }}" role="button">Masuk</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-default text-white" href="/pilih"
+            <a class="btn btn-default text-white" href="{{ route('register') }}"
               role="button">Bergabung</a>
           </li>
         @endauth

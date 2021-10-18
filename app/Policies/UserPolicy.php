@@ -10,6 +10,12 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
+    public function manageAll(User $user)
+    {
+        # code...
+        return $user->role_id == Role::IS_ADMIN;
+    }
+
     /**
      * Determine whether the user can view any models.
      *

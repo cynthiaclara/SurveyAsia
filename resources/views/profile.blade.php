@@ -47,7 +47,8 @@
             <a href="#" class="link-default text-decoration-none">Delete</a>
           </div>
           <div class="col">
-            <h3>{{ Auth::user()->name }}</h3>
+            <h3>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
+            </h3>
 
             @if (Auth::user()->subscription_id != null)
               <p>Show subscription name</p>
@@ -64,7 +65,8 @@
             <p class="fs-5">Nama</p>
           </div>
           <div class="col">
-            <p>{{ Auth::user()->name }}</p>
+            <p>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
+            </p>
           </div>
           <div class="col-md-1 text-end">
             <a href="#" class="link-default">Edit</a>
@@ -76,7 +78,7 @@
             <p class="fs-5">Username</p>
           </div>
           <div class="col">
-            <p>davidc</p>
+            <p>{{ Auth::user()->username }}</p>
           </div>
           <div class="col-md-1 text-end">
             <a href="#" class="link-default">Edit</a>

@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\News;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -19,6 +20,7 @@ class NewsPolicy
     public function viewAny(User $user)
     {
         //
+        return true;
     }
 
     /**
@@ -31,6 +33,7 @@ class NewsPolicy
     public function view(User $user, News $news)
     {
         //
+        return true;
     }
 
     /**
@@ -42,6 +45,7 @@ class NewsPolicy
     public function create(User $user)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -54,6 +58,7 @@ class NewsPolicy
     public function update(User $user, News $news)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -66,6 +71,7 @@ class NewsPolicy
     public function delete(User $user, News $news)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -78,6 +84,7 @@ class NewsPolicy
     public function restore(User $user, News $news)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -90,5 +97,6 @@ class NewsPolicy
     public function forceDelete(User $user, News $news)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 }

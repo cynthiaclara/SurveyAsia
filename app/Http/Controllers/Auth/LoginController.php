@@ -19,6 +19,7 @@ class LoginController extends Controller
     |
     */
 
+    // disable default authentication
     use AuthenticatesUsers;
 
     /**
@@ -36,5 +37,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLoginForm()
+    {
+        return view('auth_my.login');
     }
 }
