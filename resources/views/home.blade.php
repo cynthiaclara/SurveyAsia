@@ -17,7 +17,7 @@
           satu tempat.
         </p>
         <a class="btn btn-light text-default fw-bold mt-5 py-3 px-5"
-          href="/sign-up" role="button">Coba Gratis</a>
+          href="{{ route('register') }}" role="button">Coba Gratis</a>
       </div>
     </div>
   </section>
