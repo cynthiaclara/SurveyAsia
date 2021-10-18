@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
   <div class="container">
@@ -12,6 +12,12 @@
             @if ($errors->has('errors'))
               <div class="alert alert-danger" role="alert">
                 {{ $errors->first() }}
+              </div>
+            @endif
+
+            @if (Session::has('register_success'))
+              <div class="alert alert-success" role="alert">
+                {{ Session::get('register_success') }}
               </div>
             @endif
 

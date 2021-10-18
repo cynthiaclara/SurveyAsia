@@ -11,9 +11,11 @@ class Role extends Model
     use HasFactory, SoftDeletes;
 
     //define constants
-    public const IS_USER = 1;
-    public const IS_ADMIN = 2;
-    public const IS_MANAGER = 3;
+    public const IS_ADMIN = 1;
+    public const IS_FREE_USER = 2;
+    public const IS_ONE_TIME_USER = 3;
+    public const IS_SUBSCRIBER_USER = 4;
+    public const IS_RESPONDEN = 5;
 
     public $timestamps = true;
 
@@ -22,7 +24,7 @@ class Role extends Model
     public function permissions()
     {
         # code...
-        return $this->belongsToMany(Permission::class, 'role_permission');
+        return $this->belongsToMany(Permission::class, 'roles_permissions');
     }
 
     public function user()

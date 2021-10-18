@@ -15,7 +15,7 @@ class RolePermissionSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('role_permission')
+        DB::table('roles_permissions')
             ->insert(
                 [
                     //assign permissions for User roles. id = 1

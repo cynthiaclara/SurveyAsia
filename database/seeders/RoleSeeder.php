@@ -18,20 +18,32 @@ class RoleSeeder extends Seeder
         //
         Role::create([
             'id' => 1,
-            'name' => 'User',
-            'description' => 'This is a user role'
+            'name' => 'Administrator',
+            'description' => 'Administrator adalah user yang mampu mengakses seluruh struktur sistem'
         ]);
 
         Role::create([
             'id' => 2,
-            'name' => 'Administrator',
-            'description' => 'This is a admin role'
+            'name' => 'Free User',
+            'description' => 'Free User adalah salah satu bagian researcher yang mencakup kemampuan user gratis'
         ]);
 
         Role::create([
             'id' => 3,
-            'name' => 'Manager',
-            'description' => 'This is a manager role'
+            'name' => 'One Time User',
+            'description' => 'One Time User adalah salah satu bagian researcher yang mencakup kemampuan user sekali bayar'
+        ]);
+
+        Role::create([
+            'id' => 4,
+            'name' => 'Subscriber User',
+            'description' => 'Subscriber user adalah salah satu bagian researcher yang mencakup kemampuan user berlangganan'
+        ]);
+
+        Role::create([
+            'id' => 5,
+            'name' => 'Responden',
+            'description' => 'Responden adalah user yang memiliki kemampuan untuk menjawab survey dan memiliki reward'
         ]);
     }
 }

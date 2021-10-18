@@ -32,6 +32,6 @@ class AttemptLoginAction
         }
 
         $request->session()->regenerate();
-        return redirect()->to('admin/users');
+        return redirect()->to('admin');
     }
 }

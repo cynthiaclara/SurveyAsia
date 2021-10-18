@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddRoleForeignToUsersTable extends Migration
+class AddSubscriptionForeignToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,8 @@ class AddRoleForeignToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('role_id')->default(2); //default as User in Role
-
-            $table->foreign('role_id')->references('id')->on('roles')->cascadeOnDelete();
+            $table->unsignedBigInteger('subscription_id')->nullable();
+            $table->foreign('subscription_id')->references('id')->on('users_subscription')->onDelete('NO ACTION')->cascadeOnUpdate();
         });
     }
 
@@ -30,8 +29,8 @@ class AddRoleForeignToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropForeign('users_role_id_foreign');
-            $table->dropColumn('role_id');
+            $table->dropForeign('users_subscription_id_foreign');
+            $table->dropColumn('subscription_id');
         });
     }
 }

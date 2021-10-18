@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
+use Illuminate\Auth\Access\Gate;
+use Illuminate\Contracts\Auth\Access\Gate as AccessGate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate as FacadesGate;
 
 class UserController extends Controller
 {
@@ -17,13 +20,20 @@ class UserController extends Controller
     public function index()
     {
         //
+        //abort_if(!$user->can('viewAny', User::class), 403, 'Unauthorized');
         $users = User::get();
         $rolesWithPermissions = Role::with('permissions')->get();
         $rolesWithUsers = Role::with('users')->get();
         $usersWithRole = User::with('role')->get();
-        //$usersWithPermissions = User::find(1)->role;
+        //$usersWithPermissions = User::with('permissions')->get();
 
-        dd($users);
+        //dd($users);
+
+        $data = [
+            'users' => $users
+        ];
+
+        return view('admin.user.index', $data);
     }
 
     /**
@@ -90,5 +100,13 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+        //$this->authorize('delete', $user);
+        if (!FacadesGate::allows('delete', $user)) {
+            abort(403, 'Unauthorized');
+        }
+
+        $user->delete();
+
+        return redirect('admin/users')->with(['success' => 'User deleted']);
     }
 }
