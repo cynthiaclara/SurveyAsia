@@ -104,7 +104,7 @@
       </div>
       <div class="col mt-5 text-center">
         <p>
-          Sudah memiliki akun? <a href="/sign-in" class="link-default text-decoration-none fw-bold">Masuk
+          Sudah memiliki akun? <a href="{{ route('login') }}" class="link-default text-decoration-none fw-bold">Masuk
             Sekarang</a>
         </p>
       </div>

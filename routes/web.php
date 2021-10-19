@@ -40,13 +40,15 @@ Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playgrou
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 /* non-middleware routes */
 Route::view('/', 'home');
+Route::view('/about', 'about');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
+Route::view('/news', 'news');
+Route::view('/contact', 'contact');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
-
-
 
 /* Screening routes */
 Route::middleware(['auth'])->group(function () {
@@ -56,19 +58,31 @@ Route::middleware(['auth'])->group(function () {
     Route::view('/validate/personal', 'screening.personal-data')->name('personal-data-validate');
 });
 
-/* researcher routes */
+/* Researcher routes */
 Route::middleware('auth')->group(function () {
-    Route::view('/survey', 'researcher.dashboard');
+    Route::view('/researcher/dashboard', 'researcher.dashboard');
+    Route::view('/researcher/pricing', 'researcher.pricing');
+    Route::view('/researcher/payment', 'researcher.payment');
+    Route::view('/researcher/create-survey', 'researcher.create-survey');
+    Route::view('/researcher/customize-diagram', 'researcher.customize-diagram');
+    Route::view('/researcher/collect-respondent', 'researcher.collect-respondent');
+    Route::view('/researcher/status-survey', 'researcher.status-survey');
+    Route::view('/researcher/analytics-result', 'researcher.analytics-result');
 });
 
-/* survey routes */
+// Respondent Routes
 Route::middleware('auth')->group(function () {
-    Route::view('/survey', 'researcher.dashboard');
+    Route::view('/respondent/dashboard', 'respondent.dashboard');
 });
 
+/* Survey routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey/pre-survey', 'survey.pre-survey');
+    Route::view('/survey/history', 'survey.history');
+    Route::view('/survey/history/change-point', 'survey.change-point');
+});
 
 //forgot password
-
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 });
@@ -96,12 +110,11 @@ Route::get('/reset-password/{token}', function ($token) {
 // Route::post('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])
 //     ->middleware('guest')->name('password.update');
 
-    Route::post('/reset-password', 'ResetPasswordController@resetPassword');
-
+Route::post('/reset-password', 'ResetPasswordController@resetPassword');
 
 // Route::view('forgot_password', 'auth.reset')->name('password.reset');
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
-    // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
+// Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
 /* admin routes */
 Route::middleware(['is_admin'])->group(function () {

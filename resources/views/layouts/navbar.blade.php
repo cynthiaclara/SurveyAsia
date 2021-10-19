@@ -12,7 +12,7 @@
           <a class="nav-link" href="/about">Tentang Kami</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog">Blog</a>
+          <a class="nav-link" href="/blog">News</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contact">Kontak</a>
@@ -45,10 +45,10 @@
         </li>
         @else
         <li class="nav-item">
-          <a class="btn btn-outline-default mx-sm-3" href="/sign-in" role="button">Masuk</a>
+          <a class="btn btn-outline-default mx-sm-3" href="{{ route('login') }}" role="button">Masuk</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-default text-white" href="/sign-up" role="button">Bergabung</a>
+          <a class="btn btn-default text-white" href="{{ route('register') }}" role="button">Bergabung</a>
         </li>
         @endauth
         <li class="nav-item ms-3 me-2">

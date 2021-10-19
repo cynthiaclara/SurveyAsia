@@ -49,7 +49,7 @@
                         </a>
                         <a class="nav-link" href="#">
                             <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
-                            Video Tutorial
+                            Tutorial
                         </a>
                     </div>
                 </div>
