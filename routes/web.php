@@ -3,8 +3,21 @@
 use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\LinkedinController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Registercontroller;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
+use App\Http\Requests\ResetPasswordRequest;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Researcher\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +67,41 @@ Route::middleware('auth')->group(function () {
 });
 
 
+//forgot password
+
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+});
+
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->middleware('guest')->name('password.request');
+
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+        ? back()->with(['status' => __($status)])
+        : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.passwords.reset', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+// Route::post('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])
+//     ->middleware('guest')->name('password.update');
+
+    Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+
+
+// Route::view('forgot_password', 'auth.reset')->name('password.reset');
+// Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
+    // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
 /* admin routes */
 Route::middleware(['is_admin'])->group(function () {
