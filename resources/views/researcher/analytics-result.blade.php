@@ -30,15 +30,98 @@
                 </div>
             </div>
             <div class="col">
-                <div id="loadingIndicator">
-                    <span>
-                        <div id="loading">
-                            <strong>loading...</strong>
-                        </div>
-                    </span>
+                <div class="border rounded p-3">
+                    <h1 style="text-align: center;">Customer Satisfaction</h1>
+                    <table style="margin-left:auto;margin-right:auto">
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="zoomedChart"></div>
+                                    <div id="rangeSelector"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="pie" style="height: 440px; padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="chart3" style="padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container" ng-app="DemoApp" ng-controller="DemoController">
+                                    <div id="chart" dx-chart="chartOptions" style="height: 440px; padding-top: 50px;">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="chart5" style="padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="pie6" style="padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="gauge" style="height: 440px; padding-top: 50px;"></div>
+                                </div>
+                                <div id="grid" style="width: 440px; margin-left:auto;margin-right:auto"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="chart8" style="padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <div id="container9" style="height: 440px; padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="pyramid" style="width: 800px; padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="demo-container">
+                                    <div id="chart11" style="padding-top: 50px;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="padding-top: 20px;">
+                                    <canvas id="myChartgap"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div id="surveyElement" style="display:inline-block;width:100%;"></div>
-                <div id="surveyResult" class="border rounded"></div>
             </div>
         </div>
     </div>

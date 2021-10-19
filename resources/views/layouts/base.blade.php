@@ -29,15 +29,31 @@
   </script>
 
   {{-- Chart --}}
-  <script src="https://unpkg.com/jquery"></script>
-  <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
-  <script src="https://unpkg.com/survey-knockout@1.8.71/survey.ko.min.js"></script>
-  <script src="https://cdn.rawgit.com/inexorabletash/polyfill/master/typedarray.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://unpkg.com/wordcloud@1.1.0/src/wordcloud2.js"></script>
-  <link href="https://unpkg.com/survey-analytics@1.8.71/survey.analytics.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/survey-analytics@1.8.71/survey.analytics.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chart.piecelabel.js/0.15.0/Chart.PieceLabel.min.js"
+    integrity="sha512-pLEKa6g1uR205lfWRPuxwUa/aw1Yge1jOCvYr5WCL68gh3FoLi0eqMsIEtCvIXgZY0LwiRoMgiTfrpX7pK1HFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-doughnutlabel/2.0.3/chartjs-plugin-doughnutlabel.min.js"
+    integrity="sha512-bUT48RorCgRb7/kCkXnpNFwDr/xKF0o1vIFI9Y5NGYZ4uZCZBZTI4p6SygRqLkxxRsDSG4BEc7HNq8FOxeGEbA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js"
+    integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))
+  </script>
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.common.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.1.6/css/dx.light.css" />
+  <script src="https://cdn3.devexpress.com/jslib/21.1.6/js/dx.all.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="index.js"></script>
+  <script src="data.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
 
   <title>Surveyasia.id</title>
 </head>
