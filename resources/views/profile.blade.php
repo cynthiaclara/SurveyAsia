@@ -48,7 +48,7 @@
           <a href="#" class="link-default text-decoration-none">Delete</a>
         </div>
         <div class="col">
-          <h3>{{ Auth::user()->name }}</h3>
+          <h3>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h3>
 
           @if (Auth::user()->subscription_id != null)
           <p>Show subscription name</p>
@@ -111,14 +111,40 @@
             @endif
           </div>
         </div>
-        <div class="col-md-1 text-end">
+        <<<<<<< HEAD <div class="col-md-1 text-end">
           <a href="#" class="link-default">Edit</a>
-        </div>
-        <hr>
       </div>
-      <div class="row">
-        <div class="col-md-2">
-          <p class="fs-5">Bahasa</p>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <p class="fs-5">Bahasa</p>
+        =======
+        <div class="row mt-4">
+          <div class="col-md-2">
+            <p class="fs-5">Nama</p>
+          </div>
+          <div class="col">
+            <p>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
+            </p>
+          </div>
+          <div class="col-md-1 text-end">
+            <a href="#" class="link-default">Edit</a>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <p class="fs-5">Username</p>
+          </div>
+          <div class="col">
+            <p>{{ Auth::user()->username }}</p>
+          </div>
+          <div class="col-md-1 text-end">
+            <a href="#" class="link-default">Edit</a>
+          </div>
+          <hr>
+          >>>>>>> 4ae8ace7dc36d1cbb24ca0056cfd6029e9d62328
         </div>
         <div class="col">
           <p>Indonesia</p>
