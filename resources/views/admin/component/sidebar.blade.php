@@ -30,10 +30,10 @@
             <span class="ms-3 text-sidebar" aria-current="page" href="#">User</span>
         </div>
     </a>
-    <a href="#" class="text-decoration-none">
+    <a href="{{ route('news.index') }}" class="text-decoration-none">
         <div class="d-flex align-items-center px-4 py-3">
             <img src="{{ asset('assets/img/vec-blog.svg') }}" alt="" width="16px" height="16px">
-            <span class="ms-3 text-sidebar" aria-current="page" href="#">Blog</span>
+            <span class="ms-3 text-sidebar" aria-current="page" href="#">News</span>
         </div>
     </a>
 

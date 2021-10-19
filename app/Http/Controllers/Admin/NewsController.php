@@ -15,7 +15,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('news.index', [
+        return view('admin.news.index', [
             'news' => News::get()
         ]);
     }
@@ -27,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('news.index', [
+        return view('admin.news.index', [
             'news' => News::get()
         ]);
     }
@@ -69,7 +69,7 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        return view('news.edit', [
+        return view('admin.news.edit', [
             // 'title' => 'edit news',
             'news' => $news,
             "submit" => "Update"

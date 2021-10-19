@@ -117,8 +117,8 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
 /* admin routes */
-Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
 Route::middleware(['is_admin'])->group(function () {
+    Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
 
     /* show admin dashboard */
 
@@ -144,6 +144,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
+    // show news
     Route::resource('news', NewsController::class);
 });
 
