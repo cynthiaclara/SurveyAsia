@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-10">
                         <p style="margin-bottom: 0px">Selamat Datang!</p>
-                        {{ auth()->user()->name }}
+                        {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
                     </div>
                 </div>
                 <div class="row mt-4">

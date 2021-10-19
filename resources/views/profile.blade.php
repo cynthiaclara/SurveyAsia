@@ -64,7 +64,7 @@
           <p class="fs-5">Nama</p>
         </div>
         <div class="col">
-          <p>{{ Auth::user()->name }}</p>
+          <p>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</p>
         </div>
         <div class="col-md-1 text-end">
           <a href="#" class="link-default">Edit</a>
@@ -76,7 +76,7 @@
           <p class="fs-5">Username</p>
         </div>
         <div class="col">
-          <p>davidc</p>
+          <p>{{ Auth::user()->username }}</p>
         </div>
         <div class="col-md-1 text-end">
           <a href="#" class="link-default">Edit</a>
@@ -111,40 +111,14 @@
             @endif
           </div>
         </div>
-        <<<<<<< HEAD <div class="col-md-1 text-end">
+        <div class="col-md-1 text-end">
           <a href="#" class="link-default">Edit</a>
-      </div>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <p class="fs-5">Bahasa</p>
-        =======
-        <div class="row mt-4">
-          <div class="col-md-2">
-            <p class="fs-5">Nama</p>
-          </div>
-          <div class="col">
-            <p>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
-            </p>
-          </div>
-          <div class="col-md-1 text-end">
-            <a href="#" class="link-default">Edit</a>
-          </div>
-          <hr>
         </div>
-        <div class="row">
-          <div class="col-md-2">
-            <p class="fs-5">Username</p>
-          </div>
-          <div class="col">
-            <p>{{ Auth::user()->username }}</p>
-          </div>
-          <div class="col-md-1 text-end">
-            <a href="#" class="link-default">Edit</a>
-          </div>
-          <hr>
-          >>>>>>> 4ae8ace7dc36d1cbb24ca0056cfd6029e9d62328
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <p class="fs-5">Bahasa</p>
         </div>
         <div class="col">
           <p>Indonesia</p>

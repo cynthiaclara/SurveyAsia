@@ -24,7 +24,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Welcome back, {{ auth()->user()->name }}
+            Welcome back, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/"><i class="fas fa-user fa-fw"></i> Beranda</a></li>
