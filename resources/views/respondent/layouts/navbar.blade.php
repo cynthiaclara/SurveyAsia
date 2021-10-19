@@ -9,13 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link link-default" href="/">Home</a>
+                    <a class="nav-link" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-default" href="#">Riwayat</a>
+                    <a class="nav-link" href="/contact">Kontak</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-default me-3" href="/news">News</a>
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-3" href="/survey/history">Riwayat Survey</a>
                 </li>
                 @auth
                 <li>
@@ -27,9 +30,9 @@
                         {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/"><i class="fas fa-user fa-fw"></i> Home</a></li>
+                        <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="/researcher/dashboard"><i
-                                    class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a></li>
+                                    class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -37,7 +40,32 @@
                             <form action="/logout" method="post">
                                 @csrf
                                 <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i>
-                                    Logout</button>
+                                    Keluar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                @else
+                <li>
+                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        David
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="/researcher/dashboard"><i
+                                    class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt fa-fw"></i>
+                                    Keluar</button>
                             </form>
                         </li>
                     </ul>
