@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Researcher\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -79,3 +80,10 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+
+// news
+Route::resource('news', NewsController::class);
+// Route::get('/news', [NewsController::class, 'index'])->name('news');
+// Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+// Route::post('/news', [NewsController::class, 'store'])->name('news.store');
