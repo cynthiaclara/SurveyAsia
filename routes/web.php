@@ -110,17 +110,18 @@ Route::get('/reset-password/{token}', function ($token) {
 // Route::post('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])
 //     ->middleware('guest')->name('password.update');
 
-Route::post('/reset-password', 'ResetPasswordController@resetPassword');
+Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']);
 
 // Route::view('forgot_password', 'auth.reset')->name('password.reset');
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
 /* admin routes */
+Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
 Route::middleware(['is_admin'])->group(function () {
 
     /* show admin dashboard */
-    Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
+
 
     /* show all users */
     Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users.index');
@@ -155,9 +156,3 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
-
-
-// news
-// Route::get('/news', [NewsController::class, 'index'])->name('news');
-// Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
-// Route::post('/news', [NewsController::class, 'store'])->name('news.store');
