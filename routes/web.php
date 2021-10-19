@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('/dashboard', 'home');
+Route::view('/admin/dashboard', 'home');
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
 
@@ -57,6 +57,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
+    Route::resource('news', NewsController::class);
 });
 
 Route::middleware('auth')->group(function () {
@@ -75,7 +76,6 @@ Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::clas
 
 
 // news
-Route::resource('news', NewsController::class);
 // Route::get('/news', [NewsController::class, 'index'])->name('news');
 // Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
 // Route::post('/news', [NewsController::class, 'store'])->name('news.store');
