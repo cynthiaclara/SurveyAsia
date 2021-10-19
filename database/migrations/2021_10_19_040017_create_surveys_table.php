@@ -15,7 +15,7 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
+            $table->string('judul_survey');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('role_id');
             $table->timestamps();
