@@ -16,55 +16,42 @@ use App\Http\Controllers\Researcher\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/sign-in', function () {
-    return view('auth_my.login');
-})->name('login');
-
-Route::get('/sign-up', function () {
-    return view('auth_my.register');
-})->name('register');
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::view('/dashboard', 'home');
+//for testing purpose
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
-Route::get('/about', function () {
-    return view('about');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/* non-middleware routes */
+Route::view('/', 'home');
+
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+
+
+
+/* Screening routes */
+Route::middleware(['auth'])->group(function () {
+    /* screening routes */
+    Route::view('/pilih', 'screening.pilih')->name('pilih');
+    Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
+    Route::view('/validate/personal', 'screening.personal-data')->name('personal-data-validate');
 });
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
-
-Route::get('/contact', function () {
-    return view('contact');
+/* researcher routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
 });
 
-Route::get('/news', function () {
-    return view('news');
+/* survey routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
 });
 
-// Pre Screening
-Route::get('/choose-role', function () {
-    return view('screening/choose-role');
-});
 
-Route::get('/upload-ktp', function () {
-    return view('screening/upload-ktp');
-});
 
-Route::get('/personal-data', function () {
-    return view('screening/personal-data');
-});
-
-Route::get('/researcher/login', [AuthController::class, 'loginForm']);
-
+/* admin routes */
 Route::middleware(['is_admin'])->group(function () {
 
     /* show admin dashboard */
@@ -91,49 +78,6 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-});
-
-Route::middleware('auth')->group(function () {
-    // Researcher
-    Route::get('/researcher/dashboard', function () {
-        return view('researcher/dashboard');
-    });
-    Route::get('/researcher/pricing', function () {
-        return view('researcher/pricing');
-    });
-    Route::get('/researcher/create-survey', function () {
-        return view('researcher/create-survey');
-    });
-    Route::get('/researcher/customize-diagram', function () {
-        return view('researcher/customize-diagram');
-    });
-    Route::get('/researcher/collect-respondent', function () {
-        return view('researcher/collect-respondent');
-    });
-    Route::get('/researcher/status-survey', function () {
-        return view('researcher/status-survey');
-    });
-    Route::get('/researcher/analytics-result', function () {
-        return view('researcher/analytics-result');
-    });
-
-    // Respondent
-    Route::get('/respondent/dashboard', function () {
-        return view('respondent/dashboard');
-    });
-
-    // Survey
-    Route::get('/survey/pre-survey', function () {
-        return view('survey/pre-survey');
-    });
-    Route::get('/survey/history', function () {
-        return view('survey/history');
-    });
-    Route::get('/survey/history/change-point', function () {
-        return view('survey/change-point');
-    });
-
-    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
 });
 
 
