@@ -12,7 +12,7 @@ class AttemptLoginAction
     public function execute(AdminLoginRequest $request)
     {
         # code...
-        $user = User::where(['name' => $request->login])
+        $user = User::where(['username' => $request->login])
             ->orWhere(['email' => $request->login])
             ->get()->first();
 

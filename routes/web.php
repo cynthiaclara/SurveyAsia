@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Researcher\AuthController;
+use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ResetPasswordController;
@@ -15,7 +15,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use App\Http\Requests\ResetPasswordRequest;
-
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Researcher\AuthController;
 
 
 /*
@@ -29,20 +30,42 @@ use App\Http\Requests\ResetPasswordRequest;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
+//for testing purpose
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('/dashboard', 'home');
+Route::view('/admin/dashboard', 'home');
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/research/login', [AuthController::class, 'loginForm']);
+/* non-middleware routes */
+Route::view('/', 'home');
+
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+
+
+
+/* Screening routes */
+Route::middleware(['auth'])->group(function () {
+    /* screening routes */
+    Route::view('/pilih', 'screening.pilih')->name('pilih');
+    Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
+    Route::view('/validate/personal', 'screening.personal-data')->name('personal-data-validate');
+});
+
+/* researcher routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
+});
+
+/* survey routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
+});
+
 
 //forgot password
 
@@ -80,6 +103,7 @@ Route::get('/reset-password/{token}', function ($token) {
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
     // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
+/* admin routes */
 Route::middleware(['is_admin'])->group(function () {
 
     /* show admin dashboard */
@@ -106,10 +130,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
+    Route::resource('news', NewsController::class);
 });
 
 
@@ -121,3 +142,9 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+
+// news
+// Route::get('/news', [NewsController::class, 'index'])->name('news');
+// Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+// Route::post('/news', [NewsController::class, 'store'])->name('news.store');

@@ -3,6 +3,7 @@
 @extends('layouts.navbar')
 
 @section('content')
+
   {{-- Landing Page --}}
   <section class="landing-page bg-default" id="landing-page">
     <div class="row flex-md-row-reverse h-75">
@@ -17,7 +18,7 @@
           satu tempat.
         </p>
         <a class="btn btn-light text-default fw-bold mt-5 py-3 px-5"
-          href="{{ route('register') }}" role="button">Coba Gratis</a>
+          href="/sign-up" role="button">Coba Gratis</a>
       </div>
     </div>
   </section>
@@ -46,11 +47,10 @@
             dengan mudah dan terpercaya. Kustomisasi chart report sesuai
             kebutuhan. Download report dalam
             berbagai format. Harga terjangkau dan sesuai dengan kebutuhan.</p>
-          <a class="btn btn-orange text-light mt-5 py-3 px-5" href="/sign-up"
-            role="button">Buat Survei</a>
+          <a class="btn btn-orange text-light mt-5 py-3 px-5"
+            href="{{ route('register') }}" role="button">Buat Survei</a>
         </div>
       </div>
-    </div>
   </section>
   {{-- End Intro --}}
 
@@ -178,7 +178,7 @@
       </div>
       <div class="row justify-content-center mt-5">
         <div class="col-md-3">
-          <a href="/upload-ktp" class="btn btn-default text-white py-3 w-100"
+          <a href="/sign-up" class="btn btn-default text-white py-3 w-100"
             role="button">Bergabung
             Responden</a>
         </div>
