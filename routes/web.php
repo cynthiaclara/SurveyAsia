@@ -78,6 +78,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
+    Route::resource('news', NewsController::class);
 });
 
 
@@ -89,3 +90,9 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+
+// news
+// Route::get('/news', [NewsController::class, 'index'])->name('news');
+// Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+// Route::post('/news', [NewsController::class, 'store'])->name('news.store');

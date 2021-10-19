@@ -15,7 +15,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        return view('news.index', [
+            'news' => News::get()
+        ]);
     }
 
     /**
@@ -25,7 +27,9 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('news.index', [
+            'news' => News::get()
+        ]);
     }
 
     /**
@@ -36,7 +40,12 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        News::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'status' => '0'
+        ]);
+        return back();
     }
 
     /**
@@ -58,7 +67,11 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('news.edit', [
+            // 'title' => 'edit news',
+            'news' => $news,
+            "submit" => "Update"
+        ]);
     }
 
     /**
@@ -68,9 +81,13 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($request->title);
+        News::where('id', $id)->update([
+            'title' => $request->title
+        ]);
+        return back();
     }
 
     /**
@@ -79,8 +96,9 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-        //
+        News::find($id)->delete();
+        return back();
     }
 }

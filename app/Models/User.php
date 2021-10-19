@@ -73,4 +73,12 @@ class User extends Authenticatable
         # code...
         return $this->hasManyThrough(Permission::class, Role::class);
     }
+
+    public static function hitungUser()
+    {
+        // $users = User::withCount('username')->get();
+        $users = User::count();
+        // $user->follows->count();
+        return $users;
+    }
 }
