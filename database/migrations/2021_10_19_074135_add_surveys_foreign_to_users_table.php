@@ -14,7 +14,7 @@ class AddSurveysForeignToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('survey_id');
+            $table->unsignedBigInteger('survey_id')->nullable();
             $table->foreign('survey_id')->references('id')->on('surveys')->cascadeOnDelete();
         });
     }
