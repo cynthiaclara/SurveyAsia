@@ -23,7 +23,7 @@
     <div class="col-md-7 sign-up-right justify-content-center">
       <h3 class="mb-3 fw-bold">Buat akun Surveyasia</h3>
       <h6 class="mb-5">Gratis dan mudah</h6>
-      <form action="/sign-up" method="post">
+      <form action="{{ route('register') }}" method="post">
         @csrf
         <div class="row">
           <div class="col">

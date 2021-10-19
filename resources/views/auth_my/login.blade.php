@@ -24,7 +24,7 @@
       <h1>👋</h1>
       <h3 class="mb-3 fw-bold">Selamat datang kembali!</h3>
       <h6 class="mb-5">Mari membuat sesuatu yang hebat</h6>
-      <form action="/sign-in" method="POST">
+      <form action="{{ route('login') }}" method="POST">
         @csrf
         @if(session()->has('success'))
         <div class="alert alert-info alert-dismissible fade show" role="alert">

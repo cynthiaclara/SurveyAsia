@@ -21,11 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/sign-in', function () {
-    return view('auth.login');
+    return view('auth_my.login');
 })->name('login');
 
 Route::get('/sign-up', function () {
-    return view('auth.register');
+    return view('auth_my.register');
 })->name('register');
 
 Auth::routes();
