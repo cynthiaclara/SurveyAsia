@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Researcher\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Researcher\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +20,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/login', function () {
-    return view('auth_my.login');
+Route::get('/sign-in', function () {
+    return view('auth.login');
 })->name('login');
 
-Route::get('/register', function () {
-    return view('home');
-});
+Route::get('/sign-up', function () {
+    return view('auth.register');
+})->name('register');
 
 Auth::routes();
 
@@ -34,9 +35,35 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::view('/dashboard', 'home');
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
+Route::get('/about', function () {
+    return view('about');
+});
 
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
 
-Route::get('/research/login', [AuthController::class, 'loginForm']);
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/news', function () {
+    return view('news');
+});
+
+// Pre Screening
+Route::get('/choose-role', function () {
+    return view('screening/choose-role');
+});
+
+Route::get('/upload-ktp', function () {
+    return view('screening/upload-ktp');
+});
+
+Route::get('/personal-data', function () {
+    return view('screening/personal-data');
+});
+
+Route::get('/researcher/login', [AuthController::class, 'loginForm']);
 
 Route::middleware(['is_admin'])->group(function () {
 
@@ -67,6 +94,45 @@ Route::middleware(['is_admin'])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    // Researcher
+    Route::get('/researcher/dashboard', function () {
+        return view('researcher/dashboard');
+    });
+    Route::get('/researcher/pricing', function () {
+        return view('researcher/pricing');
+    });
+    Route::get('/researcher/create-survey', function () {
+        return view('researcher/create-survey');
+    });
+    Route::get('/researcher/customize-diagram', function () {
+        return view('researcher/customize-diagram');
+    });
+    Route::get('/researcher/collect-respondent', function () {
+        return view('researcher/collect-respondent');
+    });
+    Route::get('/researcher/status-survey', function () {
+        return view('researcher/status-survey');
+    });
+    Route::get('/researcher/analytics-result', function () {
+        return view('researcher/analytics-result');
+    });
+
+    // Respondent
+    Route::get('/respondent/dashboard', function () {
+        return view('respondent/dashboard');
+    });
+
+    // Survey
+    Route::get('/survey/pre-survey', function () {
+        return view('survey/pre-survey');
+    });
+    Route::get('/survey/history', function () {
+        return view('survey/history');
+    });
+    Route::get('/survey/history/change-point', function () {
+        return view('survey/change-point');
+    });
+
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
 });
 
