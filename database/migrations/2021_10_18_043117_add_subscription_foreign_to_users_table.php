@@ -16,7 +16,7 @@ class AddSubscriptionForeignToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->unsignedBigInteger('subscription_id')->nullable();
-            $table->foreign('subscription_id')->references('id')->on('users_subscription')->onDelete('NO ACTION')->cascadeOnUpdate();
+            // $table->foreign('subscription_id')->references('id')->on('users_subscription')->onDelete('NO ACTION')->cascadeOnUpdate();
         });
     }
 
@@ -29,7 +29,7 @@ class AddSubscriptionForeignToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropForeign('users_subscription_id_foreign');
+            // $table->dropForeign('users_subscription_id_foreign');
             $table->dropColumn('subscription_id');
         });
     }
