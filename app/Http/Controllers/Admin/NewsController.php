@@ -43,7 +43,9 @@ class NewsController extends Controller
         News::create([
             'title' => $request->title,
             'description' => $request->description,
-            'status' => '0'
+            'status' => '0',
+            'category' => '1',
+            'author' => '1',
         ]);
         return back();
     }
@@ -85,7 +87,8 @@ class NewsController extends Controller
     {
         // dd($request->title);
         News::where('id', $id)->update([
-            'title' => $request->title
+            'title' => $request->title,
+            'description' => $request->description
         ]);
         return back();
     }

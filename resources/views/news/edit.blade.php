@@ -8,7 +8,14 @@
                 <form action="{{ route('news.update', $news->id) }}" method="post">
                     @method('put')
                     @csrf
-                    <input type="text" name="title" id="" class="form-control" value="{{ $news->title }}">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ $news->title }}">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="" cols="10" rows="3" placeholder="description">{{ $news->decription }}</textarea>
+                      </div>
                     <button type="submit" class="btn btn-primary">update</button>
                 </form>
             </div>
