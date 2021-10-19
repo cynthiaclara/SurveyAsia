@@ -18,6 +18,7 @@
         rel="stylesheet">
 
     {{-- My CSS --}}
+    <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/style.css">
 
     {{-- Favicon --}}
@@ -28,29 +29,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
     </script>
 
-    {{-- Chart --}}
-    <script src="https://unpkg.com/jquery"></script>
-    <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
-    <script src="https://unpkg.com/survey-knockout@1.8.71/survey.ko.min.js"></script>
-    <script src="https://cdn.rawgit.com/inexorabletash/polyfill/master/typedarray.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://unpkg.com/wordcloud@1.1.0/src/wordcloud2.js"></script>
-    <link href="https://unpkg.com/survey-analytics@1.8.71/survey.analytics.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/survey-analytics@1.8.71/survey.analytics.min.js"></script>
-
-    <title>Surveyasia.id</title>
+    <title>Researcher | Surveyasia.id</title>
 </head>
 
 <body>
 
-    @yield('content')
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-light shadow" id="sidenavAccordion">
+                <div class="sb-sidenav-menu py-5">
+                    <div class="nav">
+                        <a class="nav-link" href="/researcher/dashboard">
+                            <div class="sb-nav-link-icon"><i class="fas fa-home fa-fw"></i></div>
+                            Beranda
+                        </a>
+                        <a class="nav-link" href="/researcher/pricing">
+                            <div class="sb-nav-link-icon"><i class="fas fa-money-check-alt fa-fw"></i></div>
+                            Harga
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
+                            Video Tutorial
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+
+                @yield('content')
+
+            </main>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="/js/index.js"></script>
-    <script src="/js/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
 </body>
 
 </html>
