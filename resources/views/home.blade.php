@@ -46,8 +46,8 @@
             dengan mudah dan terpercaya. Kustomisasi chart report sesuai
             kebutuhan. Download report dalam
             berbagai format. Harga terjangkau dan sesuai dengan kebutuhan.</p>
-          <a class="btn btn-orange text-light mt-5 py-3 px-5" href="/sign-up"
-            role="button">Buat Survei</a>
+          <a class="btn btn-orange text-light mt-5 py-3 px-5"
+            href="{{ route('register') }}" role="button">Buat Survei</a>
         </div>
       </div>
     </div>

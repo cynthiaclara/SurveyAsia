@@ -15,21 +15,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::view('/dashboard', 'home');
+//for testing purpose
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/research/login', [AuthController::class, 'loginForm']);
+/* non-middleware routes */
+Route::view('/', 'home');
 
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+
+
+
+/* Screening routes */
+Route::middleware(['auth'])->group(function () {
+    /* screening routes */
+    Route::view('/pilih', 'screening.pilih')->name('pilih');
+    Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
+    Route::view('/validate/personal', 'screening.personal-data')->name('personal-data-validate');
+});
+
+/* researcher routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
+});
+
+/* survey routes */
+Route::middleware('auth')->group(function () {
+    Route::view('/survey', 'researcher.dashboard');
+});
+
+
+
+/* admin routes */
 Route::middleware(['is_admin'])->group(function () {
 
     /* show admin dashboard */
@@ -56,10 +77,6 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile']);
 });
 
 
