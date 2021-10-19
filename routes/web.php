@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
@@ -19,6 +20,9 @@ use App\Http\Controllers\Researcher\AuthController;
 Auth::routes();
 
 //for testing purpose
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('/admin/dashboard', 'home');
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -78,6 +82,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
+    Route::resource('news', NewsController::class);
 });
 
 
@@ -89,3 +94,9 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+
+// news
+// Route::get('/news', [NewsController::class, 'index'])->name('news');
+// Route::get('/news/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+// Route::post('/news', [NewsController::class, 'store'])->name('news.store');
