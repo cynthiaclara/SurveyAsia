@@ -2,12 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\News;
-use App\Models\Role;
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class NewsPolicy
+class TransactionPolicy
 {
     use HandlesAuthorization;
 
@@ -20,20 +19,18 @@ class NewsPolicy
     public function viewAny(User $user)
     {
         //
-        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, News $news)
+    public function view(User $user, Transaction $transaction)
     {
         //
-        return true;
     }
 
     /**
@@ -45,58 +42,53 @@ class NewsPolicy
     public function create(User $user)
     {
         //
-        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, News $news)
+    public function update(User $user, Transaction $transaction)
     {
         //
-        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, News $news)
+    public function delete(User $user, Transaction $transaction)
     {
         //
-        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, News $news)
+    public function restore(User $user, Transaction $transaction)
     {
         //
-        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Transaction  $transaction
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, News $news)
+    public function forceDelete(User $user, Transaction $transaction)
     {
         //
-        return $user->role_id == Role::IS_ADMIN;
     }
 }

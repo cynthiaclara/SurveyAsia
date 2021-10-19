@@ -18,6 +18,10 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('status', 1);
+            $table->string('category');
+            $table->string('author');
+            // $table->mediumText('content');
+
             $table->softDeletes();
             $table->timestamps();
         });

@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'username',
+        'first_name',
+        'last_name',
         'email',
         'password',
         'role_id'
@@ -53,6 +55,18 @@ class User extends Authenticatable
     {
         # code...
         return $this->belongsTo(Role::class);
+    }
+
+    public function subscription()
+    {
+        # code...
+        return $this->hasOne(Subscription::class, 'user_id');
+    }
+
+    public function subscriptions()
+    {
+        # code...
+        return $this->hasMany(Subscription::class, 'user_id');
     }
 
     public function permissions()

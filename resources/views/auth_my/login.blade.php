@@ -26,7 +26,7 @@
         <h1>👋</h1>
         <h3 class="mb-3 fw-bold">Selamat datang kembali!</h3>
         <h6 class="mb-5">Mari membuat sesuatu yang hebat</h6>
-        <form action="/sign-in" method="POST">
+        <form action="{{ route('login') }}" method="POST">
           @csrf
           @if (session()->has('success'))
             <div class="alert alert-info alert-dismissible fade show"
@@ -72,16 +72,13 @@
           password?</a>
         <p class="text-center mt-3 text-secondary">atau masuk dengan akun lain</p>
         <div class="d-flex justify-content-center">
-          <a href="{{ route('google.login') }}"><img
-              src="assets/img/btn_google.png" alt="Google" /></a>
-          <a href="{{ route('facebook.login') }}"><img
-              src="assets/img/btn_facebook.png" alt="Facebook" /></a>
-          <a href="{{ route('linkedin.login') }}"><img
-              src="assets/img/btn_linkedin.png" alt="LinkedIn" /></a>
+          <a href=""><img src="assets/img/btn_google.png" alt="Google" /></a>
+          <a href=""><img src="assets/img/btn_facebook.png" alt="Facebook" /></a>
+          <a href=""><img src="assets/img/btn_linkedin.png" alt="LinkedIn" /></a>
         </div>
         <div class="col mt-5 text-center">
           <p>
-            Tidak memiliki akun? <a href="/pilih"
+            Tidak memiliki akun? <a href="{{ route('register') }}"
               class="link-info text-decoration-none fw-bold">Buat Akun</a>
           </p>
         </div>
