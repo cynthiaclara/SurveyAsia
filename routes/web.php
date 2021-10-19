@@ -79,3 +79,8 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+//View login super admin by fe
+Route::get('/admin/list-user', function () {
+    return view('admin.auth.list-user');
+});
