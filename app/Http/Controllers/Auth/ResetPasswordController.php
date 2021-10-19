@@ -28,18 +28,18 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    public function reset(ResetPasswordRequest $request) {
-        $reset_password_status = Password::reset($request->validated(), function ($user, $password) {
-            $user->password = $password;
-            $user->save();
-        });
+    // public function reset(ResetPasswordRequest $request) {
+    //     $reset_password_status = Password::reset($request->validated(), function ($user, $password) {
+    //         $user->password = $password;
+    //         $user->save();
+    //     });
 
-        if ($reset_password_status == Password::INVALID_TOKEN) {
-            return $this->respondBadRequest(ApiCode::INVALID_RESET_PASSWORD_TOKEN);
-        }
+    //     if ($reset_password_status == Password::INVALID_TOKEN) {
+    //         return $this->respondBadRequest(ApiCode::INVALID_RESET_PASSWORD_TOKEN);
+    //     }
 
-        return $this->respondWithMessage("Password has been successfully changed");
-    }
+    //     return $this->respondWithMessage("Password has been successfully changed");
+    // }
 
     
 }
