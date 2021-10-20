@@ -24,7 +24,7 @@
             Transaction History</p>
         </a>
         <a href="#" class="link-dark text-decoration-none">
-          <p class="mt-3 ms-3"><i class="fas fa-tv fa-fw"></i> Video Tutorial
+          <p class="mt-3 ms-3"><i class="fas fa-tv fa-fw"></i> Tutorial
           </p>
         </a>
         <a href="#" class="link-dark text-decoration-none">

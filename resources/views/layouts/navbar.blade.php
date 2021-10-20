@@ -13,7 +13,7 @@
           <a class="nav-link" href="/about">Tentang Kami</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blog">Blog</a>
+          <a class="nav-link" href="/blog">News</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contact">Kontak</a>

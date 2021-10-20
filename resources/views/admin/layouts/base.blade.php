@@ -9,7 +9,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+    {{-- Bootstrap Icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +19,11 @@
         rel="stylesheet">
 
     {{-- My CSS --}}
-    <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/style.css">
+    {{-- <link rel="stylesheet" href="/css/style.css"> --}}
+    
+
+    
+    @yield('css')
 
     {{-- Favicon --}}
     <link rel='icon' type='image/png' href='/favicon-surveyasia-32.png' />
@@ -29,45 +33,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
     </script>
 
-    <title>Researcher | Surveyasia.id</title>
+    <title>Surveyasia.id</title>
 </head>
 
 <body>
 
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-light shadow" id="sidenavAccordion">
-                <div class="sb-sidenav-menu py-5">
-                    <div class="nav">
-                        <a class="nav-link" href="/researcher/dashboard">
-                            <div class="sb-nav-link-icon"><i class="fas fa-home fa-fw"></i></div>
-                            Beranda
-                        </a>
-                        <a class="nav-link" href="/researcher/pricing">
-                            <div class="sb-nav-link-icon"><i class="fas fa-money-check-alt fa-fw"></i></div>
-                            Harga
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
-                            Tutorial
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-
-                @yield('content')
-
-            </main>
-        </div>
-    </div>
+    @yield('content')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="/js/dashboard.js"></script>
+    <script src="/js/index.js"></script>
+
+    @yield('script')
+
 </body>
 
 </html>

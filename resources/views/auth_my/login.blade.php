@@ -79,7 +79,7 @@
         </div>
         <div class="col mt-5 text-center">
           <p>
-            Tidak memiliki akun? <a href="/sign-up"
+            Tidak memiliki akun? <a href="{{ route('register') }}"
               class="link-info text-decoration-none fw-bold">Buat Akun</a>
           </p>
         </div>

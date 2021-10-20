@@ -23,7 +23,8 @@ class User extends Authenticatable
         'last_name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'survey_id'
     ];
 
     /**
@@ -48,7 +49,7 @@ class User extends Authenticatable
     /**
      * Get user's role, each user will have only one role so that the
      * relation is one-to-one, or many
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function role()
