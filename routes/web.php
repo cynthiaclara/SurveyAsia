@@ -164,7 +164,7 @@ Route::get('/login-admin', function () {
 });
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
-});
+  })->name('admin-users');
 Route::get('/admin/news', function () {
     return view('admin.auth.news');
 });
