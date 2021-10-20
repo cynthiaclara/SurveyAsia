@@ -161,4 +161,4 @@ Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::clas
 //View login super admin by fe
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
-});
+})->name('admin-users');
