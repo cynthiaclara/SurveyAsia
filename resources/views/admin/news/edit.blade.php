@@ -14,7 +14,8 @@
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="description" id="" cols="10" rows="3" placeholder="description">{{ $news->decription }}</textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="description" cols="10" rows="3">{{ $news->description }}
+                        </textarea>
                       </div>
                     <button type="submit" class="btn btn-primary">update</button>
                 </form>
