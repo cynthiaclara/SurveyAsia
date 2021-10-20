@@ -19,5 +19,15 @@ class Authenticate extends Middleware
         if (!$request->expectsJson()) {
             return route('login');
         }
+
+        if (Auth::check() && Auth::user() != null) {
+            $redirect = Auth::user()->role_id == Role::IS_RESEARCHER ? 'researcher' : 'respondent';
+
+            if (Auth::user()->role_id == Role::IS_ADMIN) {
+                $redirect = '/';
+            }
+
+            return redirect($redirect);
+        }
     }
 }
