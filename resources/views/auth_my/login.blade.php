@@ -6,8 +6,9 @@
       <div class="col-md-5 bg-default py-5 ps-5 text-white">
         <div class="row justify-content-center">
           <div class="col-10 col-sm-8">
-            <a href="/" class="text-decoration-none">
-              <h3 class="mb-5 fw-bold text-white">Surveyasia</h3>
+            <a href="/">
+              <img src="/assets/img/surveyasia_white.png" alt="Surveyasia"
+                width="150">
             </a>
             <h1 class="mt-5 fw-bold">
               Mari kita membuat sesuatu yang luar biasa hari ini.
@@ -67,14 +68,14 @@
           <button type="submit"
             class="btn btn-orange w-100 text-white mt-5">Masuk</button>
         </form>
-        <a href="/forgot-password"
+        <a href="/password/reset"
           class="d-flex justify-content-end link-orange text-decoration-none mt-3 mb-5">Lupa
           password?</a>
         <p class="text-center mt-3 text-secondary">atau masuk dengan akun lain</p>
         <div class="d-flex justify-content-center">
-          <a href=""><img src="assets/img/btn_google.png" alt="Google" /></a>
-          <a href=""><img src="assets/img/btn_facebook.png" alt="Facebook" /></a>
-          <a href=""><img src="assets/img/btn_linkedin.png" alt="LinkedIn" /></a>
+          <a href="#"><img src="assets/img/btn_google.png" alt="Google" /></a>
+          <a href="#"><img src="assets/img/btn_facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="assets/img/btn_linkedin.png" alt="LinkedIn" /></a>
         </div>
         <div class="col mt-5 text-center">
           <p>

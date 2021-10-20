@@ -21,13 +21,13 @@ class UserController extends Controller
     {
         //
         //abort_if(!$user->can('viewAny', User::class), 403, 'Unauthorized');
-        $users = User::get();
+        $users = User::with('subscription')->get();
         $rolesWithPermissions = Role::with('permissions')->get();
         $rolesWithUsers = Role::with('users')->get();
         $usersWithRole = User::with('role')->get();
         //$usersWithPermissions = User::with('permissions')->get();
 
-        //dd($users);
+        // dd($users);
 
         $data = [
             'users' => $users
