@@ -158,7 +158,13 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
 
-//View login super admin by fe
+//View dashboard admin by fe
+Route::get('/login-admin', function () {
+    return view('admin.auth.login-admin');
+});
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
+});
+Route::get('/admin/news', function () {
+    return view('admin.auth.news');
 });

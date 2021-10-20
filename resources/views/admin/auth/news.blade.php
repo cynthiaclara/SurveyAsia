@@ -18,51 +18,57 @@
                 <div class="container pt-4">
 
                     {{-- LIST USER --}}
-                    <div class="d-flex align-items-center justify-content-between mb-3">
                         <div class="position-relative input-group align-items-center" style="width: 15%">
                             <input type="text" class="form-control rounded-pill py-2 text-center" placeholder="Search everything" aria-label="search" aria-describedby="basic-addon1" style="font-size: 12px">
                             <a href="#">
                                 <i class="position-absolute top-50 start-0 translate-middle-y bi bi-search p-2 ms-1 text-secondary" style="z-index: 999;"></i>
                             </a>
                         </div>
-                        <button type="submit" class="btn bg-special-blue text-white px-4" id="btn-add-template">Add Template</button>
-                    </div>
 
-                    <table class="table table-no-border-head align-middle">
+                    <table class="table align-middle" id="table-news">
                         <thead>
                             <tr>
-                                <td scope="col"></td>
-                                <td scope="col">Nama</td>
+                                <td scope="col">Title</td>
                                 <td scope="col">Status</td>
-                                <td scope="col">Perusahaan</td>
-                                <td scope="col">Position</td>
-                                <td scope="col"></td>
+                                <td scope="col">Stats</td>
+                                <td class="text-end">
+                                    <button type="button" class="btn bg-special-blue text-white">
+                                        <i class="bi bi-vector-pen me-"></i>  
+                                        Add New
+                                    </button>
+                                </td>
                             </tr>
                         </thead>
                         <tbody>
 
                             {{-- LOOPING DATA --}}
-                            @for ($i = 0; $i < 10; $i++)
-                            <tr>
-                                <th scope="row">
-                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                                </th>
-                                <td scope="col" class="d-flex align-items-center">
-                                    <img src="{{ asset('assets/img/photo-neil-seims.jpg') }}" alt="" class="rounded-pill me-2">
-                                    <div>
-                                        <h6 class="nopadding">Neil Seims</h6>
-                                        <span class="d-block" style="font-size: 13px">Neilseims@gmail.com</span>
-                                    </div>
+                            @for ($i = 0; $i < 5; $i++)
+                                        
+                            <tr style="background-color: #F7FAFC;">
+                                <td scope="col" class="py-4 ps-3">
+                                    <h6 class="fw-bold" style="color: #2A4365">Design: A Survival Guide for Beginners</h6>
+                                    <span class="d-block text-secondary" style="font-size: 13px">Posted 3 days ago</span>
                                 </td>
-                                <td>Responden</td>
-                                <td>Google</td>
-                                <td>Manager</td>
-                                <td class="text-end"><button type="button" class="btn bg-special-blue text-white">
-                                    <i class="bi bi-vector-pen me-"></i>  
-                                    Edit Item</button>
+                                <td scope="col">
+                                    <div class="text-published rounded-pill text-center w-75">Published</div>
+                                </td>
+                                <td scope="col">
+                                    <span class="fw-bold">120</span> 
+                                    views
+                                    <i class="bi bi-arrow-up-circle text-success"></i>
+                                </td>
+                                <td scope="col" class="text-end pe-3">
+                                    <a href="#" role="button" id="dropdown-manage-news" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots fs-3 text-secondary"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown-manage-news">
+                                        <li><a class="dropdown-item" href="#">Edit File</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">Delete File</a></li>
+                                    </ul>
                                 </td>
                                 </tr>
-                                @endfor
+
+                            @endfor
                         </tbody>
                     </table>
                     {{-- END OF LIST USER --}}
