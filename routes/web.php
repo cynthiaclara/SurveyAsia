@@ -1,22 +1,22 @@
 <?php
 
-use App\Http\Controllers\Admin\NewsController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\LinkedinController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Registercontroller;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Requests\ResetPasswordRequest;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\LinkedinController;
+use App\Http\Controllers\Registercontroller;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\NewsController as News;
+use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Researcher\AuthController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 /*
@@ -43,10 +43,11 @@ Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playgrou
 /* non-middleware routes */
 Route::view('/', 'home');
 Route::view('/about', 'about');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/detail-blog', [BlogController::class, 'show'])->name('detail-blog');
-Route::view('/news', 'news');
+Route::get('/news', [News::class, 'index'])->name('news');
+Route::get('/news/detail-news', [News::class, 'show'])->name('detail-news');
 Route::view('/contact', 'contact');
+Route::view('/pricing', 'pricing');
+Route::view('/payment', 'payment');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
 
@@ -144,8 +145,7 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-    // show news
-    Route::resource('news', NewsController::class);
+    Route::resource('admin/news', NewsController::class);
 });
 
 
@@ -158,7 +158,13 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
 
-//View login super admin by fe
+//View dashboard admin by fe
+Route::get('/login-admin', function () {
+    return view('admin.auth.login-admin');
+});
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
-})->name('admin-users');
+  })->name('admin-users');
+Route::get('/admin/news', function () {
+    return view('admin.auth.news');
+});

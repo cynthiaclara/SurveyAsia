@@ -94,7 +94,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Design</p>
-                    <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>
@@ -102,7 +104,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Report</p>
-                    <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,7 +114,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Share</p>
-                    <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>

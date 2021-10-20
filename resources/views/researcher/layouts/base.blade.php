@@ -51,6 +51,14 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
                             Tutorial
                         </a>
+                        <a class="nav-link" href="/news">
+                            <div class="sb-nav-link-icon"><i class="fas fa-newspaper fa-fw"></i></div>
+                            News
+                        </a>
+                        <a class="nav-link" href="/contact">
+                            <div class="sb-nav-link-icon"><i class="fas fa-phone-alt fa-fw"></i></div>
+                            Kontak
+                        </a>
                     </div>
                 </div>
             </nav>

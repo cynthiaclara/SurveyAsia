@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 
-class BlogController extends Controller
+class NewsController extends Controller
 {
     public function index()
     {
         $videoList = $this->_videoList();
 
-        return view('blog', compact('videoList'));
+        return view('news', compact('videoList'));
     }
 
     public function show()
     {
-        return view('detail-blog');
+        return view('detail-news');
     }
 
     protected function _videoList()

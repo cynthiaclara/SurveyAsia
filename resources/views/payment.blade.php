@@ -1,10 +1,10 @@
 @extends('layouts.footer')
-@extends('researcher.layouts.base')
-@extends('researcher.layouts.navbar')
+@extends('layouts.base')
+@extends('layouts.navbar')
 
 @section('content')
 
-<div class="container-fluid p-5">
+<div class="container p-5">
     <h2 class="fw-bold text-center mb-5">Personal Account</h2>
     <form action="#">
         @csrf
@@ -47,19 +47,19 @@
         <h5 class="mt-5">Metode Pembayaran</h5>
         <hr>
         <div class="row mb-3 ms-1">
-            <div class="col-md-1 border rounded shadow text-center pt-5 pb-4 me-3">
+            <div class="col-md-2 border rounded shadow text-center pt-5 pb-4 me-3">
                 <a href="#" class="link-secondary text-decoration-none">
                     <i class="fas fa-wallet fa-fw mb-1"></i>
                     <p>Credit Card</p>
                 </a>
             </div>
-            <div class="col-md-1 border border-default rounded shadow text-center pt-5 pb-4 me-3">
+            <div class="col-md-2 border border-default rounded shadow text-center pt-5 pb-4 me-3">
                 <a href="#" class="link-default text-decoration-none">
                     <i class="fas fa-wallet fa-fw mb-1"></i>
                     <p>Debit Card</p>
                 </a>
             </div>
-            <div class="col-md-1 border rounded shadow text-center pt-5 pb-4 me-3">
+            <div class="col-md-2 border rounded shadow text-center pt-5 pb-4 me-3">
                 <a href="#" class="link-secondary text-decoration-none">
                     <i class="fas fa-wallet fa-fw mb-1"></i>
                     <p>E-Wallet</p>
