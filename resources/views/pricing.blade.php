@@ -1,6 +1,6 @@
 @extends('layouts.footer')
-@extends('researcher.layouts.base')
-@extends('researcher.layouts.navbar')
+@extends('layouts.base')
+@extends('layouts.navbar')
 
 @section('content')
 
@@ -52,8 +52,7 @@
                         <h5 class="text-default">Rp190.000</h5>
                         <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, labore.
                         </p>
-                        <a class="btn btn-default text-light w-50 mb-3" href="/researcher/payment"
-                            role="button">Beli</a>
+                        <a class="btn btn-default text-light w-50 mb-3" href="/payment" role="button">Beli</a>
                         <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, labore.
                         </p>
                         <p><i class="fas fa-check fa-fw"></i> Lorem ipsum dolor sit amet</p>

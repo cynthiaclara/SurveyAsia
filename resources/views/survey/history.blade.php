@@ -112,15 +112,25 @@
             dengan memperhatikan
             persyaratan.</p>
           <div class="row">
-            @for ($j = 0; $j < 6; $j++) <div class="col-md-6">
+            @for ($j = 1; $j <= 3; $j++) <div class="col-md-6">
               <a href="/survey/history/change-point" class="link-dark text-decoration-none">
-                <div class="card mt-4">
+                <div class="card mt-4 p-4" style="height: 320px;">
                   <div class="card-body text-center">
                     <h4 class="fw-bold">Pulsa</h4>
-                    <img src="/assets/img/partner_1.png" alt="Pulsa" class="mt-5">
+                    <img src="/assets/img/pulsa_{{ $j }}.png" alt="Pulsa" class="mt-5">
                   </div>
                 </div>
               </a>
+          </div>
+          <div class="col-md-6">
+            <a href="/survey/history/change-point" class="link-dark text-decoration-none">
+              <div class="card mt-4 p-4" style="height: 320px;">
+                <div class="card-body text-center">
+                  <h4 class="fw-bold">E-Wallet</h4>
+                  <img src="/assets/img/e-wallet_{{ $j }}.png" alt="Pulsa" class="mt-5">
+                </div>
+              </div>
+            </a>
           </div>
           @endfor
         </div>
