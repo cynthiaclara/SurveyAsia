@@ -12,17 +12,17 @@
                     <a class="nav-link" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/survey/history">Riwayat Survey</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/contact">Kontak</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link me-3" href="/survey/history">Riwayat Survey</a>
+                    <a class="nav-link" href="/news">News</a>
                 </li>
                 @auth
                 <li>
-                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid ms-3" width="36">
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -31,8 +31,13 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="/respondent/dashboard"><i
+                                    class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
                         <li><a class="dropdown-item" href="/researcher/dashboard"><i
-                                    class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a></li>
+                                    class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

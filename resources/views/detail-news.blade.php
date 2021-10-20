@@ -4,9 +4,9 @@
 
 @section('content')
 
-<section class="header-detail-blog pt-5" id="header-detail-blog">
+<section class="header-detail-news pt-5" id="header-detail-news">
     <div class="container">
-        <h1 class="text-center fw-bold">A few words about this blog <br> platform, Ghost, and how this site was made
+        <h1 class="text-center fw-bold">A few words about this news <br> platform, Ghost, and how this site was made
         </h1>
         <img src="/assets/img/detail_blog_1.png" alt="Detail Blog" class="img-fluid w-100 my-5">
         <div class="row mb-3">
@@ -56,7 +56,7 @@
     </div>
 </section>
 
-<section class="other-blog py-5" id="other-blog">
+<section class="other-news py-5" id="other-news">
     <div class="container">
         <h6>Tulisan Lainnya</h6>
         <hr>
