@@ -3,6 +3,10 @@ body {
     overflow-x: hidden;
 }
 
+.bg-light-grey {
+    background-color: #eee;
+}
+
 .bg-default {
     background-color: #1a94cd;
 }
@@ -59,6 +63,10 @@ body {
 .services hr {
     width: 10%;
     border: 5px solid #f7931b;
+}
+
+.bg-orange {
+    background-color: #f7931b;
 }
 
 .btn-orange {
@@ -182,10 +190,15 @@ body {
     color: #fff;
 }
 
-/* ktp */
+/* KTP */
 #drop_zone {
     background-color: #fff;
     border: #000 2px dashed;
     width: 100%;
     padding: 120px 0;
+}
+/* End KTP */
+
+.form-range::-webkit-slider-thumb {
+    background-color: #1a94cd;
 }

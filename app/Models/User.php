@@ -18,10 +18,13 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'username',
+        'first_name',
+        'last_name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'survey_id'
     ];
 
     /**
@@ -46,7 +49,7 @@ class User extends Authenticatable
     /**
      * Get user's role, each user will have only one role so that the
      * relation is one-to-one, or many
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function role()
@@ -55,9 +58,29 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function subscription()
+    {
+        # code...
+        return $this->hasOne(Subscription::class, 'user_id');
+    }
+
+    public function subscriptions()
+    {
+        # code...
+        return $this->hasMany(Subscription::class, 'user_id');
+    }
+
     public function permissions()
     {
         # code...
         return $this->hasManyThrough(Permission::class, Role::class);
+    }
+
+    public static function hitungUser()
+    {
+        // $users = User::withCount('username')->get();
+        $users = User::count();
+        // $user->follows->count();
+        return $users;
     }
 }
