@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -9,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -56,23 +57,36 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    /**
+     * Get user's single subscription, each user will have only one active
+     * subscription so that the relation is one-to-one
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function subscription()
     {
         # code...
         return $this->hasOne(Subscription::class, 'user_id');
     }
 
+    /**
+     * Get user's list of subscriptions, each user could have
+     * more than one subscriptions but expired
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function subscriptions()
     {
         # code...
         return $this->hasMany(Subscription::class, 'user_id');
     }
 
-    public function permissions()
-    {
-        # code...
-        return $this->hasManyThrough(Permission::class, Role::class);
-    }
+    // This code will return error, dont use it
+    // public function permissions()
+    // {
+    //     # code...
+    //     return $this->hasManyThrough(Permission::class, Role::class);
+    // }
 
     public static function hitungUser()
     {

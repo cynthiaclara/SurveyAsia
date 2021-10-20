@@ -12,10 +12,8 @@ class Role extends Model
 
     //define constants
     public const IS_ADMIN = 1;
-    public const IS_FREE_USER = 2;
-    public const IS_ONE_TIME_USER = 3;
-    public const IS_SUBSCRIBER_USER = 4;
-    public const IS_RESPONDEN = 5;
+    public const IS_RESEARCHER = 2;
+    public const IS_RESPONDENT = 3;
 
     public $timestamps = true;
 

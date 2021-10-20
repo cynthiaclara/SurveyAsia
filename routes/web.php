@@ -26,6 +26,7 @@ Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playgrou
 
 /* non-middleware routes */
 Route::view('/', 'home');
+Route::view('/home', 'home');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
 
@@ -78,7 +79,9 @@ Route::middleware(['is_admin'])->group(function () {
 
     /* attempt delete user */
     Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-    Route::resource('news', NewsController::class);
+
+    /* news resource */
+    Route::resource('news', \App\Http\Controllers\Admin\NewsController::class);
 });
 
 
