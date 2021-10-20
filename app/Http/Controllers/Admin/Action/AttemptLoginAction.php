@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Admin;
+namespace App\Http\Controllers\Admin\Action;
 
 use App\Http\Requests\AdminLoginRequest;
 use App\Models\Role;
