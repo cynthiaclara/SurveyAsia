@@ -49,7 +49,9 @@ Route::view('/contact', 'contact');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+});
 
 /* Screening routes */
 Route::middleware(['auth'])->group(function () {
@@ -61,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
 
 /* Researcher routes */
 Route::middleware('auth')->group(function () {
+    Route::view('/researcher', 'researcher.dashboard');
     Route::view('/researcher/dashboard', 'researcher.dashboard');
     Route::view('/researcher/pricing', 'researcher.pricing');
     Route::view('/researcher/payment', 'researcher.payment');
@@ -73,6 +76,7 @@ Route::middleware('auth')->group(function () {
 
 // Respondent Routes
 Route::middleware('auth')->group(function () {
+    Route::view('/respondent', 'respondent.dashboard');
     Route::view('/respondent/dashboard', 'respondent.dashboard');
 });
 
@@ -151,20 +155,14 @@ Route::middleware(['is_admin'])->group(function () {
 
 /* admin auth routes */
 // login
-Route::view('/admin-login', 'admin.auth.login')->name('view-admin-login');
+Route::view('/admin-login', 'admin.auth.login-admin')->name('view-admin-login');
 Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 'attemptLogin'])->name('attempt-admin-login');
 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
 
-//View dashboard admin by fe
-Route::get('/login-admin', function () {
-    return view('admin.auth.login-admin');
-});
+
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
-  })->name('admin-users');
-Route::get('/admin/news', function () {
-    return view('admin.auth.news');
-});
+})->name('admin-users');
