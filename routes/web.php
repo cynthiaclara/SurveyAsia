@@ -46,6 +46,7 @@ Route::view('/about', 'about');
 Route::get('/news', [News::class, 'index'])->name('news');
 Route::get('/news/detail-news', [News::class, 'show'])->name('detail-news');
 Route::view('/contact', 'contact');
+Route::view('/faq', 'faq');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
@@ -54,7 +55,7 @@ Route::middleware('auth')->group(function () {
 });
 
 /* Screening routes */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['guest'])->group(function () {
     /* screening routes */
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
