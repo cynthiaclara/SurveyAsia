@@ -97,7 +97,11 @@ class ResetPasswordController extends Controller
 
         event(new PasswordReset($user));
 
+     
+        return redirect('/login')->with(['success' =>'Your password has been changed, Please Login!']);
+
         //user auto login after reset password
-        $this->guard()->login($user);
+        // $this->guard()->login($user);
+        // $request->session()->flash('success', 'Your password has been changed, Please Login!');
     }
 }

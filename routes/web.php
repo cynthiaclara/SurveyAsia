@@ -17,6 +17,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Researcher\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\SocialShareController;
 
 
 /*
@@ -120,6 +121,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 // Route::view('forgot_password', 'auth.reset')->name('password.reset');
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
+
+//social share
+// Route::get('/detail-news', [SocialShareController::class, 'index']);
 
 /* admin routes */
 Route::middleware(['is_admin'])->group(function () {
