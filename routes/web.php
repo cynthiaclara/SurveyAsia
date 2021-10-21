@@ -50,16 +50,12 @@ Route::view('/faq', 'faq');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
 });
 
 /* Screening routes */
-<<<<<<< Updated upstream
 Route::middleware(['guest'])->group(function () {
-=======
-Route::middleware(['auth', 'verified'])->group(function () {
->>>>>>> Stashed changes
     /* screening routes */
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
@@ -67,7 +63,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 /* Researcher routes */
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('/researcher', 'researcher.dashboard');
     Route::view('/researcher/dashboard', 'researcher.dashboard');
     Route::view('/researcher/pricing', 'researcher.pricing');
