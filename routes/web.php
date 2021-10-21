@@ -17,6 +17,7 @@ use App\Http\Controllers\NewsController as News;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Researcher\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
@@ -49,7 +50,7 @@ Route::view('/contact', 'contact');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
 });
 
@@ -138,3 +139,23 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 // register
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+
+/* email verification routes, DO NOT MODIFY */
+// email verification link notice view
+Route::get('email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+// email verification proccess
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    // specifiy where to redirect after activated
+    return redirect('home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// resend email verification proccess
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
