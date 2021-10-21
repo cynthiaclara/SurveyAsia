@@ -30,7 +30,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //for testing purpose
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -55,7 +55,11 @@ Route::middleware('auth')->group(function () {
 });
 
 /* Screening routes */
+<<<<<<< Updated upstream
 Route::middleware(['guest'])->group(function () {
+=======
+Route::middleware(['auth', 'verified'])->group(function () {
+>>>>>>> Stashed changes
     /* screening routes */
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');

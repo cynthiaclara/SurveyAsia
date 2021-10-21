@@ -17,7 +17,6 @@ class CreateSurveysTable extends Migration
             $table->id();
             $table->string('judul_survey');
             $table->unsignedBigInteger('user_id');
-
             $table->softDeletes();
             $table->timestamps();
 

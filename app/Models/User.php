@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, CanResetPassword;
 
@@ -61,7 +61,7 @@ class User extends Authenticatable
     /**
      * Get user's single subscription, each user will have only one active
      * subscription so that the relation is one-to-one
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function subscription()
@@ -73,7 +73,7 @@ class User extends Authenticatable
     /**
      * Get user's list of subscriptions, each user could have
      * more than one subscriptions but expired
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function subscriptions()
