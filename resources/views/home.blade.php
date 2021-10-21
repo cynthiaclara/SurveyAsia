@@ -17,8 +17,7 @@
                 Klik, rancang, dan simpan hal yang paling penting bagi Anda, semuanya di
                 satu tempat.
             </p>
-            <a class="btn btn-light text-default fw-bold mt-5 py-3 px-5" href="{{ route('register') }}"
-                role="button">Coba Gratis</a>
+            <a class="btn btn-light text-default fw-bold mt-5 py-3 px-5" href="/pilih" role="button">Coba Gratis</a>
         </div>
     </div>
 </section>
@@ -171,7 +170,7 @@
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-3">
-                <a href="{{ route('register') }}" class="btn btn-default text-white py-3 w-100" role="button">Bergabung
+                <a href="/validate" class="btn btn-default text-white py-3 w-100" role="button">Bergabung
                     Responden</a>
             </div>
         </div>

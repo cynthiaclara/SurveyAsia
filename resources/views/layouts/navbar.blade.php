@@ -48,7 +48,7 @@
           <a class="btn btn-outline-default mx-sm-3" href="{{ route('login') }}" role="button">Masuk</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-default text-white" href="{{ route('register') }}" role="button">Bergabung</a>
+          <a class="btn btn-default text-white" href="/pilih" role="button">Bergabung</a>
         </li>
         @endauth
         <li class="nav-item ms-3 me-2">

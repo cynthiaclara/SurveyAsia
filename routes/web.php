@@ -46,13 +46,16 @@ Route::view('/about', 'about');
 Route::get('/news', [News::class, 'index'])->name('news');
 Route::get('/news/detail-news', [News::class, 'show'])->name('detail-news');
 Route::view('/contact', 'contact');
+Route::view('/faq', 'faq');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
-Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('user-profile');
+});
 
 /* Screening routes */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['guest'])->group(function () {
     /* screening routes */
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
@@ -61,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
 /* Researcher routes */
 Route::middleware('auth')->group(function () {
+    Route::view('/researcher', 'researcher.dashboard');
     Route::view('/researcher/dashboard', 'researcher.dashboard');
     Route::view('/researcher/pricing', 'researcher.pricing');
     Route::view('/researcher/payment', 'researcher.payment');
@@ -73,6 +77,7 @@ Route::middleware('auth')->group(function () {
 
 // Respondent Routes
 Route::middleware('auth')->group(function () {
+    Route::view('/respondent', 'respondent.dashboard');
     Route::view('/respondent/dashboard', 'respondent.dashboard');
 });
 
@@ -162,6 +167,3 @@ Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::clas
 Route::get('/admin/list-user', function () {
     return view('admin.auth.list-user');
 })->name('admin-users');
-Route::get('/admin/news', function () {
-    return view('admin.auth.news');
-});
