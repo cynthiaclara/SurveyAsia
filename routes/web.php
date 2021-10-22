@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewsController as News;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\SocialShareController;
+
 
 
 /*
@@ -37,6 +40,7 @@ Route::view('/about', 'about');
 Route::get('/news', [News::class, 'index'])->name('news');
 Route::get('/news/detail-news', [News::class, 'show'])->name('detail-news');
 Route::view('/contact', 'contact');
+Route::view('/faq', 'faq');
 Route::view('/pricing', 'pricing');
 Route::view('/payment', 'payment');
 
@@ -45,7 +49,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 /* Screening routes */
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['guest'])->group(function () {
     /* screening routes */
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
@@ -106,6 +110,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 // Route::view('forgot_password', 'auth.reset')->name('password.reset');
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
+
+//social share
+// Route::get('/detail-news', [SocialShareController::class, 'index']);
 
 /* admin routes */
 Route::middleware('is_admin')->group(function () {
