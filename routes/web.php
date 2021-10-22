@@ -4,19 +4,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Password;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\GoogleController;
-use App\Http\Requests\ResetPasswordRequest;
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\LinkedinController;
-use App\Http\Controllers\Registercontroller;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewsController as News;
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\Researcher\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\SocialShareController;
+
 
 
 /*
@@ -35,7 +30,6 @@ Auth::routes(['verify' => true]);
 //for testing purpose
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::view('/admin/dashboard', 'home');
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -63,29 +57,24 @@ Route::middleware(['guest'])->group(function () {
 });
 
 /* Researcher routes */
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/researcher', 'researcher.dashboard');
-    Route::view('/researcher/dashboard', 'researcher.dashboard');
-    Route::view('/researcher/pricing', 'researcher.pricing');
-    Route::view('/researcher/payment', 'researcher.payment');
-    Route::view('/researcher/create-survey', 'researcher.create-survey');
-    Route::view('/researcher/customize-diagram', 'researcher.customize-diagram');
-    Route::view('/researcher/collect-respondent', 'researcher.collect-respondent');
-    Route::view('/researcher/status-survey', 'researcher.status-survey');
-    Route::view('/researcher/analytics-result', 'researcher.analytics-result');
+Route::middleware(['auth', 'role:researcher'])->group(function () {
+    Route::prefix('researcher')->name('researcher.')->group(function () {
+        Route::redirect('/', '/researcher/dashboard', 301);
+        Route::view('dashboard', 'researcher.dashboard');
+        Route::view('pricing', 'researcher.pricing');
+        Route::view('payment', 'researcher.payment');
+        Route::view('create-survey', 'researcher.create-survey');
+        Route::view('customize-diagram', 'researcher.customize-diagram');
+        Route::view('collect-respondent', 'researcher.collect-respondent');
+        Route::view('status-survey', 'researcher.status-survey');
+        Route::view('analytics-result', 'researcher.analytics-result');
+    });
 });
 
 // Respondent Routes
 Route::middleware('auth')->group(function () {
     Route::view('/respondent', 'respondent.dashboard');
     Route::view('/respondent/dashboard', 'respondent.dashboard');
-});
-
-/* Survey routes */
-Route::middleware('auth')->group(function () {
-    Route::view('/survey/pre-survey', 'survey.pre-survey');
-    Route::view('/survey/history', 'survey.history');
-    Route::view('/survey/history/change-point', 'survey.change-point');
 });
 
 //forgot password
@@ -122,35 +111,27 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
+//social share
+// Route::get('/detail-news', [SocialShareController::class, 'index']);
+
 /* admin routes */
-Route::middleware(['is_admin'])->group(function () {
-    Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
+Route::middleware('is_admin')->group(function () {
+    /* admin prefix, ex : admin/users , admin/users */
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::redirect('/', 'admin/dashboard', 301);
 
-    /* show admin dashboard */
+        /* show admin dashboard */
+        Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
+        /* users resource */
+        Route::resource('users', UserController::class);
+        // user custom notify
+        Route::get('users/{user}/notify', [UserController::class, 'notify'])->name('users.notify');
+        Route::get('users/{user}/profile', [UserController::class, 'profile'])->name('users.profile');
 
-    /* show all users */
-    Route::get('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users.index');
-
-    /* show users details */
-    Route::get('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'show'])->name('admin_users.show');
-
-    /* show create user form */
-    Route::get('admin/users/create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_users.create');
-    /* attempt store user */
-    Route::post('admin/users', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin_users.store');
-
-    /* show update user form */
-    Route::get('admin/users/edit/{user}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin_users.edit');
-    /* attempt update user */
-    Route::put(
-        'admin/users',
-        [\App\Http\Controllers\Admin\UserController::class, 'update']
-    )->name('admin_users.update');
-
-    /* attempt delete user */
-    Route::delete('admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_users.destroy');
-    Route::resource('admin/news', NewsController::class);
+        /* news resource */
+        Route::resource('news', NewsController::class);
+    });
 });
 
 
@@ -163,7 +144,22 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
 Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
 
+/* email verification routes, DO NOT MODIFY */
+// email verification link notice view
+Route::get('email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
 
-Route::get('/admin/list-user', function () {
-    return view('admin.auth.list-user');
-})->name('admin-users');
+// email verification proccess
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    // specifiy where to redirect after activated
+    return redirect('home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// resend email verification proccess
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
