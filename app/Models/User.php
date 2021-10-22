@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, CanResetPassword;
 
@@ -45,6 +45,39 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Check If user have a specified role
+     * @param App\Models\User $user
+     * @param int $role
+     * @return bool
+     */
+    public function hasRole(User $user, $role)
+    {
+        # code...
+
+        if ($role == Role::IS_ADMIN) {
+            return $user->role_id == Role::IS_ADMIN;
+        }
+
+        if ($role == Role::IS_RESEARCHER) {
+            return $user->role_id == Role::IS_RESEARCHER;
+        }
+
+        return $user->role_id == Role::IS_RESPONDENT;
+    }
+
+    /**
+     * Get user's profile, each user will have only one profile
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function profile()
+    {
+        # code...
+        return $this->hasOne(UsersProfile::class);
+    }
 
     /**
      * Get user's role, each user will have only one role so that the
