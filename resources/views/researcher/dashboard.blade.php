@@ -6,6 +6,12 @@
 
 <div class="container-fluid p-5">
     <div class="row">
+
+            @if(session('verified'))
+            <div class="alert alert-success col-md-4 col-md-offset-4"  role="alert">
+                <p>Verifikasi Berhasil<button type="button" class="btn-close justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button></p>
+            </div>
+            @endif
         <div class="col">
             {{-- Modal Button --}}
             <button type="button" class="btn btn-orange text-light" data-bs-toggle="modal"
