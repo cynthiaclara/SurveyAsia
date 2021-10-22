@@ -117,4 +117,10 @@ class UserController extends Controller
         $user->notify(new Custom());
         return redirect('/admin/users')->with('success', 'Notification sent');
     }
+
+    public function profile(User $user)
+    {
+        # code...
+        return view('admin.user.profile', ['user' => $user]);
+    }
 }

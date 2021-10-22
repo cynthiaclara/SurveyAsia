@@ -69,6 +69,17 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Get user's profile, each user will have only one profile
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function profile()
+    {
+        # code...
+        return $this->hasOne(UsersProfile::class);
+    }
+
+    /**
      * Get user's role, each user will have only one role so that the
      * relation is one-to-one, or many
      *

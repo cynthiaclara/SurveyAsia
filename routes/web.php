@@ -119,7 +119,8 @@ Route::middleware('is_admin')->group(function () {
         /* users resource */
         Route::resource('users', UserController::class);
         // user custom notify
-        Route::get('users/{user}', [UserController::class, 'notify'])->name('users.notify');
+        Route::get('users/{user}/notify', [UserController::class, 'notify'])->name('users.notify');
+        Route::get('users/{user}/profile', [UserController::class, 'profile'])->name('users.profile');
 
         /* news resource */
         Route::resource('news', NewsController::class);

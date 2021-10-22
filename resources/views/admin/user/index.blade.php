@@ -36,7 +36,15 @@
                       @endphp
                     @endif
                     <tr>
-                      <td>{{ $user->first_name }} {{ $user->last_name }}</td>
+                      @if ($user->profile != null)
+                        <td><a
+                            href="{{ route('admin.users.profile', $user->id) }}"
+                            class="text-decoration-none">{{ $user->first_name }}
+                            {{ $user->last_name }}</a></td>
+                      @else
+                        <td>{{ $user->first_name }}
+                          {{ $user->last_name }}</td>
+                      @endif
                       <td>{{ $user->username }}</td>
                       <td>{{ $user->email }}</td>
                       @if ($user->role_id != null && $user->role != null)
