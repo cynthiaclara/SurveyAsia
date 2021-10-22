@@ -4,21 +4,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Password;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\GoogleController;
-use App\Http\Requests\ResetPasswordRequest;
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\LinkedinController;
-use App\Http\Controllers\Registercontroller;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewsController as News;
-use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\Researcher\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
 /*
@@ -118,14 +108,20 @@ Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']
 // Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
 
 /* admin routes */
-Route::middleware(['auth', 'is_admin'])->group(function () {
+Route::middleware('is_admin')->group(function () {
     /* admin prefix, ex : admin/users , admin/users */
     Route::prefix('admin')->name('admin.')->group(function () {
+        Route::redirect('/', 'admin/dashboard', 301);
+
         /* show admin dashboard */
-        Route::get('admin', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin_dashboard');
+        Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
         /* users resource */
         Route::resource('users', UserController::class);
+        // user custom notify
+        Route::get('users/{user}', [UserController::class, 'notify'])->name('users.notify');
+
+        /* news resource */
         Route::resource('news', NewsController::class);
     });
 });

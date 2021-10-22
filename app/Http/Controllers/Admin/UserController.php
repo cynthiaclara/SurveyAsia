@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
+use App\Notifications\Custom;
 use Illuminate\Auth\Access\Gate;
 use Illuminate\Contracts\Auth\Access\Gate as AccessGate;
 use Illuminate\Http\Request;
@@ -108,5 +109,12 @@ class UserController extends Controller
         $user->delete();
 
         return redirect('admin/users')->with(['success' => 'User deleted']);
+    }
+
+    public function notify(User $user)
+    {
+        # code...
+        $user->notify(new Custom());
+        return redirect('/admin/users')->with('success', 'Notification sent');
     }
 }

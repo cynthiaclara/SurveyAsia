@@ -17,13 +17,12 @@
         <div class="container mt-4">
           <div class="row">
             <div class="col">
-              <table class="table">
+              <table class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th>Name</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Verified At</th>
                     <th>Role</th>
                     <th>Subscription</th>
                     <th>Actions</th>
@@ -31,15 +30,15 @@
                 </thead>
                 <tbody>
                   @foreach ($users as $user)
+                    @if ($user->role_id == 1)
+                      @php
+                        continue;
+                      @endphp
+                    @endif
                     <tr>
                       <td>{{ $user->first_name }} {{ $user->last_name }}</td>
                       <td>{{ $user->username }}</td>
                       <td>{{ $user->email }}</td>
-                      @if ($user->email_verified_at != null)
-                        <td>{{ $user->email_verified_at }}</td>
-                      @else
-                        <td>{{ __('Not Verified') }}</td>
-                      @endif
                       @if ($user->role_id != null && $user->role != null)
                         <td>{{ $user->role->name }}</td>
                       @else
@@ -51,9 +50,11 @@
                       @else
                         <td>{{ __('No Subscription') }}</td>
                       @endif
-                      <td>
-                        <form class="inline-block"
-                          action="{{ route('admin_users.destroy', $user->id) }}"
+                      <td class="text-nowrap">
+                        <a href="{{ route('admin.users.notify', $user->id) }}"
+                          class="btn btn-sm btn-success">Notify</a>
+                        <form
+                          action="{{ route('admin.users.destroy', $user->id) }}"
                           method="POST"
                           onsubmit="return confirm('Are you sure?');">
                           <input type="hidden" name="_method" value="DELETE">
