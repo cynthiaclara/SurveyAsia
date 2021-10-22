@@ -57,7 +57,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 /* Researcher routes */
-Route::middleware(['auth', 'role:researcher'])->group(function () {
+Route::middleware(['auth', 'role:researcher', 'verified'])->group(function () {
     Route::prefix('researcher')->name('researcher.')->group(function () {
         Route::redirect('/', '/researcher/dashboard', 301);
         Route::view('dashboard', 'researcher.dashboard');
