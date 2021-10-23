@@ -25,14 +25,13 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 Auth::routes();
 
 //for testing purpose
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/playground', [App\Http\Controllers\HomeController::class, 'playground'])->middleware('auth');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::view('/', 'home')->middleware('redirect')->name('home');
 
 /* non-middleware routes */
-Route::view('/', 'home');
 Route::view('/about', 'about');
 Route::get('/news', [News::class, 'index'])->name('news');
 Route::get('/news/detail-news', [News::class, 'show'])->name('detail-news');
@@ -68,40 +67,42 @@ Route::middleware(['auth', 'role:researcher'])->group(function () {
 });
 
 // Respondent Routes
-Route::middleware('auth')->group(function () {
-    Route::view('/respondent', 'respondent.dashboard');
-    Route::view('/respondent/dashboard', 'respondent.dashboard');
+Route::middleware(['auth', 'role:respondent'])->group(function () {
+    Route::prefix('respondent')->name('respondent.')->group(function () {
+        Route::redirect('/', '/respondent/dashboard', 301);
+        Route::view('/dashboard', 'respondent.dashboard');
+    });
 });
 
 //forgot password
-Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
-});
+// Route::get('/forgot-password', function () {
+//     return view('auth.forgot-password');
+// });
 
-Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
-})->middleware('guest')->name('password.request');
+// Route::get('/forgot-password', function () {
+//     return view('auth.forgot-password');
+// })->middleware('guest')->name('password.request');
 
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
+// Route::post('/forgot-password', function (Request $request) {
+//     $request->validate(['email' => 'required|email']);
 
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
+//     $status = Password::sendResetLink(
+//         $request->only('email')
+//     );
 
-    return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.email');
+//     return $status === Password::RESET_LINK_SENT
+//         ? back()->with(['status' => __($status)])
+//         : back()->withErrors(['email' => __($status)]);
+// })->middleware('guest')->name('password.email');
 
-Route::get('/reset-password/{token}', function ($token) {
-    return view('auth.passwords.reset', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
+// Route::get('/reset-password/{token}', function ($token) {
+//     return view('auth.passwords.reset', ['token' => $token]);
+// })->middleware('guest')->name('password.reset');
 
 // Route::post('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])
 //     ->middleware('guest')->name('password.update');
 
-Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']);
+// Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']);
 
 // Route::view('forgot_password', 'auth.reset')->name('password.reset');
 // Route::post('password/email', [ForgotPasswordController::class, 'forgot']);

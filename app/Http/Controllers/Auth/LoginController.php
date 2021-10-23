@@ -104,7 +104,10 @@ class LoginController extends Controller
             return $response;
         }
 
-        $this->guard()->user()->role_id == Role::IS_RESEARCHER ? $this->redirectTo = 'researcher' : 'respondent';
+        if ($this->guard()->user()->role_id == Role::IS_RESEARCHER)
+            $this->redirectTo = 'researcher';
+        if ($this->guard()->user()->role_id == Role::IS_RESPONDENT)
+            $this->redirectTo = 'respondent';
 
         return $request->wantsJson()
             ? new JsonResponse([], 204)
