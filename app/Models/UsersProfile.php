@@ -20,13 +20,19 @@ class UsersProfile extends Model
         'gender',
         'birth_place',
         'birth_date',
-        'jobs',
+        'ktp_province',
+        'ktp_city',
+        'ktp_district',
+        'ktp_postal_code',
+        'province',
+        'city',
+        'district',
+        'postal_code',
+        'job',
         'job_location',
-        'education',
-        'education_place',
-        'avatar',
         'ktp_address',
-        'address'
+        'address',
+        'avatar'
     ];
 
     /**
@@ -37,6 +43,10 @@ class UsersProfile extends Model
     protected $hidden = [
         'nik',
         'user_id',
+        'ktp_province',
+        'ktp_city',
+        'ktp_district',
+        'ktp_postal_code',
     ];
 
     public function user()

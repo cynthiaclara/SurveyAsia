@@ -33,13 +33,21 @@ class UsersProfileSeeder extends Seeder
             'gender' => 'L',
             'birth_place' => $faker->city(),
             'birth_date' => $faker->date(),
-            'jobs' => $faker->jobTitle(),
+            'job' => $faker->jobTitle(),
             'job_location' => $faker->city(),
             // 'education',
             // 'education_place',
             // 'avatar',
-            'ktp_address' => $faker->streetAddress(),
-            'address' => $faker->streetAddress()
+            'ktp_province' => $faker->state,
+            'ktp_city' => $faker->city(),
+            'ktp_district' => $faker->streetSuffix(),
+            'ktp_postal_code' => $faker->postcode(),
+            'ktp_address' => $faker->address(),
+            'province' => $faker->state,
+            'city' => $faker->city(),
+            'district' => $faker->streetSuffix(),
+            'postal_code' => $faker->postcode(),
+            'address' => $faker->address(),
         ]);
     }
 }
