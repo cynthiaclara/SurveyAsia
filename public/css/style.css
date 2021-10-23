@@ -207,3 +207,20 @@ body {
 .form-range::-webkit-slider-thumb {
     background-color: #1a94cd;
 }
+
+
+/* Kode Verifikasi */
+.kode {
+    background-color: #1a94cd;
+    }
+    
+    .kode-form-control {
+        float: left;
+        width: 13%;
+        margin-right: 15px;
+    }
+    
+    .ellipse_kode {
+        right: 0%;
+    }
+    /* End kode verifikasi */

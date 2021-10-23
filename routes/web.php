@@ -59,6 +59,10 @@ Route::middleware(['auth'])->group(function () {
     Route::view('/pilih', 'screening.pilih')->name('pilih');
     Route::view('/validate', 'screening.upload-ktp')->name('ktp-validate');
     Route::view('/validate/personal', 'screening.personal-data')->name('personal-data-validate');
+    Route::view('/device', 'screening.device')->name('device');
+    Route::view('/kode', 'screening.kode')->name('kode');
+    Route::view('/ios', 'screening.ios')->name('ios');
+
 });
 
 /* Researcher routes */
