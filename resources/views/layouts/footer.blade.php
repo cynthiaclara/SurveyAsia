@@ -8,22 +8,19 @@
             </div>
             <div class="col-md-2">
                 <p class="fw-bold">Tentang</p>
-                <a href="#" class="link-light text-decoration-none">
-                    <p>Karir</p>
+                <a href="/about" class="link-light text-decoration-none">
+                    <p>Tentang Kami</p>
                 </a>
-                <a href="#" class="link-light text-decoration-none">
-                    <p>Kantor</p>
+                <a href="/news" class="link-light text-decoration-none">
+                    <p>News</p>
                 </a>
-                <a href="/blog" class="link-light text-decoration-none">
-                    <p>Blog</p>
+                <a href="/pricing" class="link-light text-decoration-none">
+                    <p>Harga</p>
                 </a>
             </div>
             <div class="col-md-2">
                 <p class="fw-bold">Panduan</p>
-                <a href="#" class="link-light text-decoration-none">
-                    <p>Pusat Bantuan</p>
-                </a>
-                <a href="#" class="link-light text-decoration-none">
+                <a href="/about#tac" class="link-light text-decoration-none">
                     <p>Syarat & Ketentuan</p>
                 </a>
                 <a href="#" class="link-light text-decoration-none">
@@ -31,12 +28,12 @@
                 </a>
             </div>
             <div class="col-md-2">
-                <p class="fw-bold">Help</p>
-                <a href="#" class="link-light text-decoration-none">
+                <p class="fw-bold">Bantuan</p>
+                <a href="/faq" class="link-light text-decoration-none">
                     <p>FAQ</p>
                 </a>
-                <a href="#" class="link-light text-decoration-none">
-                    <p>Help Support</p>
+                <a href="/contact" class="link-light text-decoration-none">
+                    <p>Kontak</p>
                 </a>
             </div>
             <div class="col-md-4">
@@ -54,7 +51,8 @@
                 </form>
                 <div class="row mt-5">
                     <div class="col-auto">
-                        <a href="#"><img src="/assets/img/logo_youtube_white.png" alt="YouTube" height="32">
+                        <a href="https://www.youtube.com/channel/UCeovD8uCm_QnBgo-tMoKkIg" target="_blank"><img
+                                src="/assets/img/logo_youtube_white.png" alt="YouTube" height="32">
                         </a>
                     </div>
                     <div class="col-auto">

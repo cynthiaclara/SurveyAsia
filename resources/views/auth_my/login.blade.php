@@ -29,14 +29,11 @@
         <h6 class="mb-5">Mari membuat sesuatu yang hebat</h6>
         <form action="{{ route('login') }}" method="POST">
           @csrf
-          @if (session()->has('success'))
-            <div class="alert alert-info alert-dismissible fade show"
-              role="alert">
-              {{ session('success') }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert"
-                aria-label="Close"></button>
-            </div>
-          @endif
+          @if (session('success'))
+                         <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
           @if (session()->has('loginError'))
             <div class="alert alert-danger alert-dismissible fade show"

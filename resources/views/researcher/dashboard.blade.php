@@ -42,7 +42,7 @@
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>-Pilih-</option>
                                                 <option value="1">Free User</option>
-                                                <option value="2">Pay for Survey</option>
+                                                <option value="2">Pay per Survey</option>
                                                 <option value="3">Join Member</option>
                                             </select>
                                         </div>
