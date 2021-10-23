@@ -18,19 +18,13 @@ class RoleRedirect
      */
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
-
-        if ($user->role_id == Role::IS_ADMIN) {
-            return route('admin_dashboard');
-        } elseif ($user->role_id == Role::IS_RESEARCHER) {
-            return route('researcher');
-        } elseif ($user->role_id == Role::IS_RESPONDENT) {
-            return route('respondent');
-        } else {
-            return route('/');
+        if (Auth::check() && Auth::user() != null) {
+            if ($request->user()->role_id == Role::IS_RESEARCHER) {
+                return redirect('researcher');
+            } else if ($request->user()->role_id == Role::IS_RESPONDENT) {
+                return redirect('respondent');
+            }
         }
-
-
         return $next($request);
     }
 }

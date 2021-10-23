@@ -6,7 +6,8 @@
     <h3>test user roles and permissions</h3>
     <p>using policies classes</p>
 
-    <p>Current user = {{ Auth::user()->name }}</p>
+    <p>Current user = {{ Auth::user()->first_name }}
+      {{ Auth::user()->last_name }}</p>
     <p>Role = {{ Auth::user()->role->name }}</p>
 
     <div class="row">

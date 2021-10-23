@@ -41,7 +41,7 @@ class HomeController extends Controller
         $data = [
             [
                 'context' => 'Current subscription ?',
-                'result' => Auth::user()->subscription_id == null ? 'No subscription' : Auth::user()->subscription_id
+                'result' => Auth::user()->subscription_id == null ? 'No subscription' : Auth::user()->subscription->name
             ],
             [
                 'context' => 'Can manage other users ?',
