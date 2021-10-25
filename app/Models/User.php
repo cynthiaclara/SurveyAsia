@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Jobs\QueuedEmailVerificationJob;
+use App\Notifications\Auth\QueuedEmailVerification;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,6 +47,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sendEmailVerificationNotification()
+    {
+        // Approach 1
+        // $this->notify(new QueuedEmailVerification());
+
+        // Approach 2
+        QueuedEmailVerificationJob::dispatch($this);
+    }
 
 
     /**

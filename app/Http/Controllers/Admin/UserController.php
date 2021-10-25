@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendCustomEmailJob;
 use App\Models\Role;
 use App\Models\User;
 use App\Notifications\Custom;
@@ -114,7 +115,7 @@ class UserController extends Controller
     public function notify(User $user)
     {
         # code...
-        $user->notify(new Custom());
+        SendCustomEmailJob::dispatch($user);
         return redirect('/admin/users')->with('success', 'Notification sent');
     }
 

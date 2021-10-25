@@ -115,10 +115,10 @@ class RegisterController extends Controller
      */
     protected function validatorRespondent(array $data)
     {
-        return Validator::make($data, [
+        $rules = [
             'first_name' => ['required', 'string', 'max:25'],
             'last_name' => ['required', 'string', 'max:25'],
-            'nik' => ['required', 'numeric'],
+            'nik' => ['required', 'numeric', 'min:16'],
             'gender' => ['required'],
             'birth_place' => ['required', 'string', 'max:50'],
             'birth_date' => ['required'],
@@ -127,14 +127,19 @@ class RegisterController extends Controller
             'ktp_district' => ['required', 'string', 'max:50'],
             'ktp_postal_code' => ['required', 'numeric'],
             'ktp_address' => ['required', 'max:255'],
-            'province' => ['string', 'max:50'],
-            'city' => ['string', 'max:50'],
-            'district' => ['max:50'],
-            'postal_code' => ['numeric'],
-            'address' => ['max:255'],
             'job' => ['required', 'string'],
             'job_location' => ['required', 'string', 'max:50'],
-        ]);
+        ];
+
+        if (!$data['similar_address'] == 'checked') {
+            $rules['province'] = ['required', 'string', 'max:50'];
+            $rules['city'] = ['required', 'string', 'max:50'];
+            $rules['district'] = ['required', 'max:50'];
+            $rules['postal_code'] = ['required', 'numeric'];
+            $rules['address'] = ['required', 'max:255'];
+        }
+
+        return Validator::make($data, $rules);
     }
 
     /**

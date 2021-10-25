@@ -139,17 +139,17 @@ Route::middleware('is_admin')->group(function () {
 /* admin auth routes */
 // login
 Route::view('/admin-login', 'admin.auth.login-admin')->name('view-admin-login');
-Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 'attemptLogin'])->name('attempt-admin-login');
+Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 'attemptLogin'])->name('attempt-admin-login')->middleware('throttle:admin-login');
 
 // register
-Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
-Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
+// Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
+// Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
 
 /* email verification routes, DO NOT MODIFY */
 // email verification link notice view
-// Route::get('email/verify', function () {
-//     return view('auth.verify');
-// })->middleware('auth')->name('verification.notice');
+Route::get('email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
 
 // // email verification proccess
 // Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {

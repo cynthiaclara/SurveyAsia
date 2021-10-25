@@ -15,8 +15,8 @@ class CreateUsersProfilesTable extends Migration
     {
         Schema::create('users_profiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->bigInteger('nik');
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->bigInteger('nik')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->enum('gender', ['L', 'P']);
