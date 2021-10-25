@@ -1,12 +1,8 @@
 function RolesButton() {
     const researcher = document.getElementById("researcher");
     if (researcher.checked) {
-        window.location.href = "/register";
+        window.location.href = "/researcher/dashboard";
     } else if (respondent.checked) {
-        window.location.href = "/upload-ktp";
+        window.location.href = "/validate";
     }
 }
-
-// else {
-//     window.location.href = "/pilih";
-// }
