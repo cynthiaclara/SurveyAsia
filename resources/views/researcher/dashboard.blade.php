@@ -7,11 +7,12 @@
 <div class="container-fluid p-5">
     <div class="row">
 
-            @if(session('verified'))
-            <div class="alert alert-success col-md-4 col-md-offset-4"  role="alert">
-                <p>Verifikasi Berhasil<button type="button" class="btn-close justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button></p>
-            </div>
-            @endif
+        @if(session('verified'))
+        <div class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+            <p>Verifikasi Berhasil<button type="button" class="btn-close justify-content-end" data-bs-dismiss="alert"
+                    aria-label="Close"></button></p>
+        </div>
+        @endif
         <div class="col">
             {{-- Modal Button --}}
             <button type="button" class="btn btn-orange text-light" data-bs-toggle="modal"
@@ -40,7 +41,7 @@
                                                 placeholder="Judul untuk survey anda">
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
+                                    {{-- <div class="row mt-3">
                                         <div class="col-md-4">
                                             <label for="titleSurvey" class="form-label">Jenis Survey</label>
                                         </div>
@@ -52,7 +53,7 @@
                                                 <option value="3">Join Member</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </form>
                             </div>
                         </div>
@@ -100,7 +101,7 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Design</p>
-                    <a href="#">
+                    <a href="/researcher/create-survey">
                         <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
                     </a>
                 </div>
@@ -110,7 +111,7 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Report</p>
-                    <a href="#">
+                    <a href="/researcher/analytics-result">
                         <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
                     </a>
                 </div>
@@ -120,7 +121,7 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Share</p>
-                    <a href="#">
+                    <a href="/researcher/status-survey">
                         <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
                     </a>
                 </div>
