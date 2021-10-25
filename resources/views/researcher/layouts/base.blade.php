@@ -51,6 +51,14 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
                             Tutorial
                         </a>
+                        <a class="nav-link" href="/news">
+                            <div class="sb-nav-link-icon"><i class="fas fa-newspaper fa-fw"></i></div>
+                            News
+                        </a>
+                        <a class="nav-link" href="/contact">
+                            <div class="sb-nav-link-icon"><i class="fas fa-phone-alt fa-fw"></i></div>
+                            Kontak
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -67,6 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
+    <script src="/js/index.js"></script>
     <script src="/js/dashboard.js"></script>
 </body>
 

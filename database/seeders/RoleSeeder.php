@@ -30,7 +30,7 @@ class RoleSeeder extends Seeder
 
         Role::create([
             'id' => 3,
-            'name' => 'Responden',
+            'name' => 'Respondent',
             'description' => 'user yang menjawab survey'
         ]);
     }

@@ -4,9 +4,9 @@
 
 @section('content')
 
-<section class="header-detail-blog pt-5" id="header-detail-blog">
+<section class="header-detail-news pt-5" id="header-detail-news">
     <div class="container">
-        <h1 class="text-center fw-bold">A few words about this blog <br> platform, Ghost, and how this site was made
+        <h1 class="text-center fw-bold">A few words about this news <br> platform, Ghost, and how this site was made
         </h1>
         <img src="/assets/img/detail_blog_1.png" alt="Detail Blog" class="img-fluid w-100 my-5">
         <div class="row mb-3">
@@ -21,17 +21,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
-                <a href="#" class="link-dark text-decoration-none">
-                    <p class="fw-bold mt-3"><i class="fab fa-facebook fa-fw"></i> Share on Facebook</p>
+            <div class="col-md-6">
+            <p>Share To Your Social Media</p>
+            <div class="row mt-1">
+                    <div class="col-auto">
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-facebook-icon.png" alt="Facebook" height="42">
+                 
                 </a>
             </div>
-            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
-                <a href="#" class="link-dark text-decoration-none">
-                    <p class="fw-bold mt-3"><i class="fab fa-twitter fa-fw"></i> Share on Twitter</p>
+      
+        <div class="col-auto">
+                <a href="https://twitter.com/intent/tweet?text=Share+title&url=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-twitter-icon.png" alt="Twitter" height="42">
+                </a>
+                </div>
+          
+                <div class="col-auto">                
+                    <a href="https://wa.me/?text=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-wa-icon.png" alt="Whatsapp" height="42">
                 </a>
             </div>
         </div>
+</div>
         <h5 class="fw-bold mt-5">Next on the pipeline</h5>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, praesentium at error omnis velit illo
             quia quod! Recusandae quasi odit itaque praesentium impedit voluptatum eaque est adipisci, quae, dolore
@@ -56,7 +66,7 @@
     </div>
 </section>
 
-<section class="other-blog py-5" id="other-blog">
+<section class="other-news py-5" id="other-news">
     <div class="container">
         <h6>Tulisan Lainnya</h6>
         <hr>

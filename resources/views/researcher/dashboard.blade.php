@@ -6,6 +6,12 @@
 
 <div class="container-fluid p-5">
     <div class="row">
+
+            @if(session('verified'))
+            <div class="alert alert-success col-md-4 col-md-offset-4"  role="alert">
+                <p>Verifikasi Berhasil<button type="button" class="btn-close justify-content-end" data-bs-dismiss="alert" aria-label="Close"></button></p>
+            </div>
+            @endif
         <div class="col">
             {{-- Modal Button --}}
             <button type="button" class="btn btn-orange text-light" data-bs-toggle="modal"
@@ -42,7 +48,7 @@
                                             <select class="form-select" aria-label="Default select example">
                                                 <option selected>-Pilih-</option>
                                                 <option value="1">Free User</option>
-                                                <option value="2">Pay for Survey</option>
+                                                <option value="2">Pay per Survey</option>
                                                 <option value="3">Join Member</option>
                                             </select>
                                         </div>
@@ -94,7 +100,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Design</p>
-                    <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_edit.svg" alt="Edit Design" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>
@@ -102,7 +110,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Report</p>
-                    <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_report.svg" alt="Report" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,7 +120,9 @@
             <div class="row text-center">
                 <div class="col">
                     <p class="text-default">Share</p>
-                    <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
+                    <a href="#">
+                        <img src="/assets/img/ic_share.svg" alt="Share" class="img-fluid" width="24">
+                    </a>
                 </div>
             </div>
         </div>

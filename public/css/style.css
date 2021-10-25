@@ -39,6 +39,10 @@ body {
     color: #4eb8e9 !important;
 }
 
+.border-default {
+    border-color: #1a94cd !important;
+}
+
 .vl {
     height: 40px;
     border: 1px solid #999;
@@ -127,6 +131,7 @@ body {
     border-radius: 16px;
 }
 
+.bg-light-default,
 .faq,
 .award,
 .partner,

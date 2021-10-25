@@ -59,7 +59,8 @@
                                 <td>Manager</td>
                                 <td class="text-end"><button type="button" class="btn bg-special-blue text-white">
                                     <i class="bi bi-vector-pen me-"></i>  
-                                    Edit Item</button></td>
+                                    Edit Item</button>
+                                </td>
                                 </tr>
                                 @endfor
                         </tbody>

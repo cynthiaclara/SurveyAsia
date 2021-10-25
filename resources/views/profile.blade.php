@@ -15,7 +15,7 @@
         <a href="/profile" class="link-dark text-decoration-none">
           <p class="mt-3 ms-3"><i class="fas fa-user fa-fw"></i> Profile</p>
         </a>
-        <a href="#" class="link-dark text-decoration-none">
+        <a href="/survey/history/change-point" class="link-dark text-decoration-none">
           <p class="mt-3 ms-3"><i class="fas fa-ticket-alt fa-fw"></i> Reward
             Point</p>
         </a>
@@ -27,7 +27,7 @@
           <p class="mt-3 ms-3"><i class="fas fa-tv fa-fw"></i> Tutorial
           </p>
         </a>
-        <a href="#" class="link-dark text-decoration-none">
+        <a href="/news" class="link-dark text-decoration-none">
           <p class="mt-3 ms-3"><i class="fas fa-newspaper fa-fw"></i> News
           </p>
         </a>
@@ -41,7 +41,7 @@
     <div class="col shadow pt-4 pb-5 px-5" style="border-radius: 16px;">
       {{-- <img src="/assets/img/header_profile.svg" alt="Header" width="100%"> --}}
       <div class="row">
-        <div class="col-2 col-md-3">
+        <div class="col-2">
           <img src="/assets/img/prof_pic.png" alt="Profile Picture" width="110" class="d-block mb-2 ms-3">
           <a href="#" class="link-default text-decoration-none">Change</a>
           |
