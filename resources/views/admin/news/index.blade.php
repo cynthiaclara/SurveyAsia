@@ -33,7 +33,7 @@
                             <tr class="fw-bold">
                                 <td scope="col">Title</td>
                                 <td scope="col">Status</td>
-                                <td scope="col">Stats</td>
+                                <td scope="col">Category</td>
                                 <td class="text-end">
                                     <a href="{{ route('admin.news.create') }}"  class="btn bg-special-blue text-white">
                                         <i class="bi bi-vector-pen me-"></i>  
@@ -55,23 +55,24 @@
                                     <div class="text-published rounded-pill text-center w-75">Published</div>
                                 </td>
                                 <td scope="col">
-                                    <span class="fw-bold">120</span> 
-                                    views
-                                    <i class="bi bi-arrow-up-circle text-success"></i>
+                                    {{-- <span class="fw-bold">120</span>  --}}
+                                    Tech
+                                    {{-- <i class="bi bi-arrow-up-circle text-success"></i> --}}
+                                    
                                 </td>
                                 <td scope="col" class="text-end pe-3">
                                     <a href="#" role="button" id="dropdown-manage-news" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-three-dots fs-3 text-secondary"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-manage-news">
-                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-edit-news">Edit File</a></li>
+                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-edit-news" data-title="{{ $item->title }}" data-description="{{ $item->description }}" data-img="{{ $item->img }}" data-id="{{ $item->id }}">Edit File</a></li>
                                         <li>
-                                            {{-- <a class="dropdown-item" href="#" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">Delete File</a> --}}
                                             <form
                                                 action="{{ route('admin.news.destroy', $item->id) }}"
                                                 method="post">
                                                 @method('delete')
                                                 @csrf
+                                                <input type="hidden" name="img" value="{{ $item->img }}">
                                                 <button type="submit"
                                                     class="dropdown-item" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">delete</button>
                                                 </form>
@@ -126,21 +127,27 @@
                 <div class="container-fluid px-0 mb-5">
                     <div class="row">
                         <div class="col-6">
+                            <form  method="post" enctype="multipart/form-data" id="form-edit">
+                                @method('put')
+                                @csrf
                             <div class="mb-3">
-                                <label for="judul" class="form-label">Judul</label>
-                                <input type="text" class="form-control border-r-besar" id="judul" value="Design: A Survival Guide for Beginners">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="hidden" class="form-control border-r-besar" id="id" name="id">
+                                <input type="text" id="oldImg" name="oldImg">
+                                <input type="text" class="form-control border-r-besar" id="title" name="title">
                             </div>
                             <div class="mb-3">
                                 <label for="deskripsi" class="form-label">Deksripsi</label>
-                                <textarea class="form-control border-r-besar" id="deskripsi" rows="5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse incidunt eveniet voluptas non rem nihil aliquid ex veritatis quis voluptates</textarea>
+                                <textarea class="form-control border-r-besar" id="description" rows="5" name="description">
+                                </textarea>
                             </div>
                             
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
                                 <label for="foto" class="form-label" >Upload Foto</label>
-                                <img src="{{ asset('assets/img/surveyasia_news_1.png') }}" alt="" width="70" class="d-block mb-1">
-                                <input type="file" class="form-control border-r-besar" id="foto">
+                                <img id="img" alt="" width="70" class="d-block mb-1">
+                                <input type="file" class="form-control border-r-besar" id="foto" name="img">
                                 
                             </div>
                             <div class="mb-3">
@@ -156,7 +163,7 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn text-white mx-auto px-lg-3 mt-5" style="background-color: #4C6FFF">Simpan</button>
+                <button type="submit" class="btn text-white mx-auto px-lg-3 mt-5" style="background-color: #4C6FFF">Simpan</button>
 
                 
                 

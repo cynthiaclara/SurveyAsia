@@ -16,7 +16,9 @@
         @include('admin.component.header')
 
         <div class="container pt-4">
-          <h1>Admin Dashboard</h1>
+          <p>Jumlah user <h4>{{ $users }}</h4> </p>
+          <p>Jumlah transaksi <h4>{{ $transaksi }}</h4> </p>
+          <p>Jumlah news <h4>{{ $news }}</h4> </p>
         </div>
       </div>
     </div>

@@ -122,7 +122,7 @@ Route::middleware('is_admin')->group(function () {
         Route::redirect('/', 'admin/dashboard', 301);
 
         /* show admin dashboard */
-        Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
         /* users resource */
         Route::resource('users', UserController::class);

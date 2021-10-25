@@ -28,6 +28,7 @@ class DashboardController extends Controller
         return view('admin.dashboard.index', [
             'users' => $users,
             'transaksi' => $transaksi,
+            'news' => $news,
         ]);
     }
 }

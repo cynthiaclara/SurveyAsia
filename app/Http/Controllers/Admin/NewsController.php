@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
@@ -39,17 +40,19 @@ class NewsController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'title' => ['required'],
-            'description' => ['required']
+        $news = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'img' => 'image|file|max:1024'
         ]);
-        News::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'status' => '0',
-            'category' => '1',
-            'author' => '1',
-        ]);
+
+        $news['status'] = '0';
+        $news['category'] = '1';
+        $news['author'] = '1';
+        if ($request->file('img')) {
+            $news['img'] = $request->file('img')->store('news-img');
+        }
+        News::create($news);
         return redirect('admin/news/')->with('status', 'Success post news!');
     }
 
@@ -89,10 +92,22 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->title);
-        News::where('id', $id)->update([
-            'title' => $request->title,
-            'description' => $request->description
+        $news = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'img' => 'image|file|max:1024'
         ]);
+
+        $news['status'] = '0';
+        $news['category'] = '1';
+        $news['author'] = '1';
+        if ($request->file('img')) {
+            if ($request->oldImg) {
+                Storage::delete($request->oldImg);
+            }
+            $news['img'] = $request->file('img')->store('news-img');
+        }
+        News::where('id', $id)->update($news);
         return back();
     }
 
@@ -102,8 +117,11 @@ class NewsController extends Controller
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        if ($request->img) {
+            Storage::delete($request->img);
+        }
         News::find($id)->delete();
         return back()->with('status', 'Deleted news success');
     }
