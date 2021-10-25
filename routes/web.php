@@ -90,3 +90,9 @@ Route::get('/admin/list-user', function () {
 Route::get('/admin/news', function () {
     return view('admin.auth.news');
 });
+Route::get('/admin/create-news', function () {
+    return view('admin.auth.create-news');
+});
+Route::get('/admin/report-user', function () {
+    return view('admin.auth.report-user');
+});

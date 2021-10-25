@@ -1,4 +1,4 @@
-<nav class="nav flex-column  bg-special-black" style="min-height: 900px;" id="sidebar-dashboard">
+<nav class="nav flex-column bg-special-black" style="min-height: 100%; " id="sidebar-dashboard">
     <img src="{{ asset('assets/img/surveyasia.png') }}" alt="" width="166px" height="30px" class="mx-auto mt-3 mb-5">
     <a href="#" class="text-decoration-none">
         <div class="d-flex align-items-center px-4 py-3">
