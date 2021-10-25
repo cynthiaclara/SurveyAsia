@@ -24,7 +24,6 @@
                         </a>
                     </div>
                     
-                    {{-- LIST USER --}}
                     <table class="table align-middle" id="table-news">
                         <thead>
                             <tr class="fw-bold">
@@ -32,22 +31,21 @@
                                 <td scope="col">Status</td>
                                 <td scope="col">Stats</td>
                                 <td class="text-end">
-                                    <button type="button" class="btn bg-special-blue text-white">
+                                    <a href="{{ route('admin.news.create') }}"  class="btn bg-special-blue text-white">
                                         <i class="bi bi-vector-pen me-"></i>  
                                         Add New
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
 
-                            {{-- LOOPING DATA --}}
-                            @for ($i = 0; $i < 5; $i++)
-                                        
+                            {{-- LOOPING NEWS --}}
+                            @foreach ($news as $item)
                             <tr style="background-color: #F7FAFC;">
                                 <td scope="col" class="py-4 ps-3">
-                                    <h6 class="fw-bold" style="color: #2A4365">Design: A Survival Guide for Beginners</h6>
-                                    <span class="d-block text-secondary" style="font-size: 13px">Posted 3 days ago</span>
+                                    <h6 class="fw-bold" style="color: #2A4365">{{ $item->title }}</h6>
+                                    <span class="d-block text-secondary" style="font-size: 13px">Posted {{ $item->created_at->diffForHumans(); }}</span>
                                 </td>
                                 <td scope="col">
                                     <div class="text-published rounded-pill text-center w-75">Published</div>
@@ -63,12 +61,21 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-manage-news">
                                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-edit-news">Edit File</a></li>
-                                        <li><a class="dropdown-item" href="#" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">Delete File</a></li>
+                                        <li>
+                                            {{-- <a class="dropdown-item" href="#" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">Delete File</a> --}}
+                                            <form
+                                                action="{{ route('admin.news.destroy', $item->id) }}"
+                                                method="post">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit"
+                                                    class="dropdown-item" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">delete</button>
+                                                </form>
+                                        </li>
                                     </ul>
                                 </td>
                                 </tr>
-
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                     {{-- END OF LIST USER --}}

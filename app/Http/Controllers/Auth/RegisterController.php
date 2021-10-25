@@ -62,14 +62,15 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-
         // check the role of registration
         if ($request->role == Role::IS_RESPONDENT) {
             // validate respondent required fields
             $this->validatorRespondent($request->all())->validate();
-        } else {
+        } else if ($request->role == Role::IS_RESEARCHER) {
             // validate researcher required fields
             $this->validator($request->all())->validate();
+        } else {
+            abort(500);
         }
 
         //dispatch registration event
@@ -104,6 +105,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:25'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
+            'role' => ['required']
         ]);
     }
 
