@@ -58,6 +58,9 @@ body {
 .border-r-sedang {
     border-radius: 8px;
 }
+.border-r-besar {
+    border-radius: 16px;
+}
 .table-no-border-head > thead > tr > td {
     border: none;
 }
@@ -66,10 +69,7 @@ body {
     border-bottom: 10px solid rgb(255, 255, 255);   
 
 }
-#table-news > thead > tr > td {
-   position: relative;
-   z-index: 9999;
-}
+
 .text-published {
     border: 2px solid #9AE6B4;
     color: #9AE6B4;
