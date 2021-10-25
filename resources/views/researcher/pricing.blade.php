@@ -63,9 +63,11 @@
                                         sed repellat eius quam?
                                     </p>
                                     <h5 class="text-orange">Free</h5>
-                                    <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
-                                    <a class="btn btn-orange text-light w-50 mb-3" href="/researcher/payment"
-                                        role="button">Free!</a>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Quis,
+                                        labore.</p>
+                                    <a class="btn btn-orange text-light w-50 mb-3" href="/researcher/dashboard"
+                                        role="button">Selanjutnya</a>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quis,
                                         labore.
@@ -89,9 +91,11 @@
                                         sed repellat eius quam?
                                     </p>
                                     <h5 class="text-orange">Contact Us</h5>
-                                    <p class="text-secondary">Lorem ipsum dolor sit amet.</p>
-                                    <a class="btn btn-orange text-light w-50 mb-3" href="/researcher/payment"
-                                        role="button">Beli</a>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Quis,
+                                        labore.</p>
+                                    <a class="btn btn-orange text-light w-50 mb-3" href="/contact" role="button">Contact
+                                        Us</a>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quis,
                                         labore.
@@ -142,7 +146,7 @@
                                         Quis,
                                         labore.
                                     </p>
-                                    <a class="btn btn-default text-light w-50 mb-3" href="/payment"
+                                    <a class="btn btn-default text-light w-50 mb-3" href="/researcher/payment"
                                         role="button">Beli</a>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quis,
@@ -258,7 +262,7 @@
                                     </p>
                                     <h5 class="text-default">Rp1.999.000/user</h5>
                                     <p class="text-secondary">Minimal 5 User</p>
-                                    <a class="btn btn-default text-light w-50 mb-3" href="/payment"
+                                    <a class="btn btn-default text-light w-50 mb-3" href="/researcher/payment"
                                         role="button">Beli</a>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quis,
@@ -281,8 +285,7 @@
                                         Quis,
                                         labore.
                                     </p>
-                                    <a class="btn btn-orange text-light w-50 mb-3" href="/researcher/payment"
-                                        role="button">Contact
+                                    <a class="btn btn-orange text-light w-50 mb-3" href="/contact" role="button">Contact
                                         Us</a>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                         Quis,

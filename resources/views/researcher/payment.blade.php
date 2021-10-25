@@ -121,7 +121,8 @@
         </div>
         <hr>
         <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-default w-25 text-white my-3" name="submit">Beli</button>
+            {{-- <button type="submit" class="btn btn-default w-25 text-white my-3" name="submit">Beli</button> --}}
+            <a class="btn btn-default w-25 text-white my-3" href="/researcher/dashboard" role="button">Beli</a>
         </div>
     </form>
 </div>
