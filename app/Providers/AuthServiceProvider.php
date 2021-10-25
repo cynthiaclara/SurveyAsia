@@ -32,13 +32,25 @@ class AuthServiceProvider extends ServiceProvider
 
 
 
-        //send otp instead of link for verification
+        //send link for verification
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
 
             return (new MailMessage)
-                ->subject('Registration OTP')
-                ->line('the information below is your OTP for verifying email to use our services')
-                ->action('Verify Now', $url);
+                ->subject('SurveyAsia Account Activation')
+                ->line('Thank you for registering')
+                ->line('Click the button below to verify your account and start using our services')
+                ->action('Verify Now', $url)
+                ->line('*not you ?, just ignore this message and secure your email account');
         });
+
+        //send otp instead of link for verification
+        /* VerifyEmail::toMailUsing(function ($notifiable, $url) {
+
+            return (new MailMessage)
+                ->subject('Your OTP for SurveyAsia Account Activation')
+                ->line('the information below is your OTP for verifying email to use our services')
+                ->action('Verify Now', $url)
+                ->line('*not you ?, just ignore this message and secure your email account');
+        }); */
     }
 }
