@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Notifications;
+namespace App\Notifications\Auth;
 
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
-class Custom extends Notification implements ShouldQueue
+class QueuedEmailVerification extends VerifyEmail implements ShouldQueue
 {
     use Queueable;
 
@@ -27,10 +26,10 @@ class Custom extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return array
      */
-    public function via($notifiable)
-    {
-        return ['mail'];
-    }
+    // public function via($notifiable)
+    // {
+    //     return ['mail'];
+    // }
 
     /**
      * Get the mail representation of the notification.
@@ -38,14 +37,13 @@ class Custom extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-            ->view('notification.custom');
-        // ->line('The introduction to the notification.')
-        // ->action('Notification Action', url('/'))
-        // ->line('Thank you for using our application!');
-    }
+    // public function toMail($notifiable)
+    // {
+    //     return (new MailMessage)
+    //                 ->line('The introduction to the notification.')
+    //                 ->action('Notification Action', url('/'))
+    //                 ->line('Thank you for using our application!');
+    // }
 
     /**
      * Get the array representation of the notification.
@@ -53,10 +51,10 @@ class Custom extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
-    }
+    // public function toArray($notifiable)
+    // {
+    //     return [
+    //         //
+    //     ];
+    // }
 }

@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/researcher/dashboard';
+    public const HOME = '/';
 
     /**
      * The controller namespace for the application.
@@ -57,7 +57,25 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+            return $request->user()
+                ? Limit::perMinute(100)->by($request->user()->id)
+                : Limit::perMinute(10)->by($request->ip());
+        });
+
+        /**
+         * Define rate limiter for user login, currently 6 attempts per 4 minutes
+         * using the same ip address as key 
+         */
+        RateLimiter::for('login', function (Request $request) {
+            return Limit::perMinutes(4, 6)->by($request->ip());
+        });
+
+        /**
+         * Define rate limiter for admin login, currently 2 attempts per 10 minutes
+         * using the same ip address as key 
+         */
+        RateLimiter::for('admin-login', function (Request $request) {
+            return Limit::perMinutes(10, 2)->by($request->ip());
         });
     }
 }
