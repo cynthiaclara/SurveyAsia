@@ -16,7 +16,7 @@ class NewsController extends Controller
     public function index()
     {
         return view('admin.news.index', [
-            'news' => News::get()
+            'news' => News::latest()->get()
         ]);
     }
 
@@ -27,9 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.index', [
-            'news' => News::get()
-        ]);
+        return view('admin.news.create');
     }
 
     /**
@@ -40,6 +38,11 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => ['required'],
+            'description' => ['required']
+        ]);
         News::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -47,7 +50,7 @@ class NewsController extends Controller
             'category' => '1',
             'author' => '1',
         ]);
-        return back();
+        return redirect('admin/news/')->with('status', 'Success post news!');
     }
 
     /**
@@ -102,6 +105,6 @@ class NewsController extends Controller
     public function destroy($id)
     {
         News::find($id)->delete();
-        return back();
+        return back()->with('status', 'Deleted news success');
     }
 }

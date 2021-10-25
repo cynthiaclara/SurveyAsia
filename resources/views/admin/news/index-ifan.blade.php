@@ -16,11 +16,7 @@
                 @include('admin.component.header')
 
                 <div class="container pt-4">
-                    @if (session()->has('status'))
-                        <div class="alert alert-success">
-                        {{ session()->get('status') }}
-                        </div>
-                    @endif
+
                     <div class="position-relative input-group align-items-center" style="width: 15%">
                         <input type="text" class="form-control rounded-pill py-2 text-center" placeholder="Search everything" aria-label="search" aria-describedby="basic-addon1" style="font-size: 12px">
                         <a href="#">

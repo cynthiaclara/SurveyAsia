@@ -165,18 +165,18 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
 //View dashboard admin by fe
-Route::get('/login-admin', function () {
-    return view('admin.auth.login-admin');
-});
-Route::get('/admin/list-user', function () {
-    return view('admin.auth.list-user');
-});
-Route::get('/admin/news', function () {
-    return view('admin.auth.news');
-});
-Route::get('/admin/create-news', function () {
-    return view('admin.auth.create-news');
-});
-Route::get('/admin/report-user', function () {
-    return view('admin.auth.report-user');
-});
+// Route::get('/login-admin', function () {
+//     return view('admin.auth.login-admin');
+// });
+// Route::get('/admin/list-user', function () {
+//     return view('admin.auth.list-user');
+// });
+// Route::get('/admin/news', function () {
+//     return view('admin.auth.news');
+// });
+// Route::get('/admin/create-news', function () {
+//     return view('admin.auth.create-news');
+// });
+// Route::get('/admin/report-user', function () {
+//     return view('admin.auth.report-user');
+// });
