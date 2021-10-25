@@ -2,23 +2,24 @@
 
 namespace Tests\Unit;
 
+use App\Mail\WelcomeNewUserMail;
 use Illuminate\Support\Facades\Mail;
 use PHPUnit\Framework\TestCase;
 
-class ExampleTest extends TestCase
+class TestSendEmailToUser extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic unit test example.
      *
      * @return void
      */
-    public function test_example()
+    public function test_mail()
     {
         Mail::fake();
 
         Mail::assertNothingSent();
 
-        //Mail::assertQueued(WelcomeNewUserMail::class);
+        Mail::assertQueued();
 
         Mail::assertSent(WelcomeNewUserMail::class);
     }
