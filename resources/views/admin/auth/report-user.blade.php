@@ -78,7 +78,7 @@
                     </div>
 
 
-
+                    {{-- SCRIPT UNTUK CHART --}}
                     <script>
                         
                         const labels = [
