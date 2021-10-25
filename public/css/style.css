@@ -204,6 +204,13 @@ body {
 }
 /* End KTP */
 
+/* .upload-ktp {
+    background-image: url("/assets/img/bg_ktp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+} */
+
 .form-range::-webkit-slider-thumb {
     background-color: #1a94cd;
 }

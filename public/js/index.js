@@ -26,6 +26,15 @@ $(function () {
     });
 });
 
+$(function () {
+    $(".link-question").on("click", function (e) {
+        $(".link-question").removeClass(
+            "link-default text-decoration-underline"
+        );
+        $(this).addClass("link-default text-decoration-underline");
+    });
+});
+
 // $(function () {
 //     $(".breadcrumb-item").on("click", function (e) {
 //         $(".breadcrumb-item").removeClass(
