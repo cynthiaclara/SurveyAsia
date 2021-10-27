@@ -133,7 +133,7 @@ class RegisterController extends Controller
             'job_location' => ['required', 'string', 'max:50'],
         ];
 
-        if (!$data['similar_address'] == 'checked') {
+        if (array_key_exists('similar_address', $data) && !$data['similar_address'] == 'checked') {
             $rules['province'] = ['required', 'string', 'max:50'];
             $rules['city'] = ['required', 'string', 'max:50'];
             $rules['district'] = ['required', 'max:50'];
@@ -191,7 +191,7 @@ class RegisterController extends Controller
         ];
 
         // check if current address is similar to ktp addresses
-        if ($data['similar_address'] == 'checked') {
+        if (array_key_exists('similar_address', $data) && $data['similar_address'] == 'checked') {
             $profile['province'] = $profile['ktp_province'];
             $profile['city'] = $profile['ktp_city'];
             $profile['district'] = $profile['ktp_district'];
