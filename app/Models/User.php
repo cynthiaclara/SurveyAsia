@@ -48,14 +48,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    // public function sendEmailVerificationNotification()
-    // {
-    //     // Approach 1
-    //     // $this->notify(new QueuedEmailVerification());
+    public function sendEmailVerificationNotification()
+    {
+        // Approach 1
+        // $this->notify(new QueuedEmailVerification());
 
-    //     // Approach 2
-    //     // QueuedEmailVerificationJob::dispatch($this);
-    // }
+        //Approach 2
+        QueuedEmailVerificationJob::dispatch($this)->onQueue('emails');
+    }
 
 
     /**
