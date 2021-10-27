@@ -126,6 +126,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Subscription::class, 'user_id');
     }
 
+    /**
+     * Get user's list of surveys
+     */
+    public function surveys()
+    {
+        # code...
+        return $this->hasMany(Survey::class);
+    }
+
     // This code will return error, dont use it
     // public function permissions()
     // {
