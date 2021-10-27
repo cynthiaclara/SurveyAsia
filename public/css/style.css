@@ -214,3 +214,15 @@ body {
 .form-range::-webkit-slider-thumb {
     background-color: #1a94cd;
 }
+
+.slider-respondent::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #f7931b !important;
+    cursor: pointer;
+}
+
+.slider-respondent::-moz-range-thumb {
+    background: #f7931b !important;
+    cursor: pointer;
+}
