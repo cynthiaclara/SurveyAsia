@@ -17,7 +17,7 @@ class AddProfileForeignToUsersTable extends Migration
             //
             $table->unsignedBigInteger('profile_id')->nullable();
 
-            $table->foreign('profile_id')->references('id')->on('users_profile')->cascadeOnUpdate()->onDelete('SET NULL');
+            $table->foreign('profile_id')->references('id')->on('users_profiles')->cascadeOnUpdate()->onDelete('SET NULL');
         });
     }
 
