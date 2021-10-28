@@ -17,6 +17,7 @@ class UsersProfile extends Model
         'nik',
         'first_name',
         'last_name',
+        'photo',
         'gender',
         'birth_place',
         'birth_date',

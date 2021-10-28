@@ -25,7 +25,7 @@ use App\Http\Controllers\SocialShareController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Auth::routes(['verify' => true]);
 Auth::routes();
 
 //for testing purpose
@@ -78,6 +78,14 @@ Route::middleware(['auth', 'role:respondent'])->group(function () {
         Route::view('/dashboard', 'respondent.dashboard');
     });
 });
+
+//editprofile
+Route::group(array('prefix'=>'user'), function(){
+    Route::get('editprofile/{id}', 'ProfileController@edit');
+    Route::post('updateprofile/{id}','ProfileController@update')->name('updateprofile');
+    Route::post('profile/simpanphoto','ProfileController@simpanphoto')->name('simpanphoto');
+});
+
 
 //social share
 // Route::get('/detail-news', [SocialShareController::class, 'index']);

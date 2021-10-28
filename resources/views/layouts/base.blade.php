@@ -67,6 +67,7 @@
   </script>
   <script src="/js/index.js"></script>
   <script src="/js/chart.js"></script>
+  @yield('js')
 </body>
 
 </html>
