@@ -12,8 +12,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SocialShareController;
-
-
+use App\Http\Controllers\SurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +58,8 @@ Route::middleware(['guest'])->group(function () {
 /* Researcher routes */
 Route::middleware(['auth', 'role:researcher', 'verified'])->group(function () {
     Route::prefix('researcher')->name('researcher.')->group(function () {
-        Route::redirect('/', '/researcher/dashboard', 301);
+        Route::redirect('/', '/researcher/surveys', 301);
+        Route::redirect('/dashboard', '/researcher/surveys', 301);
         Route::view('dashboard', 'researcher.dashboard');
         Route::view('pricing', 'researcher.pricing');
         Route::view('payment', 'researcher.payment');
@@ -68,6 +68,9 @@ Route::middleware(['auth', 'role:researcher', 'verified'])->group(function () {
         Route::view('collect-respondent', 'researcher.collect-respondent');
         Route::view('status-survey', 'researcher.status-survey');
         Route::view('analytics-result', 'researcher.analytics-result');
+
+        //survey resource
+        Route::resource('surveys', SurveyController::class);
     });
 });
 
@@ -108,10 +111,6 @@ Route::middleware('is_admin')->group(function () {
 Route::view('/admin-login', 'admin.auth.login-admin')->name('view-admin-login');
 Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 'attemptLogin'])->name('attempt-admin-login')->middleware('throttle:admin-login');
 
-// register
-// Route::view('/admin-register', 'admin.auth.register')->name('view-admin-register');
-// Route::post('/admin-register', [\App\Http\Controllers\Admin\AuthController::class, 'attemptRegister'])->name('attempt-admin-register');
-
 /* email verification routes, DO NOT MODIFY */
 // email verification link notice view
 Route::get('email/verify/{id}', [VerificationController::class, 'send'])->name('verification.send');
@@ -121,23 +120,3 @@ Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify']
 
 // resend email verification proccess
 Route::post('/email/verification-notification', [VerificationController::class])->middleware(['throttle:2,10'])->name('verification.resend');
-// Route::post('/email/verification-notification', function (Request $request) {
-//     $request->user()->sendEmailVerificationNotification();
-//     return back()->with('message', 'Verification link sent!');
-// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
-//View dashboard admin by fe
-// Route::get('/login-admin', function () {
-//     return view('admin.auth.login-admin');
-// });
-// Route::get('/admin/list-user', function () {
-//     return view('admin.auth.list-user');
-// });
-// Route::get('/admin/news', function () {
-//     return view('admin.auth.news');
-// });
-// Route::get('/admin/create-news', function () {
-//     return view('admin.auth.create-news');
-// });
-// Route::get('/admin/report-user', function () {
-//     return view('admin.auth.report-user');
-// });

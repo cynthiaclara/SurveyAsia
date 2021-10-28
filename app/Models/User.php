@@ -132,7 +132,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function surveys()
     {
         # code...
-        return $this->hasMany(Survey::class);
+        return $this->hasMany(Survey::class, 'creator_id');
     }
 
     // This code will return error, dont use it
