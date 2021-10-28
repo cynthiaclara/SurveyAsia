@@ -103,11 +103,8 @@ function valueSlider() {
     };
 }
 
-// Modal Pricing
-$(window).load(function () {
-    $("#pricingModal").modal("show");
-});
-
-$(function () {
-    $("#pricingModal").modal("show");
-});
+function modalPreviewQuestion() {
+    var question = document.getElementById("modal-question").textContent;
+    var previewQuestion = document.getElementById("preview-question");
+    previewQuestion.innerHTML = question;
+}

@@ -47,7 +47,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-money-check-alt fa-fw"></i></div>
                             Harga
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/researcher/tutorial">
                             <div class="sb-nav-link-icon"><i class="fas fa-tv fa-fw"></i></div>
                             Tutorial
                         </a>
@@ -79,6 +79,11 @@
     </script>
     <script src="/js/index.js"></script>
     <script src="/js/dashboard.js"></script>
+    <script>
+        window.onload = function() {
+            $("#pricingModal").modal("show");
+        };
+    </script>
 </body>
 
 </html>
