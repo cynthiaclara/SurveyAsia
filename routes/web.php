@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewsController as News;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SocialShareController;
@@ -25,7 +26,7 @@ use App\Http\Controllers\SocialShareController;
 |
 */
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 //for testing purpose
 
@@ -78,40 +79,6 @@ Route::middleware(['auth', 'role:respondent'])->group(function () {
     });
 });
 
-//forgot password
-// Route::get('/forgot-password', function () {
-//     return view('auth.forgot-password');
-// });
-
-// Route::get('/forgot-password', function () {
-//     return view('auth.forgot-password');
-// })->middleware('guest')->name('password.request');
-
-// Route::post('/forgot-password', function (Request $request) {
-//     $request->validate(['email' => 'required|email']);
-
-//     $status = Password::sendResetLink(
-//         $request->only('email')
-//     );
-
-//     return $status === Password::RESET_LINK_SENT
-//         ? back()->with(['status' => __($status)])
-//         : back()->withErrors(['email' => __($status)]);
-// })->middleware('guest')->name('password.email');
-
-// Route::get('/reset-password/{token}', function ($token) {
-//     return view('auth.passwords.reset', ['token' => $token]);
-// })->middleware('guest')->name('password.reset');
-
-// Route::post('/reset-password/{token}', [ResetPasswordController::class, 'resetPassword'])
-//     ->middleware('guest')->name('password.update');
-
-// Route::post('/reset-password', [ResetPasswordController::class, 'resetPassword']);
-
-// Route::view('forgot_password', 'auth.reset')->name('password.reset');
-// Route::post('password/email', [ForgotPasswordController::class, 'forgot']);
-// Route::post('password/reset', [ForgotPasswordController::class, 'reset']);
-
 //social share
 // Route::get('/detail-news', [SocialShareController::class, 'index']);
 
@@ -147,23 +114,13 @@ Route::post('/admin-login', [\App\Http\Controllers\Admin\AuthController::class, 
 
 /* email verification routes, DO NOT MODIFY */
 // email verification link notice view
-Route::get('email/verify', function () {
-    return view('auth.verify');
-})->middleware('auth')->name('verification.notice');
+Route::get('email/verify/{id}', [VerificationController::class, 'send'])->name('verification.send');
 
-// // email verification proccess
-// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-//     $request->fulfill();
-
-//     // specifiy where to redirect after activated
-//     return redirect('/');
-// })->middleware(['auth', 'signed'])->name('verification.verify');
+// email verification proccess
+Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
 // resend email verification proccess
-// Route::post('/email/verification-notification', function (Request $request) {
-//     $request->user()->sendEmailVerificationNotification();
-//     return back()->with('message', 'Verification link sent!');
-// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+Route::post('/email/verification-notification', [VerificationController::class])->middleware(['throttle:2,10'])->name('verification.resend');
 // Route::post('/email/verification-notification', function (Request $request) {
 //     $request->user()->sendEmailVerificationNotification();
 //     return back()->with('message', 'Verification link sent!');

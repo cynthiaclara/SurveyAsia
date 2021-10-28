@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'email/verify ';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -88,7 +88,7 @@ class RegisterController extends Controller
             return $response;
         }
 
-        return redirect($this->redirectPath())->with('success', 'Registration Complete');
+        return redirect('email/verify/' . $user->id)->with('success', 'Registration Complete');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\User;
+use App\Notifications\Auth\QueuedEmailVerification;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -36,6 +37,6 @@ class QueuedEmailVerificationJob implements ShouldQueue
     public function handle()
     {
         //send the default email verification
-        $this->user->notify(new VerifyEmail);
+        $this->user->notify(new QueuedEmailVerification);
     }
 }
