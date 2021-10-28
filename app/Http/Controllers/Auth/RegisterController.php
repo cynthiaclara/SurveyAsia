@@ -79,6 +79,8 @@ class RegisterController extends Controller
         // create profile when registering as respondent
         if ($request->role == Role::IS_RESPONDENT) {
             $profile = $this->createProfile($request->all(), $user->id);
+            $user->profile_id = $profile->id;
+            $user->save();
         }
 
         //$this->guard()->login($user);

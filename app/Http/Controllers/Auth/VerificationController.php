@@ -42,7 +42,7 @@ class VerificationController extends Controller
     {
         // $this->middleware('auth');
         $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:2,10')->only('verify', 'resend');
+        $this->middleware('throttle:2,10')->only(['verify', 'resend']);
     }
 
 
@@ -54,7 +54,8 @@ class VerificationController extends Controller
      */
     public function show(Request $request)
     {
-        return view('auth.verify');
+        return $request->user()->hasVerifiedEmail() ? redirect('/') :
+            view('auth_my.unverified');
     }
 
     /**

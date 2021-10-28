@@ -120,4 +120,7 @@ Route::get('email/verify/{id}', [VerificationController::class, 'send'])->name('
 Route::get('email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 
 // resend email verification proccess
-Route::post('/email/verification-notification', [VerificationController::class])->middleware(['throttle:2,10'])->name('verification.resend');
+Route::post('email/verification-resend', [VerificationController::class, 'resend'])->middleware(['throttle:2,10'])->name('verification.resend');
+
+// resend email verification proccess
+Route::get('email/verification-notification', [VerificationController::class, 'show'])->name('verification.notice');
