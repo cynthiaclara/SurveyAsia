@@ -33,6 +33,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
     </script>
 
+    {{-- Import Library ChartJS --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Surveyasia.id</title>
 </head>
 
@@ -44,7 +47,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/index.js"></script>
-
+    <script src="/js/edit-news.js"></script>
     @yield('script')
 
 </body>

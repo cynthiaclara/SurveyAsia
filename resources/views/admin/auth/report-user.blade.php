@@ -28,21 +28,21 @@
                             <div class="p-3 bg-primary rounded-circle me-2"></div>
                             <div>
                                 <span class="text-secondary">User</span>
-                                <span class="d-block fw-bold">{{ $users }}</span>
+                                <span class="d-block fw-bold">3456</span>
                             </div>
                         </div>
                         <div class="col-3 d-flex bg-white align-items-center px-3 py-4 border-r-sedang">
                             <div class="p-3 bg-primary rounded-circle me-2"></div>
                             <div>
                                 <span class="text-secondary">News</span>
-                                <span class="d-block fw-bold">{{ $news }}</span>
+                                <span class="d-block fw-bold">3456</span>
                             </div>
                         </div>
                         <div class="col-3 d-flex bg-white align-items-center px-3 py-4 border-r-sedang">
                             <div class="p-3 bg-primary rounded-circle me-2"></div>
                             <div>
                                 <span class="text-secondary">Transaction</span>
-                                <span class="d-block fw-bold">{{ $transaksi }}</span>
+                                <span class="d-block fw-bold">3456</span>
                             </div>
                         </div>
                             

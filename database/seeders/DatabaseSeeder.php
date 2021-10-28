@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Transaction;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +23,9 @@ class DatabaseSeeder extends Seeder
                 UsersProfileSeeder::class,
                 RolePermissionSeeder::class,
                 SubscriptionSeeder::class,
-                SurveyCaseSeeder::class
+                SurveyCaseSeeder::class,
+                NewsSeeder::class,
+                TransactionSeeder::class,
             ]
         );
     }

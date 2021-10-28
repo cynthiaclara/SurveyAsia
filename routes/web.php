@@ -122,7 +122,7 @@ Route::middleware('is_admin')->group(function () {
         Route::redirect('/', 'admin/dashboard', 301);
 
         /* show admin dashboard */
-        Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
         /* users resource */
         Route::resource('users', UserController::class);
@@ -164,3 +164,23 @@ Route::get('email/verify', function () {
 //     $request->user()->sendEmailVerificationNotification();
 //     return back()->with('message', 'Verification link sent!');
 // })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+// Route::post('/email/verification-notification', function (Request $request) {
+//     $request->user()->sendEmailVerificationNotification();
+//     return back()->with('message', 'Verification link sent!');
+// })->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+//View dashboard admin by fe
+// Route::get('/login-admin', function () {
+//     return view('admin.auth.login-admin');
+// });
+// Route::get('/admin/list-user', function () {
+//     return view('admin.auth.list-user');
+// });
+// Route::get('/admin/news', function () {
+//     return view('admin.auth.news');
+// });
+// Route::get('/admin/create-news', function () {
+//     return view('admin.auth.create-news');
+// });
+// Route::get('/admin/report-user', function () {
+//     return view('admin.auth.report-user');
+// });
