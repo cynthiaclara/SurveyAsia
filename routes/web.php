@@ -63,6 +63,7 @@ Route::middleware(['auth', 'role:researcher', 'verified'])->group(function () {
         Route::view('dashboard', 'researcher.dashboard');
         Route::view('pricing', 'researcher.pricing');
         Route::view('payment', 'researcher.payment');
+        Route::view('tutorial', 'researcher.tutorial');
         Route::view('create-survey', 'researcher.create-survey');
         Route::view('customize-diagram', 'researcher.customize-diagram');
         Route::view('collect-respondent', 'researcher.collect-respondent');

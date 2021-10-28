@@ -152,7 +152,8 @@ body {
 .hero-blog img,
 .hero-blog .card,
 .history-survey .card,
-.header-survey .card {
+.header-survey .card,
+.tutorial .card {
     border-radius: 16px;
 }
 
