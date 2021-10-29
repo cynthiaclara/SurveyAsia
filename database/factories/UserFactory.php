@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -44,6 +45,26 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    public function researcher()
+    {
+        # code...
+        return $this->state(function (array $attributes) {
+            return [
+                'role_id' => Role::IS_RESEARCHER,
+            ];
+        });
+    }
+
+    public function respondent()
+    {
+        # code...
+        return $this->state(function (array $attributes) {
+            return [
+                'role_id' => Role::IS_RESPONDENT,
             ];
         });
     }

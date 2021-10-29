@@ -111,7 +111,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function subscription()
     {
         # code...
-        return $this->hasOne(Subscription::class, 'user_id');
+        return $this->hasOneThrough(Subscription::class, UsersSubscriptions::class, 'user_id');
     }
 
     /**
@@ -123,7 +123,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function subscriptions()
     {
         # code...
-        return $this->hasMany(Subscription::class, 'user_id');
+        return $this->belongsToMany(Subscription::class, 'users_subscriptions');
     }
 
     /**

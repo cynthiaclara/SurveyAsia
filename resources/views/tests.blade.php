@@ -39,7 +39,7 @@
       </div>
     </div> --}}
 
-    <h3>test survey case</h3>
+    {{-- <h3>test survey case</h3>
     <div class="row mb-5">
       <div class="col">
         <div class="card shadow">
@@ -54,9 +54,6 @@
               @foreach ($survey->questions as $question)
                 <li class="list-group-item">
                   <p>{{ $no }}. {{ $question->question }} ?</p>
-                  {{-- @php
-                    dd($question);
-                  @endphp --}}
                   @if ($question->has_options == 'yes' && $question->multi_answers == 'yes')
                     <ol class="list-group">
                       @foreach ($question->options as $option)
@@ -104,7 +101,25 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
+
+    <h3>Test Jumlah User Subscription</h3>
+    <table class="table table-striped table-inverse table-responsive">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Subscription</th>
+          <th>Jumlah User</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($subscriptions as $subscription)
+          <tr>
+            <td scope="row">{{ $subscription->name }}</td>
+            <td>{{ $subscription->users->count() }}</td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
 
   </div>
 
