@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Survey;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class SurveyController extends Controller
 {
@@ -14,7 +16,18 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        //
+        // Conventional
+        // $user = Auth::user();
+        // $surveys = Survey::where(['creator_id' => $user->id])->get();
+
+        // Relational
+        $surveys = Auth::user()->surveys;
+
+        $data = [
+            'surveys' => $surveys
+        ];
+
+        return view('researcher.dashboard', $data);
     }
 
     /**
@@ -36,6 +49,23 @@ class SurveyController extends Controller
     public function store(Request $request)
     {
         //
+        if (!$request->user()->can('create', Survey::class)) {
+            # code...
+            abort(403, 'Unauthorized');
+        }
+
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        Survey::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'creator_id' => $request->user()->id
+        ]);
+
+        return redirect()->back()->with(['surveys.success', 'Survey Created!']);
     }
 
     /**

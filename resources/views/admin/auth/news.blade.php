@@ -17,17 +17,17 @@
 
                 <div class="container pt-4">
 
+                    <div class="position-relative input-group align-items-center" style="width: 15%">
+                        <input type="text" class="form-control rounded-pill py-2 text-center" placeholder="Search everything" aria-label="search" aria-describedby="basic-addon1" style="font-size: 12px">
+                        <a href="#">
+                            <i class="position-absolute top-50 start-0 translate-middle-y bi bi-search p-2 ms-1 text-secondary"></i>
+                        </a>
+                    </div>
+                    
                     {{-- LIST USER --}}
-                        <div class="position-relative input-group align-items-center" style="width: 15%">
-                            <input type="text" class="form-control rounded-pill py-2 text-center" placeholder="Search everything" aria-label="search" aria-describedby="basic-addon1" style="font-size: 12px">
-                            <a href="#">
-                                <i class="position-absolute top-50 start-0 translate-middle-y bi bi-search p-2 ms-1 text-secondary" style="z-index: 999;"></i>
-                            </a>
-                        </div>
-
                     <table class="table align-middle" id="table-news">
                         <thead>
-                            <tr>
+                            <tr class="fw-bold">
                                 <td scope="col">Title</td>
                                 <td scope="col">Status</td>
                                 <td scope="col">Stats</td>
@@ -62,7 +62,7 @@
                                         <i class="bi bi-three-dots fs-3 text-secondary"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-manage-news">
-                                        <li><a class="dropdown-item" href="#">Edit File</a></li>
+                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal-edit-news">Edit File</a></li>
                                         <li><a class="dropdown-item" href="#" onclick="return confirm('Apakah kamu yakin ingin menghapus?')">Delete File</a></li>
                                     </ul>
                                 </td>
@@ -98,13 +98,64 @@
                     </nav>
                     {{-- END OF PAGINATION --}}
                 </div>
-
-
-
-
             </div>
     </div>
 </div>
+
+<!-- Modal Edit News -->
+<div class="modal fade" id="modal-edit-news" tabindex="-1" aria-labelledby="modal-edit-newsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body py-4">
+                <div class="d-flex justify-content-between">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit News</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class="mt-2">
+                <div class="container-fluid px-0 mb-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="judul" class="form-label">Judul</label>
+                                <input type="text" class="form-control border-r-besar" id="judul" value="Design: A Survival Guide for Beginners">
+                            </div>
+                            <div class="mb-3">
+                                <label for="deskripsi" class="form-label">Deksripsi</label>
+                                <textarea class="form-control border-r-besar" id="deskripsi" rows="5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse incidunt eveniet voluptas non rem nihil aliquid ex veritatis quis voluptates</textarea>
+                            </div>
+                            
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="foto" class="form-label" >Upload Foto</label>
+                                <img src="{{ asset('assets/img/surveyasia_news_1.png') }}" alt="" width="70" class="d-block mb-1">
+                                <input type="file" class="form-control border-r-besar" id="foto">
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="tanggal" class="form-label">Tanggal Publish</label>
+                                <input type="date" class="form-control border-r-besar" id="tanggal" value="2021-07-22">
+                            </div>
+                            <div class="mb-3">
+                                <label for="jam-publish" class="form-label">Jam Publish</label>
+                                <input type="time" class="form-control border-r-besar" id="jam-publish" value="23:00">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn text-white mx-auto px-lg-3 mt-5" style="background-color: #4C6FFF">Simpan</button>
+
+                
+                
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+{{-- END OF MODAL EDIT NEWS --}}
 
 
 @endsection

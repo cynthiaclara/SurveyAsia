@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use Illuminate\Support\Facades\Mail;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -13,6 +14,12 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-        $this->assertTrue(true);
+        Mail::fake();
+
+        Mail::assertNothingSent();
+
+        //Mail::assertQueued(WelcomeNewUserMail::class);
+
+        Mail::assertSent(WelcomeNewUserMail::class);
     }
 }

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Role;
+use App\Models\UsersProfile;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -31,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'pilih';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -61,20 +62,35 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-        $this->validator($request->all())->validate();
+        // check the role of registration
+        if ($request->role == Role::IS_RESPONDENT) {
+            // validate respondent required fields
+            $this->validatorRespondent($request->all())->validate();
+        } else if ($request->role == Role::IS_RESEARCHER) {
+            // validate researcher required fields
+            $this->validator($request->all())->validate();
+        } else {
+            abort(500);
+        }
 
-        //register
-        //$this->create($request->all());
+        //dispatch registration event
+        event(new Registered($user = $this->create($request->all(), $request->role)));
 
-        event(new Registered($user = $this->create($request->all())));
+        // create profile when registering as respondent
+        if ($request->role == Role::IS_RESPONDENT) {
+            $profile = $this->createProfile($request->all(), $user->id);
+            $user->profile_id = $profile->id;
+            $user->save();
+        }
 
-        $this->guard()->login($user);
+        //$this->guard()->login($user);
 
-        /* if ($response = $this->registered($request, $user)) {
+        // registered event listener
+        if ($response = $this->registered($request, $user)) {
             return $response;
-        } */
+        }
 
-        return redirect($this->redirectPath());
+        return redirect('email/verify/' . $user->id)->with('success', 'Registration Complete');
     }
 
     /**
@@ -91,16 +107,53 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:25'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
+            'role' => ['required']
         ]);
+    }
+
+    /**
+     * Get a validator for an incoming respondent registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validatorRespondent(array $data)
+    {
+        $rules = [
+            'first_name' => ['required', 'string', 'max:25'],
+            'last_name' => ['required', 'string', 'max:25'],
+            'nik' => ['required', 'numeric', 'min:16'],
+            'gender' => ['required'],
+            'birth_place' => ['required', 'string', 'max:50'],
+            'birth_date' => ['required'],
+            'ktp_province' => ['required', 'string', 'max:50'],
+            'ktp_city' => ['required', 'string', 'max:50'],
+            'ktp_district' => ['required', 'string', 'max:50'],
+            'ktp_postal_code' => ['required', 'numeric'],
+            'ktp_address' => ['required', 'max:255'],
+            'job' => ['required', 'string'],
+            'job_location' => ['required', 'string', 'max:50'],
+        ];
+
+        if (array_key_exists('similar_address', $data) && !$data['similar_address'] == 'checked') {
+            $rules['province'] = ['required', 'string', 'max:50'];
+            $rules['city'] = ['required', 'string', 'max:50'];
+            $rules['district'] = ['required', 'max:50'];
+            $rules['postal_code'] = ['required', 'numeric'];
+            $rules['address'] = ['required', 'max:255'];
+        }
+
+        return Validator::make($data, $rules);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
+     * @param int $role
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    protected function create(array $data, $role)
     {
         return User::create([
             'first_name' => $data['first_name'],
@@ -108,6 +161,53 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role_id' => $role
         ]);
+    }
+
+    /**
+     * Create a new user's profile as credentials for respondent.
+     *
+     * @param  array  $data
+     * @param int $userId
+     * @return \App\Models\UsersProfile
+     */
+    protected function createProfile(array $data, $userId)
+    {
+        # code...
+        $profile = [
+            'user_id' => $userId,
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'nik' => $data['nik'],
+            'gender' => $data['gender'],
+            'birth_place' => $data['birth_place'],
+            'birth_date' => $data['birth_date'],
+            'ktp_province' => $data['ktp_province'],
+            'ktp_city' => $data['ktp_city'],
+            'ktp_district' => $data['ktp_district'],
+            'ktp_postal_code' => $data['ktp_postal_code'],
+            'ktp_address' => $data['ktp_address'],
+            'job' => $data['job'],
+            'job_location' => $data['job_location'],
+        ];
+
+        // check if current address is similar to ktp addresses
+        if (array_key_exists('similar_address', $data) && $data['similar_address'] == 'checked') {
+            $profile['province'] = $profile['ktp_province'];
+            $profile['city'] = $profile['ktp_city'];
+            $profile['district'] = $profile['ktp_district'];
+            $profile['postal_code'] = $profile['ktp_postal_code'];
+            $profile['address'] = $profile['ktp_address'];
+        } else {
+            $profile['province'] = $data['province'];
+            $profile['city'] = $data['city'];
+            $profile['district'] = $data['district'];
+            $profile['postal_code'] = $data['postal_code'];
+            $profile['address'] = $data['address'];
+        }
+
+
+        return UsersProfile::create($profile);
     }
 }

@@ -35,8 +35,9 @@
                                     class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                        <li><a class="dropdown-item" href="/researcher/dashboard"><i
-                                    class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a>
+                            <li>
+                            <a class="dropdown-item" href="/researcher/dashboard"><i
+                            class="fas fa-user-friends fa-fw"></i> Jadi Researcher</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">

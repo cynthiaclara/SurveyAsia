@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         //create fake researcher
-        $faker = Faker::create();
+        $faker = Faker::create('id_ID');
 
         DB::table('users')->insert([
             [
@@ -94,6 +94,18 @@ class UserSeeder extends Seeder
             ],
         ]);
 
+        //create user that will have a profile
+        User::create([
+            'id' => 6,
+            'first_name' => $faker->firstName(),
+            'last_name' => $faker->lastName(),
+            'username' => $faker->userName(),
+            'password' => Hash::make('12345678'),
+            'email' => $faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'role_id' => 3
+        ]);
+
         //using factory
         User::factory()->count(5)->create();
 
@@ -104,6 +116,7 @@ class UserSeeder extends Seeder
             'username' => 'admin123',
             'password' => Hash::make('12345678'),
             'email' => 'admin@example.com',
+            'email_verified_at' => now(),
             'role_id' => 1
         ]);
     }

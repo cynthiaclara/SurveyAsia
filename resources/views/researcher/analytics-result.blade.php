@@ -20,16 +20,24 @@
                     <p class="text-muted m-0">Jumlah Responden</p>
                     <h6>20/100 Responden</h6>
                 </div>
-                <div class="mt-3">
-                    <button class="btn btn-default text-light w-100" id="btnDownload" type="button">
-                        <span>
-                            Download Result
-                            <i class="fas fa-download ms-5"></i>
-                        </span>
+                <div class="dropdown mt-3">
+                    <button class="btn btn-default text-light w-100" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Download Result
+                        <i class="fas fa-download ms-5"></i>
                     </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-file-pdf fa-fw"></i> PDF</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-file-csv fa-fw"></i> CSV</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-file-excel fa-fw"></i> Excel</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-file-powerpoint fa-fw"></i> Power
+                                Point</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-print fa-fw"></i> Print</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-md-9">
                 <div class="border rounded p-3">
                     <h1 style="text-align: center;">Customer Satisfaction</h1>
                     <table style="margin-left:auto;margin-right:auto">

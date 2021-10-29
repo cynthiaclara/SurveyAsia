@@ -21,17 +21,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
-                <a href="#" class="link-dark text-decoration-none">
-                    <p class="fw-bold mt-3"><i class="fab fa-facebook fa-fw"></i> Share on Facebook</p>
+            <div class="col-md-6">
+            <p>Share To Your Social Media</p>
+            <div class="row mt-1">
+                    <div class="col-auto">
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-facebook-icon.png" alt="Facebook" height="42">
+                 
                 </a>
             </div>
-            <div class="col-md-3 border border-2 rounded d-flex justify-content-center align-items-center">
-                <a href="#" class="link-dark text-decoration-none">
-                    <p class="fw-bold mt-3"><i class="fab fa-twitter fa-fw"></i> Share on Twitter</p>
+      
+        <div class="col-auto">
+                <a href="https://twitter.com/intent/tweet?text=Share+title&url=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-twitter-icon.png" alt="Twitter" height="42">
+                </a>
+                </div>
+          
+                <div class="col-auto">                
+                    <a href="https://wa.me/?text=http://demo.surveyasia.id/news/detail-news"><img src="/assets/img/logo-wa-icon.png" alt="Whatsapp" height="42">
                 </a>
             </div>
         </div>
+</div>
         <h5 class="fw-bold mt-5">Next on the pipeline</h5>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, praesentium at error omnis velit illo
             quia quod! Recusandae quasi odit itaque praesentium impedit voluptatum eaque est adipisci, quae, dolore

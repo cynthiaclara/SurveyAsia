@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('status', 1);
             $table->string('category');
             $table->string('author');
+            $table->string('img')->nullable();
             // $table->mediumText('content');
 
             $table->softDeletes();

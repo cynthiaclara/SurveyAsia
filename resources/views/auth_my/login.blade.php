@@ -30,9 +30,18 @@
         <form action="{{ route('login') }}" method="POST">
           @csrf
           @if (session()->has('success'))
-            <div class="alert alert-info alert-dismissible fade show"
+            <div class="alert alert-success alert-dismissible fade show"
               role="alert">
               {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"
+                aria-label="Close"></button>
+            </div>
+          @endif
+
+          @if (session()->has('verified'))
+            <div class="alert alert-success alert-dismissible fade show"
+              role="alert">
+              Your Account Has been Verified Successfully!
               <button type="button" class="btn-close" data-bs-dismiss="alert"
                 aria-label="Close"></button>
             </div>
@@ -79,8 +88,9 @@
         </div>
         <div class="col mt-5 text-center">
           <p>
-            Tidak memiliki akun? <a href="{{ route('register') }}"
-              class="link-info text-decoration-none fw-bold">Buat Akun</a>
+            Tidak memiliki akun? <a href="/pilih"
+              class="link-info text-decoration-none fw-bold">Buat
+              Akun</a>
           </p>
         </div>
       </div>
