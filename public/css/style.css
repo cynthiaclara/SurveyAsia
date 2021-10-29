@@ -227,3 +227,13 @@ body {
     background: #f7931b !important;
     cursor: pointer;
 }
+
+/* Kode Verifikasi */
+.kode {
+    background-color: #1a94cd;
+}
+
+.ellipse_kode {
+    right: 20%;
+}
+/* End kode verifikasi */
