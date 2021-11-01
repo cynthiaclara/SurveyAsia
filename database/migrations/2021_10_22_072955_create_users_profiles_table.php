@@ -19,6 +19,8 @@ class CreateUsersProfilesTable extends Migration
             $table->bigInteger('nik')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('telp')->nullable();
             $table->enum('gender', ['L', 'P']);
             $table->string('birth_place', 50);
             $table->date('birth_date');

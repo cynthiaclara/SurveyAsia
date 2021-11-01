@@ -12,7 +12,9 @@ use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SocialShareController;
+use App\Http\Controllers\UsersProfileController;
 use App\Http\Controllers\SurveyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +26,7 @@ use App\Http\Controllers\SurveyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Auth::routes(['verify' => true]);
 Auth::routes();
 
 //for testing purpose
@@ -87,6 +89,18 @@ Route::middleware(['auth', 'role:respondent'])->group(function () {
         Route::view('/dashboard', 'respondent.dashboard');
     });
 });
+
+//editprofile
+// Route::group(array('prefix'=>'user'), function(){
+//     Route::get('editprofile/{id}', 'UsersProfileController@edit');
+//     Route::post('updateprofile/{id}','UsersProfileController@update')->name('updateprofile');
+//     Route::post('profile/simpanphoto','UsersProfileController@simpanphoto')->name('simpanphoto');
+// });
+Route::get('/pengaturan', 'App\Http\Controllers\UsersProfileController@pengaturan')->name('pengaturan');
+Route::put('/pengaturan','App\Http\Controllers\UsersProfileController@updateProfil')->name('pengaturan.update');
+
+Route::put('/ubah-password','App\Http\Controllers\UsersProfileController@changePassword')->name('pengaturan.ubah-password');
+
 
 //social share
 // Route::get('/detail-news', [SocialShareController::class, 'index']);

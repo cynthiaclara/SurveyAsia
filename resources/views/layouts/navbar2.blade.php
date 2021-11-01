@@ -17,10 +17,16 @@
                 <li class="nav-item">
                     <a class="nav-link link-default me-3" href="/news">News</a>
                 </li>
-                @auth
+               
                 <li>
-                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+                @if (\Auth::user()->avatar == 'NO IMAGE')
+                    <img src="{{ asset('storage/noimage.png') }}" alt="Profile Picture" class="img-fluid" width="36">
+                    @else
+                        <img class="img-circle" src="{{ asset('storage/' . \auth::user()->avatar) }}" class="img-fluid" width="36">
+                        
+                     @endif
                 </li>
+                @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">

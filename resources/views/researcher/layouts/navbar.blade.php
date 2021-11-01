@@ -9,7 +9,7 @@
     @auth
     <li>
       {{-- <img src="{{ auth()->user()->avatar }}" alt="Profile Picture" class="img-fluid" width="36"> --}}
-      <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid" width="36">
+      <img src="/assets/img/noimage.png" alt="Profile Picture" class="img-fluid" width="36">
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"

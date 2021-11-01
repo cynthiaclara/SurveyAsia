@@ -22,8 +22,9 @@
                 </li>
                 @auth
                 <li>
-                    <img src="/assets/img/prof_pic.png" alt="Profile Picture" class="img-fluid ms-3" width="36">
-                </li>
+                        <img class="img-circle" src="/assets/img/noimage.png" alt="Profile Picture" class="img-fluid ms-3" width="36">
+               
+            </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
