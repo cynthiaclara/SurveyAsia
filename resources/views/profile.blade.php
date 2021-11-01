@@ -1,14 +1,3 @@
-<?php
-   // dd($profile);
-   $img = $users_profiles->photo;
-   if(is_null($img)){
-       $img = 'noimage.png';
-   } 
-   $telp = $users_profiles->telp;
-
-
-?>
-
 @extends('layouts.footer')
 @extends('layouts.base')
 @extends('respondent.layouts.navbar')
@@ -17,7 +6,7 @@
 
 <h3 class="pt-5 ms-5 fw-bold">My Account</h3>
 
-{{-- User Profile --}}
+{{-- User Dashboard --}}
 <section class="user-profile pt-4 pb-5 mx-5" id="user-profile">
   <div class="row">
     <div class="col-auto">
@@ -48,34 +37,18 @@
             Logout</button>
         </form>
       </div>
-    </div>
-    <div class="col-12 col-md">
-<div class="flash-message">
-@foreach(['alert-danger', 'alert-warning','alert-success','alert-info'] as $alert)
-@if(Session::has($alert))
-<p class="alert {{$alert}}">{{Session::get($alert)}}</p>
-@endif
-@endforeach
 </div>
-</div>
-<div class="container emp-profile">
-            <form method="post" enctype="multipart/form-data" id="formgantiphoto" action="{{route('simpanphoto')}}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-            <input type="hidden" name="user_id" value="{{ $users_profiles->user_id }}"/>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="{{asset('images/' . $img)}}" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Ganti Photo
-                                <input type="file" name="photoprofile" id="photoprofile"/>
-                            </div>
-                        </div>
-                    </div>
-          |
 
-        </div>
-        <div class="col">
+{{-- User Profile --}}
+    <div class="col shadow pt-4 pb-5 px-5" style="border-radius: 16px;">
+      {{-- <img src="/assets/img/header_profile.svg" alt="Header" width="100%"> --}}
+      <div class="row">
+        <div class="col-2">
+          <img src="/assets/img/noimage.png" alt="Profile Picture" width="110" class="d-block mb-2 ms-3">
+          <a href="#" class="link-default text-decoration-none">Change</a>
+          <a href="#" class="link-default text-decoration-none">| Delete</a>
+
+          </div>
           <h3>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h3>
 
           @if (Auth::user()->subscription_id != null)
@@ -83,19 +56,14 @@
           @else
           <p>Basic (Free) Account</p>
           @endif
-
-          <a href="#" class="btn-sm btn-orange text-white text-decoration-none" role="button">Upgrade</a>
+          <div class="col align-self-end">
+          <a href="/pricing" class="btn btn-warning" role="button">Upgrade</a>
         </div>
       </div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                            </ul>
-                        </div>
+      </div>
                     </div>
-                    <div class="col-md-2">
-                        <a href="{{asset('user/editprofile/' . $user->id)}}" class="profile-edit-btn">Edit Profile</a>
+                    <div class="col align-self-end">
+                        <a href="{{ route('pengaturan') }}" class="btn btn-info"style="float: center">Edit Profile</a>
                     </div>
   </div>
       <div class="row mt-4">
@@ -141,10 +109,21 @@
 
       <div class="row">
         <div class="col-md-2">
-          <p class="fs-5">No. Telp</p>
+          <p class="fs-5">Nomor Telepon</p>
         </div>
         <div class="col">
-        <p>{{$telp}}</p>
+        <p>{{ Auth::user()->telp }}</p>
+        </div>
+
+        <hr>
+        </div>
+
+        <div class="row">
+        <div class="col-md-2">
+          <p class="fs-5">Pekerjaan</p>
+        </div>
+        <div class="col">
+        <p>{{ Auth::user()->job }}</p>
         </div>
       
         <hr>
@@ -154,41 +133,4 @@
 </section>
 {{-- End User Profile --}}
 
-@endsection
-@section('js')
-<script>
-$(document).ready(function(){
-  $('#photoprofile').change(function(){
-    $('#formgantiphoto').submit();
-  });
-  $('#formgantiphoto').submit(function(e){
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    e.preventDefault();
-    var formData = new FormData(this);
-    $.ajax({
-        type:'post',
-        url: "{{ url('user/profile/simpanphoto')}}",
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType:'json',
-        success: (data) =>{
-            this.reset();
-            //alert("Photo berhasil diganti");
-            setTimeout(function(){
-                location.reload();
-            }, 3000);
-        },
-        error: function(data){
-            console.log(data);
-        }
-    });
-  });
-});
-</script>
 @endsection

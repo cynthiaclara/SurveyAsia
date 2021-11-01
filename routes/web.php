@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\SocialShareController;
+use App\Http\Controllers\UsersProfileController;
 
 
 
@@ -80,11 +81,15 @@ Route::middleware(['auth', 'role:respondent'])->group(function () {
 });
 
 //editprofile
-Route::group(array('prefix'=>'user'), function(){
-    Route::get('editprofile/{id}', 'ProfileController@edit');
-    Route::post('updateprofile/{id}','ProfileController@update')->name('updateprofile');
-    Route::post('profile/simpanphoto','ProfileController@simpanphoto')->name('simpanphoto');
-});
+// Route::group(array('prefix'=>'user'), function(){
+//     Route::get('editprofile/{id}', 'UsersProfileController@edit');
+//     Route::post('updateprofile/{id}','UsersProfileController@update')->name('updateprofile');
+//     Route::post('profile/simpanphoto','UsersProfileController@simpanphoto')->name('simpanphoto');
+// });
+Route::get('/pengaturan', 'App\Http\Controllers\UsersProfileController@pengaturan')->name('pengaturan');
+Route::put('/pengaturan','App\Http\Controllers\UsersProfileController@updateProfil')->name('pengaturan.update');
+
+Route::put('/ubah-password','App\Http\Controllers\UsersProfileController@changePassword')->name('pengaturan.ubah-password');
 
 
 //social share
