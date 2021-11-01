@@ -18,7 +18,7 @@
       </a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
         <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
-        <li><a class="dropdown-item" href="/researcher/dashboard"><i class="fas fa-tachometer-alt fa-fw"></i>
+        <li><a class="dropdown-item" href="/researcher/surveys"><i class="fas fa-tachometer-alt fa-fw"></i>
             Dashboard</a>
         </li>
         <li><a class="dropdown-item" href="/validate"><i class="fas fa-user-friends fa-fw"></i> Jadi

@@ -29,7 +29,7 @@
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="/"><i class="fas fa-home fa-fw"></i> Beranda</a></li>
             <li><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-fw"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="/researcher/dashboard"><i class="fas fa-tachometer-alt fa-fw"></i>
+            <li><a class="dropdown-item" href="/researcher/surveys"><i class="fas fa-tachometer-alt fa-fw"></i>
                 Dashboard</a></li>
             <li>
               <hr class="dropdown-divider">

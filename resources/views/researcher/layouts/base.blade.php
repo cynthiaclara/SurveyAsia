@@ -39,7 +39,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-light shadow" id="sidenavAccordion">
                 <div class="sb-sidenav-menu py-5">
                     <div class="nav">
-                        <a class="nav-link" href="/researcher/dashboard">
+                        <a class="nav-link" href="/researcher/surveys">
                             <div class="sb-nav-link-icon"><i class="fas fa-home fa-fw"></i></div>
                             Beranda
                         </a>
