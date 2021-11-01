@@ -21,23 +21,51 @@ class SubscriptionFactory extends Factory
      */
     public function definition()
     {
-        $userid = $this->faker->numberBetween(1, 25);
-
         return [
             //
-            'name' => $this->randName(),
+            'name' => $this->faker->word(),
             'description' => $this->faker->text(),
-            'user_id' => $userid,
-            'expired_at' => $this->faker->date()
+            'features' => $this->faker->paragraph()
         ];
     }
 
-    private function randName()
+    public function freeUser()
     {
         # code...
-        $roleid = $this->faker->numberBetween(3, 4);
-        $names = ['User Sekali Bayar', 'User Berlangganan'];
+        return $this->state(function (array $attr) {
+            return [
+                'name' => 'Free User'
+            ];
+        });
+    }
 
-        return $roleid == 3 ? $names[0] : $names[1];
+    public function perSurvey()
+    {
+        # code...
+        return $this->state(function (array $attr) {
+            return [
+                'name' => 'User Sekali Bayar'
+            ];
+        });
+    }
+
+    public function mothlySubsription()
+    {
+        # code...
+        return $this->state(function (array $attr) {
+            return [
+                'name' => 'User Berlangganan'
+            ];
+        });
+    }
+
+    public function enterprise()
+    {
+        # code...
+        return $this->state(function (array $attr) {
+            return [
+                'name' => 'Enterprise'
+            ];
+        });
     }
 }

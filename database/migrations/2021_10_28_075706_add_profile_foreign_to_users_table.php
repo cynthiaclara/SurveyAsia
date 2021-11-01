@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSubscriptionForeignToUsersTable extends Migration
+class AddProfileForeignToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,9 @@ class AddSubscriptionForeignToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('subscription_id')->nullable();
-            // $table->foreign('subscription_id')->references('id')->on('users_subscription')->onDelete('NO ACTION')->cascadeOnUpdate();
+            $table->unsignedBigInteger('profile_id')->nullable();
+
+            $table->foreign('profile_id')->references('id')->on('users_profiles')->cascadeOnUpdate()->onDelete('SET NULL');
         });
     }
 
@@ -29,8 +30,7 @@ class AddSubscriptionForeignToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            // $table->dropForeign('users_subscription_id_foreign');
-            $table->dropColumn('subscription_id');
+            $table->dropColumn('profile_id');
         });
     }
 }

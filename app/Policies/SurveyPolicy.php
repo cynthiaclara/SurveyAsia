@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Role;
 use App\Models\Survey;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
@@ -19,6 +20,7 @@ class SurveyPolicy
     public function viewAny(User $user)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -31,6 +33,7 @@ class SurveyPolicy
     public function view(User $user, Survey $survey)
     {
         //
+        return $user->role_id == Role::IS_ADMIN || $user->id == $survey->creator_id;
     }
 
     /**
@@ -42,6 +45,7 @@ class SurveyPolicy
     public function create(User $user)
     {
         //
+        return $user->role_id == Role::IS_ADMIN || $user->role_id == Role::IS_RESEARCHER;
     }
 
     /**
@@ -54,6 +58,7 @@ class SurveyPolicy
     public function update(User $user, Survey $survey)
     {
         //
+        return $user->role_id == Role::IS_ADMIN || $user->id == $survey->creator_id;
     }
 
     /**
@@ -66,6 +71,7 @@ class SurveyPolicy
     public function delete(User $user, Survey $survey)
     {
         //
+        return $user->role_id == Role::IS_ADMIN || $user->id == $survey->creator_id;
     }
 
     /**
@@ -78,6 +84,7 @@ class SurveyPolicy
     public function restore(User $user, Survey $survey)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 
     /**
@@ -90,5 +97,6 @@ class SurveyPolicy
     public function forceDelete(User $user, Survey $survey)
     {
         //
+        return $user->role_id == Role::IS_ADMIN;
     }
 }

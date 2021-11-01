@@ -22,7 +22,7 @@ class CreateUsersProfilesTable extends Migration
             $table->string('photo')->nullable();
             $table->string('telp')->nullable();
             $table->enum('gender', ['L', 'P']);
-            $table->string('birth_place', 25);
+            $table->string('birth_place', 50);
             $table->date('birth_date');
 
             //ktp address

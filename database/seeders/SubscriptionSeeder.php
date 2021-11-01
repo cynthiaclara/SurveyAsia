@@ -17,36 +17,18 @@ class SubscriptionSeeder extends Seeder
     public function run()
     {
         //
-        $faker = Faker::create();
-        //Subscription::factory()->count(15)->create();
-        $names = ['User Sekali Bayar', 'User Berlangganan'];
-
-        DB::table('users_subscription')->insert([
-            [
-                'name' => $names[0],
-                'description' => $faker->text(),
-                'user_id' => 1
-            ],
-            [
-                'name' => $names[1],
-                'description' => $faker->text(),
-                'user_id' => 2
-            ],
-            [
-                'name' => $names[0],
-                'description' => $faker->text(),
-                'user_id' => 3
-            ],
-            [
-                'name' => $names[1],
-                'description' => $faker->text(),
-                'user_id' => 4
-            ],
-            [
-                'name' => $names[0],
-                'description' => $faker->text(),
-                'user_id' => 5
-            ],
-        ]);
+        // $faker = Faker::create();
+        Subscription::factory()
+            ->freeUser()
+            ->create();
+        Subscription::factory()
+            ->perSurvey()
+            ->create();
+        Subscription::factory()
+            ->mothlySubsription()
+            ->create();
+        Subscription::factory()
+            ->enterprise()
+            ->create();
     }
 }

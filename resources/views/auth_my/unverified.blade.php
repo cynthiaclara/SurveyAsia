@@ -17,15 +17,12 @@
             <a href="/">
               <img src="/assets/img/surveyasia.png" alt="Surveyasia" width="200">
             </a>
-            <h4 class="mt-4 fw-bold">Verifikasi Email Anda</h4>
-            <p>Tautan verifikasi telah dikirim, mohon cek email Anda.</p>
-            <p class="text-muted" style="font-size: 12px;">Jika tidak menerima email dari Surveyasia, gunakan tombol
-              di
-              bawah untuk mengirim ulang email.
-            </p>
+            <h4 class="mt-4 fw-bold">Email Anda Belum Diverifikasi</h4>
+            <p class="text-muted" style="font-size: 12px;">Gunakan tautan di bawah ini untuk memverifikasi email anda
+              dan menikmati Surveyasia</p>
             <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
               @csrf
-              <button type="submit" class="btn btn-orange rounded-pill text-white w-100 mb-3">Resend
+              <button type="submit" class="btn btn-orange rounded-pill text-white w-100 mb-3">Send
                 Email</button>
             </form>
             <p class="text-muted" style="font-size: 12px;">Pertanyaan? email kami di <a

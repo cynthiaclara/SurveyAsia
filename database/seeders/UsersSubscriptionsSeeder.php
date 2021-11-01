@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\UsersProfile;
-use Database\Factories\UsersProfileFactory;
+use Database\Factories\UsersSubscriptionsFactory;
 use Illuminate\Database\Seeder;
 
-class UsersProfileSeeder extends Seeder
+class UsersSubscriptionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,8 +14,9 @@ class UsersProfileSeeder extends Seeder
      */
     public function run()
     {
-        $factory = new UsersProfileFactory();
-        for ($i = 6; $i <= 10; $i++) {
+        //
+        $factory = new UsersSubscriptionsFactory();
+        for ($i = 1; $i <= 5; $i++) {
             # code...
             $factory
                 ->user($i)

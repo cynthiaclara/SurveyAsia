@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Subscription;
 use App\Models\Survey;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -70,13 +71,18 @@ class HomeController extends Controller
         // $answers = $questions[0]->answers;
         // $respondent = $answers[0]->respondent;
 
+        $subscriptions = Subscription::with('users')->get();
+
+        // dd($subscriptions);
+
         $result = [
             // 'results' => $data,
             'survey' => $survey,
             // 'questions' => $questions,
             // 'options' => $options,
             // 'answers' => $answers,
-            // 'respondent' => $respondent
+            // 'respondent' => $respondent,
+            'subscriptions' => $subscriptions
         ];
 
         // dd($result);

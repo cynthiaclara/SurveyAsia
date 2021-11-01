@@ -26,7 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'password',
         'role_id',
-        'survey_id'
+        'profile_id'
     ];
 
     /**
@@ -111,7 +111,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function subscription()
     {
         # code...
-        return $this->hasOne(Subscription::class, 'user_id');
+        return $this->hasOneThrough(Subscription::class, UsersSubscriptions::class, 'user_id');
     }
 
     /**
@@ -123,7 +123,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function subscriptions()
     {
         # code...
-        return $this->hasMany(Subscription::class, 'user_id');
+        return $this->belongsToMany(Subscription::class, 'users_subscriptions');
     }
 
     /**
@@ -132,7 +132,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function surveys()
     {
         # code...
-        return $this->hasMany(Survey::class);
+        return $this->hasMany(Survey::class, 'creator_id');
     }
 
     // This code will return error, dont use it
