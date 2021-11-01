@@ -23,18 +23,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <p class="text-default">Visi</p>
-                <h5>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti rerum iusto delectus, praesentium
-                    perferendis ratione ad labore a officia, repudiandae veniam nihil explicabo provident, similique
-                    nostrum ipsa illum dolorem officiis."
-                </h5>
+                <h5>"Menjadi platform riset online terbaik bagi individu maupun perusahaan."</h5>
             </div>
         </div>
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <p class="text-orange">Misi</p>
-                <h5>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti rerum iusto delectus, praesentium
-                    perferendis ratione ad labore a officia, repudiandae veniam nihil explicabo provident, similique
-                    nostrum ipsa illum dolorem officiis."
+                <h5>"Surveyasia.id membantu individu maupun perusahaan dengan memberikan solusi melalui hasil riset yang
+                    cepat, dapat diandalkan, dan berwawasan luas yang akan membawa kepada seuah keputusan yang lebih
+                    baik."
                 </h5>
             </div>
         </div>
@@ -130,33 +127,24 @@
             <h4 class="mb-3 me-2">Syarat & Ketentuan Penggunaan</h4>
             <h4 class="text-orange">Surveyasia</h4>
         </span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet hic accusamus vitae ipsum officia
-            rerum dicta deleniti ipsa facilis aut repudiandae enim minus, neque quidem aperiam corporis esse
-            aliquam suscipit saepe necessitatibus quae obcaecati fuga ab. Exercitationem eveniet necessitatibus,
-            quaerat voluptatum mollitia nobis dicta quasi magni placeat sit fuga molestias quae natus inventore
-            laborum repudiandae iure repellendus quibusdam sed. Eum, repellendus, tempore debitis, natus quam
-            amet dolores possimus impedit reprehenderit tempora voluptates dicta modi. Esse voluptate ea nobis
-            minima id cum molestias eaque perspiciatis consequuntur quam earum et eius iure, minus ipsum nam,
-            fugit quo fugiat sed est doloribus velit.
+        <p>1. Pernyataan Pengguna</p>
+        <p>1.1. Syarat & Ketentuan merupakan perjanjian yang sah antara Pengguna dengan Surveyasia. Jika Pengguna tidak
+            menyetujui salah satu, sebagian, atau seluruh isi Syarat & ketentuan, maka pengguna tidak diperkenakan
+            menggunakan layanan di Situs Web Surveyasia.
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet hic accusamus vitae ipsum officia
-            rerum dicta deleniti ipsa facilis aut repudiandae enim minus, neque quidem aperiam corporis esse
-            aliquam suscipit saepe necessitatibus quae obcaecati fuga ab. Exercitationem eveniet necessitatibus,
-            quaerat voluptatum mollitia nobis dicta quasi magni placeat sit fuga molestias quae natus inventore
-            laborum repudiandae iure repellendus quibusdam sed. Eum, repellendus, tempore debitis, natus quam
-            amet dolores possimus impedit reprehenderit tempora voluptates dicta modi. Esse voluptate ea nobis
-            minima id cum molestias eaque perspiciatis consequuntur quam earum et eius iure, minus ipsum nam,
-            fugit quo fugiat sed est doloribus velit.
+        <p>1.2. Surveyasia berhak, kapan saja dan dari waktu ke waktu, untuk mengubah dan/atau mengganti Syarat &
+            Ketentuan ini secara keseluruhan atau sebagian, tanpa pemberitahuan kepada Pengguna. Pengguna yang tetap
+            menggunakan layanan Surveyasia merupakan tanda pengakuan afirmatif atas modifikasi apa pun dan persetujuan
+            oleh Pengguna untuk tetap terikat oleh Syarat dan Ketentuan yang telah diubah dan/atau diganti. Pengguna
+            diharapkan untuk memeriksa halaman ini dari waktu ke waktu untuk memperhatikan perubahan yang telah
+            Surveyasia buat, karena hal itu mengikat Pengguna.
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet hic accusamus vitae ipsum officia
-            rerum dicta deleniti ipsa facilis aut repudiandae enim minus, neque quidem aperiam corporis esse
-            aliquam suscipit saepe necessitatibus quae obcaecati fuga ab. Exercitationem eveniet necessitatibus,
-            quaerat voluptatum mollitia nobis dicta quasi magni placeat sit fuga molestias quae natus inventore
-            laborum repudiandae iure repellendus quibusdam sed. Eum, repellendus, tempore debitis, natus quam
-            amet dolores possimus impedit reprehenderit tempora voluptates dicta modi. Esse voluptate ea nobis
-            minima id cum molestias eaque perspiciatis consequuntur quam earum et eius iure, minus ipsum nam,
-            fugit quo fugiat sed est doloribus velit.
+        <p>1.3. Surveyasia memproses informasi tentang Pengguna sesuai dengan Kebijakan Privasi. Dengan menggunakan
+            layanan Surveyasia, Pengguna menyetujui pemrosesan tersebut dan Pengguna menjamin bahwa semua data yang
+            Pengguna berikan akurat.
         </p>
+        <p>1.5. Akses ke layanan Surveyasia disediakan "sebagaimana adanya" dan penggunaan Pengguna terhadap layanan
+            Surveyasia merupakan risiko Pengguna sendiri.</p>
     </div>
 </section>
 {{-- End TaC --}}
